@@ -1,6 +1,6 @@
 {
-  "name": "SvelteKit",
-  "description": "Monorepo with multiple SvelteKit apps sharing a UI Library",
+  "name": "LeetStrength",
+  "description": "Monorepo with every LeetStrength app sharing a the same packages",
   "featured": true,
   "template": "https://vercel.com/templates/svelte/turborepo-sveltekit-starter",
   "boost": true
