@@ -10,24 +10,15 @@
 	import { isLoading, locales } from 'svelte-i18n';
 	import { setupViewTransition } from 'sveltekit-view-transition';
 	import { BRAND } from '$lib/CONFIG';
-	import {
-		setPathWithoutLang,
-		type DisplayMode,
-		setPromptEvent,
-		setOnline,
-		setDisplayMode
-	} from '$lib/utils/context';
+	import { type DisplayMode, setPromptEvent, setOnline, setDisplayMode } from '$lib/utils/context';
 	import { onMount } from 'svelte';
 
 	nprogress.configure({ easing: 'ease', minimum: 0.2, speed: 600 });
 	$: $navigating ? nprogress.start() : nprogress.done();
 
 	// Path without lang
-	let pathWithoutlang = $page.url.pathname.replace(`/${$page.params.lang}`, '') || '/';
-	setPathWithoutLang(pathWithoutlang);
-
-	$: pathWithoutlang = $page.url.pathname.replace(`/${$page.params.lang}`, '') || '/';
-	$: setPathWithoutLang(pathWithoutlang);
+	let pathWithoutLang = $page.url.pathname.replace(`/${$page.params.lang}`, '') || '/';
+	$: pathWithoutLang = $page.url.pathname.replace(`/${$page.params.lang}`, '') || '/';
 
 	let online = true;
 	let displayMode: DisplayMode = 'browser';
@@ -122,10 +113,10 @@
 	<meta name="og:site_name" content={BRAND.name} />
 
 	<!-- Href langs -->
-	<link href={pathWithoutlang} hreflang="x-default" rel="alternate" />
+	<link href={pathWithoutLang} hreflang="x-default" rel="alternate" />
 	{#each $locales as locale}
 		<link
-			href={`/${locale}${pathWithoutlang == '/' ? '' : pathWithoutlang}?owlang=true`}
+			href={`/${locale}${pathWithoutLang == '/' ? '' : pathWithoutLang}?owlang=true`}
 			hreflang={locale}
 			rel="alternate"
 		/>

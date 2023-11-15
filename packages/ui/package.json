@@ -12,6 +12,11 @@
   },
   "devDependencies": {
     "eslint-config-custom": "workspace:*",
-    "svelte": "^3.9.2"
+    "svelte": "^4.2.3"
+  },
+  "exports": {
+    ".": "./index.ts",
+    "./components": "./components/index.ts",
+    "./icons": "./icons/index.ts"
   }
 }

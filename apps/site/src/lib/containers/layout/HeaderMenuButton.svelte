@@ -1,6 +1,6 @@
 <script>
-	import Button from '$lib/components/ui/button/button.svelte';
 	import { navigationOpen } from '$lib/stores/common';
+	import { Button } from '$lib/components/ui/button';
 </script>
 
 <Button

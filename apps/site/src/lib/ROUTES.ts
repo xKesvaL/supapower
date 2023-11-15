@@ -7,6 +7,15 @@
 export const PAGES = {
   "lang_lg": (params: {lang?: string | number}= {}) =>  {
     return ensurePrefix(`${params?.lang ? `/${params?.lang}`: ''}`)
+  },
+  "lang_lg_about": (params: {lang?: string | number}= {}) =>  {
+    return ensurePrefix(`${params?.lang ? `/${params?.lang}`: ''}/about`)
+  },
+  "lang_lg_features": (params: {lang?: string | number}= {}) =>  {
+    return ensurePrefix(`${params?.lang ? `/${params?.lang}`: ''}/features`)
+  },
+  "lang_lg_pricing": (params: {lang?: string | number}= {}) =>  {
+    return ensurePrefix(`${params?.lang ? `/${params?.lang}`: ''}/pricing`)
   }
 }
 
@@ -61,7 +70,7 @@ const ensurePrefix = (str: string) => {
 * ```
 */
 export type KIT_ROUTES = { 
-  PAGES: { 'lang_lg': 'lang' }
+  PAGES: { 'lang_lg': 'lang', 'lang_lg_about': 'lang', 'lang_lg_features': 'lang', 'lang_lg_pricing': 'lang' }
   SERVERS: { 'assets_manifest.webmanifest': never, 'assets_sitemap.xml': never }
   ACTIONS: {  }
   Storage_Params: { lang: never }

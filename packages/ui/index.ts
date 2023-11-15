@@ -1,3 +1,4 @@
-import MyCounterButton from './components/MyCounterButton.svelte';
+import * as UIIcons from './icons';
+import * as UIComponents from './components';
 
-export { MyCounterButton };
+export { UIIcons, UIComponents };

@@ -1,26 +1,28 @@
 <script>
 	import { PAGES } from '$lib/ROUTES';
-	import { Button } from '$lib/components/ui/button';
-	import { ArrowUpLeft } from '$lib/icons';
+	import { ArrowUpLeft } from 'ui/icons';
 	import { navigationOpen } from '$lib/stores/common';
 	import HeaderMenuButton from './HeaderMenuButton.svelte';
 	import HeaderSocials from './HeaderSocials.svelte';
+	import { Button } from '$lib/components/ui/button';
+	import HeaderLink from './HeaderLink.svelte';
 </script>
 
 <header>
 	<div
 		class="container flex items-center justify-between gap-4 lg:my-6 lg:grid lg:grid-cols-[auto,1fr,auto,auto] lg:gap-16"
+		style="view-transition-name: header;"
 	>
 		<a class="font-title text-2xl lg:border-r lg:py-2 lg:pr-12" href={PAGES.lang_lg()}>Header</a>
 		<div
-			class="fixed inset-0 flex flex-col justify-between gap-12 bg-card transition-transform duration-500 lg:relative lg:flex-row {$navigationOpen
+			class="bg-card fixed inset-0 flex flex-col justify-between gap-12 transition-transform duration-500 lg:relative lg:flex-row {$navigationOpen
 				? 'translate-x-0'
 				: '-translate-x-full'} lg:translate-x-0 lg:bg-transparent"
 		>
 			<div class="flex flex-col items-center gap-12 lg:flex-row">
-				<a href="">Features</a>
-				<a href="">Features</a>
-				<a href="">Pricing</a>
+				<HeaderLink href="/features">Features</HeaderLink>
+				<HeaderLink href="/pricing">Pricing</HeaderLink>
+				<HeaderLink href="/about">About</HeaderLink>
 			</div>
 			<HeaderSocials />
 		</div>

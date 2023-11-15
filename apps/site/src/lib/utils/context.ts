@@ -1,24 +1,8 @@
 import { getContext, setContext } from 'svelte';
 
-export const contextKeys = [
-	'currentWorkout',
-	'user',
-	'userData',
-	'installPromptEvent',
-	'displayMode',
-	'online',
-	'pathWithoutLang',
-] as const;
+export const contextKeys = ['installPromptEvent', 'displayMode', 'online'] as const;
 
 export type ContextKey = (typeof contextKeys)[number];
-
-export const setPathWithoutLang = (path: string) => {
-	setContext('pathWithoutLang' satisfies ContextKey, path);
-};
-
-export const getPathWithoutLang = (): string => {
-	return getContext('pathWithoutLang' satisfies ContextKey);
-};
 
 export type DisplayMode = 'browser' | 'fullscreen' | 'standalone';
 
