@@ -15,11 +15,13 @@
 	>
 		<a class="font-title text-2xl lg:border-r lg:py-2 lg:pr-12" href={PAGES.lang_lg()}>Header</a>
 		<div
-			class="bg-card fixed inset-0 flex flex-col justify-between gap-12 transition-transform duration-500 lg:relative lg:flex-row {$navigationOpen
+			class="bg-card lg:0 fixed inset-0 flex flex-col justify-between gap-12 p-4 transition-transform duration-500 lg:relative lg:flex-row {$navigationOpen
 				? 'translate-x-0'
 				: '-translate-x-full'} lg:translate-x-0 lg:bg-transparent"
 		>
-			<div class="flex flex-col items-center gap-12 lg:flex-row">
+			<div
+				class="lg:justfiy-start flex flex-grow flex-col items-center justify-center gap-12 lg:flex-grow-0 lg:flex-row"
+			>
 				<HeaderLink href="/features">Features</HeaderLink>
 				<HeaderLink href="/pricing">Pricing</HeaderLink>
 				<HeaderLink href="/about">About</HeaderLink>
