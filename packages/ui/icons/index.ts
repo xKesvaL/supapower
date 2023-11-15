@@ -1,6 +1,6 @@
-import ArrowUpLeft from './arrow-up-left.svelte';
-import BrandInstagram from './brand-instagram.svelte';
-import BrandTiktok from './brand-tiktok.svelte';
-import BrandTwitter from './brand-twitter.svelte';
+import IconArrowUpLeft from './arrow-up-left.svelte';
+import IconBrandInstagram from './brand-instagram.svelte';
+import IconBrandTiktok from './brand-tiktok.svelte';
+import IconBrandTwitter from './brand-twitter.svelte';
 
-export { ArrowUpLeft, BrandInstagram, BrandTiktok, BrandTwitter };
+export { IconArrowUpLeft, IconBrandInstagram, IconBrandTiktok, IconBrandTwitter };

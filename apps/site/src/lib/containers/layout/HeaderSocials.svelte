@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button';
-	import { BrandInstagram, BrandTiktok, BrandTwitter } from 'ui/icons';
+	import { IconBrandInstagram, IconBrandTiktok, IconBrandTwitter } from 'ui/icons';
 </script>
 
 <div class="flex justify-center gap-4">
@@ -8,18 +8,18 @@
 		size="icon"
 		class="lg:text-muted-foreground/75 hover:text-foreground bg-transparent p-2 transition-colors hover:bg-transparent"
 	>
-		<BrandInstagram />
+		<IconBrandInstagram />
 	</Button>
 	<Button
 		size="icon"
 		class="lg:text-muted-foreground/75 hover:text-foreground bg-transparent p-2 transition-colors hover:bg-transparent"
 	>
-		<BrandTiktok />
+		<IconBrandTiktok />
 	</Button>
 	<Button
 		size="icon"
 		class="lg:text-muted-foreground/75 hover:text-foreground bg-transparent p-2 transition-colors hover:bg-transparent"
 	>
-		<BrandTwitter />
+		<IconBrandTwitter />
 	</Button>
 </div>

@@ -1,6 +1,6 @@
 <script>
 	import { PAGES } from '$lib/ROUTES';
-	import { ArrowUpLeft } from 'ui/icons';
+	import { IconArrowUpLeft } from 'ui/icons';
 	import { navigationOpen } from '$lib/stores/common';
 	import HeaderMenuButton from './HeaderMenuButton.svelte';
 	import HeaderSocials from './HeaderSocials.svelte';
@@ -22,9 +22,9 @@
 			<div
 				class="lg:justfiy-start flex flex-grow flex-col items-center justify-center gap-12 lg:flex-grow-0 lg:flex-row"
 			>
-				<HeaderLink href="/features">Features</HeaderLink>
-				<HeaderLink href="/pricing">Pricing</HeaderLink>
-				<HeaderLink href="/about">About</HeaderLink>
+				<HeaderLink href={PAGES.lang_lg_features()}>Features</HeaderLink>
+				<HeaderLink href={PAGES.lang_lg_pricing()}>Pricing</HeaderLink>
+				<HeaderLink href={PAGES.lang_lg_about()}>About</HeaderLink>
 			</div>
 			<HeaderSocials />
 		</div>
@@ -32,7 +32,7 @@
 			<Button class="flex gap-1 text-xs lg:gap-2 lg:rounded-full lg:text-sm">
 				Join Waitlist
 				<div class="h-4 w-4">
-					<ArrowUpLeft />
+					<IconArrowUpLeft />
 				</div>
 			</Button>
 			<HeaderMenuButton />

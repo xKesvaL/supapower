@@ -55,8 +55,7 @@
 }
 
 :is(h1, h2) {
-	font-family: var(--ft-title);
-	font-weight: 900 !important;
+	@apply font-title;
 	text-wrap: balance;
 }
 
@@ -78,7 +77,7 @@ body[data-scroll-locked='true'] {
 
 .font-title {
 	font-family: var(--ft-title);
-	font-weight: 900;
+	font-weight: 700;
 }
 
 section.section {
