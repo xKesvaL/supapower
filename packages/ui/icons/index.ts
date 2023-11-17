@@ -5,4 +5,11 @@ import IconBrandTwitter from './brand-twitter.svelte';
 import IconMoon from './moon.svelte';
 import IconSun from './sun.svelte';
 
-export { IconArrowUpLeft, IconBrandInstagram, IconBrandTiktok, IconBrandTwitter, IconMoon, IconSun };
+export {
+  IconArrowUpLeft,
+  IconBrandInstagram,
+  IconBrandTiktok,
+  IconBrandTwitter,
+  IconMoon,
+  IconSun,
+};

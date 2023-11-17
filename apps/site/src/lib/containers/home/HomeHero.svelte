@@ -4,7 +4,7 @@
 
 <section class="container grid items-center gap-8 lg:grid-cols-2">
 	<div class="flex flex-col gap-4">
-		<span class="text-muted-foreground/80 font-title text-xs uppercase lg:text-sm">
+		<span class="font-title text-xs uppercase text-muted-foreground/80 lg:text-sm">
 			Train harder, smarter. Get stronger, faster.
 		</span>
 		<h1 class="text flex flex-col gap-2 text-4xl sm:text-5xl lg:text-6xl">
@@ -12,7 +12,7 @@
 			<div>free fitness app</div>
 			for everyone.
 		</h1>
-		<p class="text-muted-foreground/80 mt-2 lg:mt-4 lg:max-w-[40ch] lg:text-lg">
+		<p class="mt-2 text-muted-foreground/80 lg:mt-4 lg:max-w-[40ch] lg:text-lg">
 			Track your workouts, set goals, and get better every session. Less thinking, more lifting, all
 			for free.
 		</p>

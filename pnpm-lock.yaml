@@ -212,12 +212,6 @@ importers:
         specifier: ^2.30.0
         version: 2.30.0(eslint@8.53.0)(svelte@4.2.3)
 
-  packages/tailwind-config:
-    devDependencies:
-      tailwindcss:
-        specifier: ^3.2.4
-        version: 3.3.5
-
   packages/ui:
     devDependencies:
       eslint-config-custom:

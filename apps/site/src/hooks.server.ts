@@ -31,7 +31,7 @@ export const handle: Handle = async ({ event, resolve }) => {
 			expires,
 			httpOnly: true,
 			path: '/',
-			secure: true,
+			secure: true
 		});
 	}
 

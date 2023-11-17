@@ -16,5 +16,5 @@ init({
 		getLocaleFromCookie() ||
 		getLocaleFromPathname(/^\/(.*?)/) ||
 		getLocaleFromNavigator() ||
-		DEFAULT_LOCALE,
+		DEFAULT_LOCALE
 });

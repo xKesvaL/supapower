@@ -9,7 +9,7 @@
 	aria-expanded={$navigationOpen}
 	aria-controls="navigation"
 	on:click={() => navigationOpen.toggle()}
-	class="bg-muted text-muted-foreground relative z-10 !transition-all !duration-300 hover:bg-muted lg:hidden hover:text-foreground {$navigationOpen
+	class="relative z-10 bg-muted text-muted-foreground !transition-all !duration-300 hover:bg-muted hover:text-foreground lg:hidden {$navigationOpen
 		? 'scale-[2] bg-transparent  hover:bg-transparent '
 		: ''}"
 >

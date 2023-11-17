@@ -14,7 +14,7 @@ export const deleteOldCaches = async (currentCacheKey: string) => {
 export const getFromCache = async (
 	cacheKey: string,
 	assets: string[],
-	request: Request,
+	request: Request
 ): Promise<Response> => {
 	if (
 		request.method !== 'GET' ||

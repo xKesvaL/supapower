@@ -24,14 +24,14 @@ const createLangStore = (): LangStore => {
 			expires: 300,
 			path: '/',
 			sameSite: 'lax',
-			secure: true,
+			secure: true
 		});
 		set(lang);
 	};
 
 	return {
 		set: setLang,
-		subscribe,
+		subscribe
 	};
 };
 

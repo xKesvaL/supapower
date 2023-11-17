@@ -15,7 +15,7 @@ const createNavigationOpenStore = () => {
 				return !t;
 			});
 		},
-		update,
+		update
 	};
 };
 

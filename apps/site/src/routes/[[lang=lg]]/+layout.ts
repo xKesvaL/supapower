@@ -14,6 +14,6 @@ export const load: LayoutLoad = async ({ data }) => {
 	await waitLocale();
 
 	return {
-		lang,
+		lang
 	};
 };

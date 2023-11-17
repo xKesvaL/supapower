@@ -25,7 +25,9 @@
 		class="container flex items-center justify-between gap-4 lg:my-6 lg:grid lg:grid-cols-[auto,1fr,auto] lg:gap-10"
 		style="view-transition-name: header;"
 	>
-		<a class="font-title text-2xl lg:border-r lg:py-2 lg:pr-12" href={PAGES.lang_lg()}>LeetStrength</a>
+		<a class="font-title text-2xl lg:border-r lg:py-2 lg:pr-12" href={PAGES.lang_lg()}
+			>LeetStrength</a
+		>
 		<div
 			class="lg:0 fixed inset-0 z-10 flex flex-col justify-between gap-12 bg-card p-4 transition-transform duration-500 lg:relative lg:flex-row {$navigationOpen
 				? 'translate-x-0'

@@ -32,7 +32,7 @@ export const SOCIALS = {
 		url: 'https://tiktok.com/@leetstrength'
 	},
 	twitter: {
-		url: "https://twitter.com/leetstrength"
+		url: 'https://twitter.com/leetstrength'
 	}
 } as const as Socials;
 

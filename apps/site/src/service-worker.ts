@@ -14,7 +14,7 @@ const CACHE = `cache-${version}`;
 const ASSETS = [
 	...build, // the app itself
 	...files, // everything in `static`
-	...prerendered, // prerendered pages
+	...prerendered // prerendered pages
 ];
 
 sw.addEventListener('install', (event) => {
