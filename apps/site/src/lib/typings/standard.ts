@@ -1,8 +1,11 @@
+import type { SocialName } from "$lib/CONFIG";
+
 export interface Brand {
 	author: BrandAuthor;
 	color: BrandColors;
 	logo: BrandLogo;
 	name: string;
+	startDate: Date;
 	url: string;
 }
 
@@ -20,6 +23,14 @@ export interface BrandAuthor {
 export type BrandColors = Record<BrandColor, string>;
 
 export type BrandColor = 'primary' | 'secondary';
+
+export type Socials = {
+	[key in SocialName]: Social;
+}
+
+export interface Social {
+	url: string;
+}
 
 export type ThemeColor =
 	| 'accent'

@@ -1,11 +1,11 @@
-import type { Brand } from './typings/standard';
+import type { Brand, Socials } from './typings/standard';
 
 export const DEFAULT_LOCALE: Locale = 'en' as const;
 
 export const BRAND = {
 	author: {
-		name: 'KesvaL',
-		url: 'https://kesval.com'
+		name: 'LeetStrength',
+		url: 'https://leetstrength.com'
 	},
 	color: {
 		primary: '#5920df',
@@ -16,20 +16,25 @@ export const BRAND = {
 		light: '/images/logos/logo.png'
 	},
 	name: 'KesvaL',
+	startDate: new Date('2023-06-01'),
 	url: 'https://kesval.com'
 } as const satisfies Brand;
 
+export const SOCIALS_LIST = ['github', 'instagram', 'linkedin', 'tiktok', 'twitter'] as const;
+
+export type SocialName = (typeof SOCIALS_LIST)[number];
+
 export const SOCIALS = {
-	github: {
-		url: 'https://github.com/xKesvaL'
-	},
 	instagram: {
-		url: 'https://instagram.com/xkesval'
+		url: 'https://instagram.com/leetstrength'
 	},
-	linkedin: {
-		url: 'https://linkedin.com/in/jordan-abeddou'
+	tiktok: {
+		url: 'https://tiktok.com/@leetstrength'
+	},
+	twitter: {
+		url: "https://twitter.com/leetstrength"
 	}
-} as const;
+} as const as Socials;
 
 export const LOCALES = ['en', 'fr'] as const;
 

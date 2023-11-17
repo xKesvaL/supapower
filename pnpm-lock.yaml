@@ -77,8 +77,8 @@ importers:
         specifier: ^3.0.3
         version: 3.0.3(@sveltejs/kit@1.27.6)
       '@sveltejs/enhanced-img':
-        specifier: ^0.1.2
-        version: 0.1.2(svelte@4.2.3)
+        specifier: ^0.1.4
+        version: 0.1.4(svelte@4.2.3)
       '@sveltejs/kit':
         specifier: ^1.27.4
         version: 1.27.6(svelte@4.2.3)(vite@4.4.2)
@@ -1183,7 +1183,7 @@ packages:
       rollup:
         optional: true
     dependencies:
-      '@types/estree': 1.0.3
+      '@types/estree': 1.0.5
       estree-walker: 2.0.2
       picomatch: 2.3.1
     dev: true
@@ -1219,8 +1219,8 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/enhanced-img@0.1.2(svelte@4.2.3):
-    resolution: {integrity: sha512-lN7fJVd6l0/9rcS6eHvhO5ztP3SYXVYiLOyHWp+5wrKixLWmK5Z7nUcni/bkQ66b12qzPHHb7Y6pQLjkuzqAAA==}
+  /@sveltejs/enhanced-img@0.1.4(svelte@4.2.3):
+    resolution: {integrity: sha512-R0nbA8U5q+j0oPxNh7i8qlQIEBtGxWDbI5T4O07U9v0ACxdAxI9Tybup6FBRph5JXSRVzf7BMy8S2mjPJYd3dQ==}
     dependencies:
       magic-string: 0.30.5
       svelte-parse-markup: 0.1.2(svelte@4.2.3)
@@ -1374,10 +1374,6 @@ packages:
 
   /@types/cookie@0.5.4:
     resolution: {integrity: sha512-7z/eR6O859gyWIAjuvBWFzNURmf2oPBmJlfVWkwehU5nzIyjwBsTh7WMmEEV4JFnHuQ3ex4oyTvfKzcyJVDBNA==}
-    dev: true
-
-  /@types/estree@1.0.3:
-    resolution: {integrity: sha512-CS2rOaoQ/eAgAfcTfq6amKG7bsN+EMcgGY4FAFQdvSj2y1ixvOZTUA9mOtCai7E1SYu283XNw7urKK30nP3wkQ==}
     dev: true
 
   /@types/estree@1.0.5:

@@ -6,7 +6,7 @@ import { defineConfig } from 'vite';
 import { kitRoutes } from 'vite-plugin-kit-routes';
 
 export default defineConfig({
-	plugins: [sveltekit(), enhancedImages(), kitRoutes<KIT_ROUTES>()],
+	plugins: [enhancedImages(), sveltekit(), kitRoutes<KIT_ROUTES>()],
 	resolve: {
 		alias: {
 			$assets: '/src/assets'
