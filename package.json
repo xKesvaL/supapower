@@ -5,9 +5,9 @@
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "format": "prettier --write .",
-    "changeset": "changeset",
+    "changeset": "changeset && git add --all",
     "publish:packages": "changeset publish",
-    "version:packages": "changeset version"
+    "version:packages": "changeset version && git add --all"
   },
   "devDependencies": {
     "eslint": "^8.53.0",
