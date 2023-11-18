@@ -1,6 +1,6 @@
 <script>
-  import { navigationOpen } from '$lib/stores/common';
-  import { Button } from '$lib/components/ui/button';
+  import { navigationOpen } from "$lib/stores/common";
+  import { Button } from "$lib/components/ui/button";
 </script>
 
 <Button

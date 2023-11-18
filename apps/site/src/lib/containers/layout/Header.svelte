@@ -1,12 +1,12 @@
 <script lang="ts">
-  import { PAGES } from '$lib/ROUTES';
-  import { IconArrowUpLeft } from 'ui/icons';
-  import { navigationOpen } from '$lib/stores/common';
-  import HeaderMenuButton from './HeaderMenuButton.svelte';
-  import Socials from '../../components/base/Socials.svelte';
-  import { Button } from '$lib/components/ui/button';
-  import HeaderLink from './HeaderLink.svelte';
-  import ThemeSwitch from './ThemeSwitch.svelte';
+  import { PAGES } from "$lib/ROUTES";
+  import { IconArrowUpLeft } from "ui/icons";
+  import { navigationOpen } from "$lib/stores/common";
+  import HeaderMenuButton from "./HeaderMenuButton.svelte";
+  import Socials from "../../components/base/Socials.svelte";
+  import { Button } from "$lib/components/ui/button";
+  import HeaderLink from "./HeaderLink.svelte";
+  import ThemeSwitch from "./ThemeSwitch.svelte";
 </script>
 
 <header>

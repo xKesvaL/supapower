@@ -1,10 +1,10 @@
-import type { Locale } from '$lib/CONFIG';
+import type { Locale } from "$lib/CONFIG";
 
-import { langStore } from '$lib/stores/lang';
-import '$lib/utils/i18n';
-import { waitLocale } from 'svelte-i18n';
+import { langStore } from "$lib/stores/lang";
+import "$lib/utils/i18n";
+import { waitLocale } from "svelte-i18n";
 
-import type { LayoutLoad } from './$types';
+import type { LayoutLoad } from "./$types";
 
 export const load: LayoutLoad = async ({ data }) => {
   const lang = data.lang;
@@ -14,6 +14,6 @@ export const load: LayoutLoad = async ({ data }) => {
   await waitLocale();
 
   return {
-    lang
+    lang,
   };
 };

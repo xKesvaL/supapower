@@ -1,15 +1,6 @@
-import IconArrowUpLeft from "./arrow-up-left.svelte";
-import IconBrandInstagram from "./brand-instagram.svelte";
-import IconBrandTiktok from "./brand-tiktok.svelte";
-import IconBrandTwitter from "./brand-twitter.svelte";
-import IconMoon from "./moon.svelte";
-import IconSun from "./sun.svelte";
-
-export {
-  IconArrowUpLeft,
-  IconBrandInstagram,
-  IconBrandTiktok,
-  IconBrandTwitter,
-  IconMoon,
-  IconSun,
-};
+export { default as IconArrowUpLeft } from "./arrow-up-left.svelte";
+export { default as IconBrandInstagram } from "./brand-instagram.svelte";
+export { default as IconBrandTiktok } from "./brand-tiktok.svelte";
+export { default as IconBrandTwitter } from "./brand-twitter.svelte";
+export { default as IconMoon } from "./moon.svelte";
+export { default as IconSun } from "./sun.svelte";

@@ -1,6 +1,6 @@
 <script>
-  import FooterBar from './FooterBar.svelte';
-  import FooterContent from './FooterContent.svelte';
+  import FooterBar from "./FooterBar.svelte";
+  import FooterContent from "./FooterContent.svelte";
 </script>
 
 <footer class="relative -z-10 flex flex-col">

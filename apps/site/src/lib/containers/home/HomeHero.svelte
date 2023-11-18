@@ -1,5 +1,5 @@
 <script>
-  import { Button } from '$lib/components/ui/button';
+  import { Button } from "$lib/components/ui/button";
 </script>
 
 <section class="container grid items-center gap-8 lg:grid-cols-2">

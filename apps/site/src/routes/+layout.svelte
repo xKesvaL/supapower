@@ -1,31 +1,31 @@
 <script lang="ts">
-  import '@kesval/design';
-  import '../app.postcss';
-  import '$lib/styles/fonts.scss';
-  import '$lib/styles/main.scss';
-  import '$lib/styles/nprogress.scss';
+  import "@kesval/design";
+  import "../app.postcss";
+  import "$lib/styles/fonts.scss";
+  import "$lib/styles/main.scss";
+  import "$lib/styles/nprogress.scss";
 
-  import { navigating, page } from '$app/stores';
-  import nprogress from 'nprogress';
-  import { isLoading, locales } from 'svelte-i18n';
-  import { setupViewTransition } from 'sveltekit-view-transition';
-  import { BRAND } from '$lib/CONFIG';
-  import { type DisplayMode, setPromptEvent, setOnline, setDisplayMode } from '$lib/utils/context';
-  import { onMount } from 'svelte';
+  import { navigating, page } from "$app/stores";
+  import nprogress from "nprogress";
+  import { isLoading, locales } from "svelte-i18n";
+  import { setupViewTransition } from "sveltekit-view-transition";
+  import { BRAND } from "$lib/CONFIG";
+  import { type DisplayMode, setPromptEvent, setOnline, setDisplayMode } from "$lib/utils/context";
+  import { onMount } from "svelte";
 
-  nprogress.configure({ easing: 'ease', minimum: 0.2, speed: 600 });
+  nprogress.configure({ easing: "ease", minimum: 0.2, speed: 600 });
   $: $navigating ? nprogress.start() : nprogress.done();
 
   // Path without lang
-  let pathWithoutLang = $page.url.pathname.replace(`/${$page.params.lang}`, '') || '/';
-  $: pathWithoutLang = $page.url.pathname.replace(`/${$page.params.lang}`, '') || '/';
+  let pathWithoutLang = $page.url.pathname.replace(`/${$page.params.lang}`, "") || "/";
+  $: pathWithoutLang = $page.url.pathname.replace(`/${$page.params.lang}`, "") || "/";
 
   let online = true;
-  let displayMode: DisplayMode = 'browser';
+  let displayMode: DisplayMode = "browser";
 
   onMount(() => {
-    window.matchMedia('(display-mode: standalone)').addEventListener('change', (e) => {
-      displayMode = e.matches ? 'standalone' : 'browser';
+    window.matchMedia("(display-mode: standalone)").addEventListener("change", (e) => {
+      displayMode = e.matches ? "standalone" : "browser";
     });
   });
 
@@ -116,7 +116,7 @@
   <link href={pathWithoutLang} hreflang="x-default" rel="alternate" />
   {#each $locales as locale}
     <link
-      href={`/${locale}${pathWithoutLang == '/' ? '' : pathWithoutLang}?owlang=true`}
+      href={`/${locale}${pathWithoutLang == "/" ? "" : pathWithoutLang}?owlang=true`}
       hreflang={locale}
       rel="alternate"
     />

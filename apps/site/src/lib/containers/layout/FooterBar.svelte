@@ -1,7 +1,7 @@
 <script>
-  import { BRAND } from '$lib/CONFIG';
-  import Socials from '$lib/components/base/Socials.svelte';
-  import { t } from 'svelte-i18n';
+  import { BRAND } from "$lib/CONFIG";
+  import Socials from "$lib/components/base/Socials.svelte";
+  import { t } from "svelte-i18n";
 </script>
 
 <div
@@ -9,7 +9,7 @@
 >
   <div>
     Copyright © {BRAND.startDate.getFullYear()}
-    {BRAND.name}. {$t('common.allRightsReserved')}
+    {BRAND.name}. {$t("common.allRightsReserved")}
   </div>
   <Socials />
 </div>

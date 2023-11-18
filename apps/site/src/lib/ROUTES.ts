@@ -6,32 +6,32 @@
 
 export const PAGES = {
   lang_lg: (params: { lang?: string | number } = {}) => {
-    return ensurePrefix(`${params?.lang ? `/${params?.lang}` : ''}`);
+    return ensurePrefix(`${params?.lang ? `/${params?.lang}` : ""}`);
   },
   lang_lg_about: (params: { lang?: string | number } = {}) => {
-    return ensurePrefix(`${params?.lang ? `/${params?.lang}` : ''}/about`);
+    return ensurePrefix(`${params?.lang ? `/${params?.lang}` : ""}/about`);
   },
   lang_lg_features: (params: { lang?: string | number } = {}) => {
-    return ensurePrefix(`${params?.lang ? `/${params?.lang}` : ''}/features`);
+    return ensurePrefix(`${params?.lang ? `/${params?.lang}` : ""}/features`);
   },
   lang_lg_pricing: (params: { lang?: string | number } = {}) => {
-    return ensurePrefix(`${params?.lang ? `/${params?.lang}` : ''}/pricing`);
-  }
+    return ensurePrefix(`${params?.lang ? `/${params?.lang}` : ""}/pricing`);
+  },
 };
 
 export const SERVERS = {
-  'assets_manifest.webmanifest': () => {
+  "assets_manifest.webmanifest": () => {
     return ensurePrefix(`/manifest.webmanifest`);
   },
-  'assets_sitemap.xml': () => {
+  "assets_sitemap.xml": () => {
     return ensurePrefix(`/sitemap.xml`);
-  }
+  },
 };
 
 export const ACTIONS = {};
 
 const appendSp = (sp?: Record<string, string | number | undefined>) => {
-  if (sp === undefined) return '';
+  if (sp === undefined) return "";
   const mapping = Object.entries(sp)
     .filter((c) => c[1] !== undefined)
     .map((c) => [c[0], String(c[1])]);
@@ -40,11 +40,11 @@ const appendSp = (sp?: Record<string, string | number | undefined>) => {
   if (formated) {
     return `?${formated}`;
   }
-  return '';
+  return "";
 };
 
 const ensurePrefix = (str: string) => {
-  if (str.startsWith('/')) {
+  if (str.startsWith("/")) {
     return str;
   }
   return `/${str}`;
@@ -69,18 +69,18 @@ const ensurePrefix = (str: string) => {
  */
 export type KIT_ROUTES = {
   PAGES: {
-    lang_lg: 'lang';
-    lang_lg_about: 'lang';
-    lang_lg_features: 'lang';
-    lang_lg_pricing: 'lang';
+    lang_lg: "lang";
+    lang_lg_about: "lang";
+    lang_lg_features: "lang";
+    lang_lg_pricing: "lang";
   };
-  SERVERS: { 'assets_manifest.webmanifest': never; 'assets_sitemap.xml': never };
+  SERVERS: { "assets_manifest.webmanifest": never; "assets_sitemap.xml": never };
   ACTIONS: {};
   Storage_Params: { lang: never };
 };
 
-import { browser } from '$app/environment';
-import { writable } from 'svelte/store';
+import { browser } from "$app/environment";
+import { writable } from "svelte/store";
 
 const _kitRoutes = <T>(key: string, initValues?: T) => {
   const store = writable<T>(initValues, (set) => {
@@ -104,8 +104,8 @@ const _kitRoutes = <T>(key: string, initValues?: T) => {
       const handleStorage = (event: StorageEvent) => {
         if (event.key === key) set(event.newValue ? JSON.parse(event.newValue) : null);
       };
-      window.addEventListener('storage', handleStorage);
-      return () => window.removeEventListener('storage', handleStorage);
+      window.addEventListener("storage", handleStorage);
+      return () => window.removeEventListener("storage", handleStorage);
     } else {
       if (initValues) {
         set(initValues);
@@ -122,7 +122,7 @@ const _kitRoutes = <T>(key: string, initValues?: T) => {
         localStorage.setItem(key, JSON.stringify(u));
       }
       store.update(() => u);
-    }
+    },
   };
 };
 
@@ -140,4 +140,4 @@ export type StorageParams = {};
  * ```
  *
  */
-export let kitRoutes = _kitRoutes<StorageParams>('kitRoutes');
+export let kitRoutes = _kitRoutes<StorageParams>("kitRoutes");

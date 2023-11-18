@@ -63,7 +63,7 @@ body {
   transition: background-color 0.2s ease-in-out;
 }
 
-body[data-scroll-locked='true'] {
+body[data-scroll-locked="true"] {
   overflow: hidden;
 }
 

@@ -2,9 +2,9 @@
 /// <reference types="vite-plugin-pwa/svelte" />
 /// <reference types="vite-plugin-pwa/client" />
 
-import type { LocalStorageKey, SearchParam } from '$lib/CONFIG';
+import type { LocalStorageKey, SearchParam } from "$lib/CONFIG";
 
-import '@total-typescript/ts-reset';
+import "@total-typescript/ts-reset";
 
 // See https://kit.svelte.dev/docs/types#app
 // for information about these interfaces

@@ -1,4 +1,4 @@
-import { writable } from 'svelte/store';
+import { writable } from "svelte/store";
 
 const createNavigationOpenStore = () => {
   const { set, subscribe, update } = writable<boolean>(false);
@@ -15,7 +15,7 @@ const createNavigationOpenStore = () => {
         return !t;
       });
     },
-    update
+    update,
   };
 };
 
