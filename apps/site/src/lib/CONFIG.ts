@@ -3,21 +3,21 @@ import type { Brand, Socials } from './typings/standard';
 export const DEFAULT_LOCALE: Locale = 'en' as const;
 
 export const BRAND = {
-	author: {
-		name: 'LeetStrength',
-		url: 'https://leetstrength.com'
-	},
-	color: {
-		primary: '#5920df',
-		secondary: '#df20b9'
-	},
-	logo: {
-		dark: '/images/logos/logo.png',
-		light: '/images/logos/logo.png'
-	},
-	name: 'KesvaL',
-	startDate: new Date('2023-06-01'),
-	url: 'https://kesval.com'
+  author: {
+    name: 'LeetStrength',
+    url: 'https://leetstrength.com'
+  },
+  color: {
+    primary: '#5920df',
+    secondary: '#df20b9'
+  },
+  logo: {
+    dark: '/images/logos/logo.png',
+    light: '/images/logos/logo.png'
+  },
+  name: 'KesvaL',
+  startDate: new Date('2023-06-01'),
+  url: 'https://kesval.com'
 } as const satisfies Brand;
 
 export const SOCIALS_LIST = ['github', 'instagram', 'linkedin', 'tiktok', 'twitter'] as const;
@@ -25,15 +25,15 @@ export const SOCIALS_LIST = ['github', 'instagram', 'linkedin', 'tiktok', 'twitt
 export type SocialName = (typeof SOCIALS_LIST)[number];
 
 export const SOCIALS = {
-	instagram: {
-		url: 'https://instagram.com/leetstrength'
-	},
-	tiktok: {
-		url: 'https://tiktok.com/@leetstrength'
-	},
-	twitter: {
-		url: 'https://twitter.com/leetstrength'
-	}
+  instagram: {
+    url: 'https://instagram.com/leetstrength'
+  },
+  tiktok: {
+    url: 'https://tiktok.com/@leetstrength'
+  },
+  twitter: {
+    url: 'https://twitter.com/leetstrength'
+  }
 } as const as Socials;
 
 export const LOCALES = ['en', 'fr'] as const;
@@ -51,7 +51,7 @@ export const SEARCH_PARAMS_LIST = ['owlang'] as const;
 export type SearchParam = (typeof SEARCH_PARAMS_LIST)[number];
 
 export interface LocalStorage {
-	theme: Theme;
+  theme: Theme;
 }
 
 export type LocalStorageKey = keyof LocalStorage;

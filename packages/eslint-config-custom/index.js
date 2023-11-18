@@ -6,6 +6,8 @@ module.exports = {
     'plugin:svelte/recommended',
     'prettier',
     'turbo',
+    'hardcore',
+    'hardcore/ts',
   ],
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint'],
@@ -13,6 +15,7 @@ module.exports = {
     sourceType: 'module',
     ecmaVersion: 2020,
     extraFileExtensions: ['.svelte'],
+    project: true,
   },
   env: {
     browser: true,

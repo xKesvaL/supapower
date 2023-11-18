@@ -12,19 +12,19 @@ import { cacheFiles, deleteOldCaches, getFromCache } from './lib/utils/sw';
 const CACHE = `cache-${version}`;
 
 const ASSETS = [
-	...build, // the app itself
-	...files, // everything in `static`
-	...prerendered // prerendered pages
+  ...build, // the app itself
+  ...files, // everything in `static`
+  ...prerendered // prerendered pages
 ];
 
 sw.addEventListener('install', (event) => {
-	event.waitUntil(cacheFiles(CACHE, ASSETS).then(() => sw.skipWaiting()));
+  event.waitUntil(cacheFiles(CACHE, ASSETS).then(() => sw.skipWaiting()));
 });
 
 sw.addEventListener('activate', (event) => {
-	event.waitUntil(deleteOldCaches(CACHE).then(() => sw.clients.claim()));
+  event.waitUntil(deleteOldCaches(CACHE).then(() => sw.clients.claim()));
 });
 
 sw.addEventListener('fetch', async (event) => {
-	event.respondWith(getFromCache(CACHE, ASSETS, event.request));
+  event.respondWith(getFromCache(CACHE, ASSETS, event.request));
 });

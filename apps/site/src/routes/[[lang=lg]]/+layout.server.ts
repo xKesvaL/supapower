@@ -1,7 +1,7 @@
 export const load = ({ locals }) => {
-	const lang = locals.lang;
+  const lang = locals.lang;
 
-	return {
-		lang
-	};
+  return {
+    lang
+  };
 };

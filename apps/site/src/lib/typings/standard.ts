@@ -1,22 +1,22 @@
 import type { SocialName } from '$lib/CONFIG';
 
 export interface Brand {
-	author: BrandAuthor;
-	color: BrandColors;
-	logo: BrandLogo;
-	name: string;
-	startDate: Date;
-	url: string;
+  author: BrandAuthor;
+  color: BrandColors;
+  logo: BrandLogo;
+  name: string;
+  startDate: Date;
+  url: string;
 }
 
 export interface BrandLogo {
-	dark: string;
-	light: string;
+  dark: string;
+  light: string;
 }
 
 export interface BrandAuthor {
-	name: string;
-	url: string;
+  name: string;
+  url: string;
 }
 
 export type BrandColors = Record<BrandColor, string>;
@@ -24,28 +24,28 @@ export type BrandColors = Record<BrandColor, string>;
 export type BrandColor = 'primary' | 'secondary';
 
 export type Socials = {
-	[key in SocialName]: Social;
+  [key in SocialName]: Social;
 };
 
 export interface Social {
-	url: string;
+  url: string;
 }
 
 export type ThemeColor =
-	| 'accent'
-	| 'background'
-	| 'card'
-	| 'destructive'
-	| 'info'
-	| 'muted'
-	| 'popover'
-	| 'success'
-	| BrandColor;
+  | 'accent'
+  | 'background'
+  | 'card'
+  | 'destructive'
+  | 'info'
+  | 'muted'
+  | 'popover'
+  | 'success'
+  | BrandColor;
 
 export type ThemeSize = 'sm' | 'md' | 'lg';
 
 export interface FormattedZodError {
-	[key: string]: {
-		message: string;
-	};
+  [key: string]: {
+    message: string;
+  };
 }
