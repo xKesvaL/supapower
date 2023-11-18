@@ -1,8 +1,8 @@
 name: Feature Request
 description: File a feature request for the app
-title: '[App/Feature]: '
-labels: ['app', 'feature request']
-projects: ['xKesvaL/5']
+title: "[App/Feature]: "
+labels: ["app", "feature request"]
+projects: ["xKesvaL/5"]
 assignees:
   - xkesval
   - gbihry

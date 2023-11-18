@@ -32,35 +32,139 @@ importers:
         version: 1.10.16
 
   apps/app:
-    dependencies:
-      ui:
-        specifier: workspace:*
-        version: link:../../packages/ui
     devDependencies:
+      '@kesval/design':
+        specifier: ^4.1.2
+        version: 4.1.2
+      '@playwright/test':
+        specifier: ^1.40.0
+        version: 1.40.0
       '@sveltejs/adapter-auto':
         specifier: ^2.1.1
         version: 2.1.1(@sveltejs/kit@1.27.6)
+      '@sveltejs/adapter-vercel':
+        specifier: ^3.1.0
+        version: 3.1.0(@sveltejs/kit@1.27.6)
+      '@sveltejs/enhanced-img':
+        specifier: ^0.1.4
+        version: 0.1.4(svelte@4.2.5)
       '@sveltejs/kit':
         specifier: ^1.27.6
         version: 1.27.6(svelte@4.2.5)(vite@5.0.0)
+      '@total-typescript/ts-reset':
+        specifier: ^0.5.1
+        version: 0.5.1
+      '@types/js-cookie':
+        specifier: ^3.0.6
+        version: 3.0.6
+      '@types/node':
+        specifier: ^20.9.1
+        version: 20.9.1
+      '@types/nprogress':
+        specifier: ^0.2.3
+        version: 0.2.3
+      '@typescript-eslint/eslint-plugin':
+        specifier: ^6.11.0
+        version: 6.11.0(@typescript-eslint/parser@6.11.0)(eslint@8.54.0)(typescript@5.2.2)
+      '@typescript-eslint/parser':
+        specifier: ^6.11.0
+        version: 6.11.0(eslint@8.54.0)(typescript@5.2.2)
+      autoprefixer:
+        specifier: ^10.4.16
+        version: 10.4.16(postcss@8.4.31)
+      bits-ui:
+        specifier: ^0.9.8
+        version: 0.9.8(svelte@4.2.5)
+      clsx:
+        specifier: ^2.0.0
+        version: 2.0.0
+      cmdk-sv:
+        specifier: ^0.0.9
+        version: 0.0.9(svelte@4.2.5)
       eslint:
         specifier: ^8.54.0
         version: 8.54.0
-      eslint-config-custom:
-        specifier: workspace:*
-        version: link:../../packages/eslint-config-custom
+      eslint-config-prettier:
+        specifier: ^9.0.0
+        version: 9.0.0(eslint@8.54.0)
+      eslint-plugin-perfectionist:
+        specifier: ^2.4.0
+        version: 2.4.0(eslint@8.54.0)(svelte@4.2.5)(typescript@5.2.2)(vue-eslint-parser@9.3.2)
+      eslint-plugin-svelte:
+        specifier: ^2.35.0
+        version: 2.35.0(eslint@8.54.0)(svelte@4.2.5)
+      formsnap:
+        specifier: ^0.4.1
+        version: 0.4.1(svelte@4.2.5)(sveltekit-superforms@1.10.2)(zod@3.22.4)
+      js-cookie:
+        specifier: ^3.0.5
+        version: 3.0.5
+      nprogress:
+        specifier: ^0.2.0
+        version: 0.2.0
+      postcss:
+        specifier: ^8.4.31
+        version: 8.4.31
+      postcss-load-config:
+        specifier: ^4.0.1
+        version: 4.0.1(postcss@8.4.31)
       prettier:
         specifier: ^3.1.0
         version: 3.1.0
       prettier-plugin-svelte:
         specifier: ^3.1.0
         version: 3.1.0(prettier@3.1.0)(svelte@4.2.5)
+      prettier-plugin-tailwindcss:
+        specifier: ^0.5.7
+        version: 0.5.7(prettier-plugin-svelte@3.1.0)(prettier@3.1.0)
+      readonly-types:
+        specifier: ^4.5.0
+        version: 4.5.0(typescript@5.2.2)
+      sass:
+        specifier: ^1.69.5
+        version: 1.69.5
       svelte:
-        specifier: ^4.2.5
+        specifier: 4.2.5
         version: 4.2.5
+      svelte-check:
+        specifier: ^3.6.0
+        version: 3.6.0(postcss-load-config@4.0.1)(postcss@8.4.31)(sass@1.69.5)(svelte@4.2.5)
+      svelte-i18n:
+        specifier: ^4.0.0
+        version: 4.0.0(svelte@4.2.5)
+      sveltekit-superforms:
+        specifier: ^1.10.2
+        version: 1.10.2(@sveltejs/kit@1.27.6)(svelte@4.2.5)(zod@3.22.4)
+      sveltekit-view-transition:
+        specifier: ^0.5.2
+        version: 0.5.2(@sveltejs/kit@1.27.6)(svelte@4.2.5)
+      tailwind-merge:
+        specifier: ^2.0.0
+        version: 2.0.0
+      tailwind-variants:
+        specifier: ^0.1.18
+        version: 0.1.18(tailwindcss@3.3.5)
+      tailwindcss:
+        specifier: ^3.3.5
+        version: 3.3.5
+      tslib:
+        specifier: ^2.6.2
+        version: 2.6.2
+      typescript:
+        specifier: ^5.2.2
+        version: 5.2.2
+      ui:
+        specifier: workspace:*
+        version: link:../../packages/ui
       vite:
         specifier: ^5.0.0
         version: 5.0.0(@types/node@20.9.1)(sass@1.69.5)
+      vite-plugin-kit-routes:
+        specifier: ^0.0.10
+        version: 0.0.10
+      zod:
+        specifier: ^3.22.4
+        version: 3.22.4
 
   apps/site:
     devDependencies:
@@ -148,6 +252,9 @@ importers:
       prettier-plugin-tailwindcss:
         specifier: ^0.5.7
         version: 0.5.7(prettier-plugin-svelte@3.1.0)(prettier@3.1.0)
+      readonly-types:
+        specifier: ^4.5.0
+        version: 4.5.0(typescript@5.2.2)
       sass:
         specifier: ^1.69.5
         version: 1.69.5
@@ -8596,6 +8703,14 @@ packages:
       picomatch: 2.3.1
     dev: true
 
+  /readonly-types@4.5.0(typescript@5.2.2):
+    resolution: {integrity: sha512-Nv6cZ3vU21wktHKen8Tzh0ekBJyDAekI+oSejSEVJdSaIKLXZsSSrrTXGce0tpq3DezgSHrQo6xgEvMib7a91g==}
+    dependencies:
+      ts-essentials: 9.4.1(typescript@5.2.2)
+    transitivePeerDependencies:
+      - typescript
+    dev: true
+
   /recast@0.23.4:
     resolution: {integrity: sha512-qtEDqIZGVcSZCHniWwZWbRy79Dc6Wp3kT/UmDA2RJKBPg7+7k51aQBZirHmUGn5uvHf2rg8DkjizrN26k61ATw==}
     engines: {node: '>= 4'}
@@ -9949,6 +10064,17 @@ packages:
   /ts-dedent@2.2.0:
     resolution: {integrity: sha512-q5W7tVM71e2xjHZTlgfTDoPF/SmqKG5hddq9SzR49CH2hayqRKJtQ4mtRlSxKaJlR/+9rEM+mnBHf7I2/BQcpQ==}
     engines: {node: '>=6.10'}
+    dev: true
+
+  /ts-essentials@9.4.1(typescript@5.2.2):
+    resolution: {integrity: sha512-oke0rI2EN9pzHsesdmrOrnqv1eQODmJpd/noJjwj2ZPC3Z4N2wbjrOEqnsEgmvlO2+4fBb0a794DCna2elEVIQ==}
+    peerDependencies:
+      typescript: '>=4.1.0'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      typescript: 5.2.2
     dev: true
 
   /ts-interface-checker@0.1.13:
