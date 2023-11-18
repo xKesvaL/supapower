@@ -1,6 +1,6 @@
-name: Bug Report
-description: File a bug report
-title: '[App/Bug]: '
+name: Feature Request
+description: File a feature request for the app
+title: '[App/Feature]: '
 labels: ['app', 'feature request']
 projects: ['xKesvaL/5']
 assignees:
