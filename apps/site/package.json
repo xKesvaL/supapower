@@ -19,7 +19,7 @@
     "@playwright/test": "^1.40.0",
     "@sveltejs/adapter-auto": "^2.1.1",
     "@sveltejs/adapter-vercel": "^3.1.0",
-    "@sveltejs/enhanced-img": "^0.1.4",
+    "@sveltejs/enhanced-img": "^0.1.5",
     "@sveltejs/kit": "^1.27.6",
     "@total-typescript/ts-reset": "^0.5.1",
     "@types/js-cookie": "^3.0.6",
@@ -30,7 +30,7 @@
     "autoprefixer": "^10.4.16",
     "bits-ui": "^0.9.8",
     "clsx": "^2.0.0",
-    "cmdk-sv": "^0.0.9",
+    "cmdk-sv": "^0.0.10",
     "eslint": "^8.54.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-perfectionist": "^2.4.0",
@@ -57,7 +57,7 @@
     "typescript": "^5.2.2",
     "ui": "workspace:*",
     "vite": "^5.0.0",
-    "vite-plugin-kit-routes": "^0.0.10",
+    "vite-plugin-kit-routes": "^0.0.11",
     "zod": "^3.22.4"
   },
   "type": "module"

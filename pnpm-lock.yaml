@@ -46,8 +46,8 @@ importers:
         specifier: ^3.1.0
         version: 3.1.0(@sveltejs/kit@1.27.6)
       '@sveltejs/enhanced-img':
-        specifier: ^0.1.4
-        version: 0.1.4(svelte@4.2.5)
+        specifier: ^0.1.5
+        version: 0.1.5(svelte@4.2.5)
       '@sveltejs/kit':
         specifier: ^1.27.6
         version: 1.27.6(svelte@4.2.5)(vite@5.0.0)
@@ -79,8 +79,8 @@ importers:
         specifier: ^2.0.0
         version: 2.0.0
       cmdk-sv:
-        specifier: ^0.0.9
-        version: 0.0.9(svelte@4.2.5)
+        specifier: ^0.0.10
+        version: 0.0.10(svelte@4.2.5)
       eslint:
         specifier: ^8.54.0
         version: 8.54.0
@@ -160,8 +160,8 @@ importers:
         specifier: ^5.0.0
         version: 5.0.0(@types/node@20.9.1)(sass@1.69.5)
       vite-plugin-kit-routes:
-        specifier: ^0.0.10
-        version: 0.0.10
+        specifier: ^0.0.11
+        version: 0.0.11
       zod:
         specifier: ^3.22.4
         version: 3.22.4
@@ -181,8 +181,8 @@ importers:
         specifier: ^3.1.0
         version: 3.1.0(@sveltejs/kit@1.27.6)
       '@sveltejs/enhanced-img':
-        specifier: ^0.1.4
-        version: 0.1.4(svelte@4.2.5)
+        specifier: ^0.1.5
+        version: 0.1.5(svelte@4.2.5)
       '@sveltejs/kit':
         specifier: ^1.27.6
         version: 1.27.6(svelte@4.2.5)(vite@5.0.0)
@@ -214,8 +214,8 @@ importers:
         specifier: ^2.0.0
         version: 2.0.0
       cmdk-sv:
-        specifier: ^0.0.9
-        version: 0.0.9(svelte@4.2.5)
+        specifier: ^0.0.10
+        version: 0.0.10(svelte@4.2.5)
       eslint:
         specifier: ^8.54.0
         version: 8.54.0
@@ -295,8 +295,8 @@ importers:
         specifier: ^5.0.0
         version: 5.0.0(@types/node@20.9.1)(sass@1.69.5)
       vite-plugin-kit-routes:
-        specifier: ^0.0.10
-        version: 0.0.10
+        specifier: ^0.0.11
+        version: 0.0.11
       zod:
         specifier: ^3.22.4
         version: 3.22.4
@@ -1464,10 +1464,8 @@ packages:
       sass: 1.69.5
     dev: true
 
-  /@kitql/helpers@0.8.2:
-    resolution: {integrity: sha512-+fny1XOuOWOEp8K3GqQqCSOCki+Kr5gMnl7Majzjs1iFlyvIvwYRv8x3sqNyP77yrUTQbiY5q/BTNav1Yl4LKg==}
-    dependencies:
-      esm-env: 1.0.0
+  /@kitql/helpers@0.8.3:
+    resolution: {integrity: sha512-oozUXcSEo7sTAyUF6HOkO1M4D8g9z0w//7MHI1fyXZ1QhA5SQEjq0Q5Js7VQPhVE5tPg0RuDlnqV5GHCOcdwsQ==}
     dev: true
 
   /@manypkg/find-root@1.1.0:
@@ -3066,8 +3064,8 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/enhanced-img@0.1.4(svelte@4.2.5):
-    resolution: {integrity: sha512-R0nbA8U5q+j0oPxNh7i8qlQIEBtGxWDbI5T4O07U9v0ACxdAxI9Tybup6FBRph5JXSRVzf7BMy8S2mjPJYd3dQ==}
+  /@sveltejs/enhanced-img@0.1.5(svelte@4.2.5):
+    resolution: {integrity: sha512-xwMBrs22CNoqZm+ZWEDFdnGAT91QO88s7rVq/B3KUZ2cAnSK+T5rBIF+n4Yyi+ULzf6RzidQD4zHw2LOPN4KUg==}
     dependencies:
       magic-string: 0.30.5
       svelte-parse-markup: 0.1.2(svelte@4.2.5)
@@ -4206,8 +4204,8 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /cmdk-sv@0.0.9(svelte@4.2.5):
-    resolution: {integrity: sha512-WnOKl+hW8zqicJAZ+YwUomHYTLuwxlMUhA23CV8w48YKEcaMNd8IpuoeaoWBe0NO0CGemg4QRbHHk3ArXlIo6w==}
+  /cmdk-sv@0.0.10(svelte@4.2.5):
+    resolution: {integrity: sha512-oFKbh+MXRNRMe/14hiuakU7voFX7NfhMHNIoiJnuuJh1TisiNOkOd8RGt//XE2vA/Uxo8wgZ8cKuyyxL7j/Qzw==}
     peerDependencies:
       svelte: ^4.0.0
     dependencies:
@@ -10512,19 +10510,19 @@ packages:
       - rollup
     dev: true
 
-  /vite-plugin-kit-routes@0.0.10:
-    resolution: {integrity: sha512-8t8H+RyMTqctYiOoHCCijppIXNl3pvwmqJI/uCe7mKDKX7zNON8/e73Fojh3Hl0xBZ1+4ovv6ZYX2WwG0eRIDw==}
+  /vite-plugin-kit-routes@0.0.11:
+    resolution: {integrity: sha512-Gptb7hnVuxR8qi9wBgPkAin+EGCZ54jjYTWrSodHS2iga7yPlZx2xV4hbn/znMF/bNHfudE0DLCvJOYca1ZRgQ==}
     dependencies:
       '@babel/parser': 7.23.3
-      '@kitql/helpers': 0.8.2
+      '@kitql/helpers': 0.8.3
       recast: 0.23.4
-      vite-plugin-watch-and-run: 1.4.1
+      vite-plugin-watch-and-run: 1.4.2
     dev: true
 
-  /vite-plugin-watch-and-run@1.4.1:
-    resolution: {integrity: sha512-+BcETwjZdPFYx64+mmzHkedw/52+9h06nr0Wfo8BCNmbj+fnUnZr2HE7y7VrUDRhF4LcBS0tM0zZ5kOqIWE0cg==}
+  /vite-plugin-watch-and-run@1.4.2:
+    resolution: {integrity: sha512-MvdFhh++FuE5bUg40n05SLnlT8gwCbcIJx1v0ZRiJRH0qNmLkiOSO8j61mxRZ2dpxCNwWVpal27OHsHgIGJ7jQ==}
     dependencies:
-      '@kitql/helpers': 0.8.2
+      '@kitql/helpers': 0.8.3
       micromatch: 4.0.5
     dev: true
 
