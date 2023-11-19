@@ -7,7 +7,8 @@
     "format": "turbo run format",
     "changeset": "changeset && git add --all",
     "publish:packages": "changeset publish",
-    "version:packages": "changeset version && git add --all"
+    "version:packages": "changeset version && git add --all",
+    "test": "turbo run test --filter=./apps/*"
   },
   "devDependencies": {
     "eslint": "^8.54.0",

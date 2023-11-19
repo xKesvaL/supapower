@@ -18,7 +18,7 @@ void init({
 
   initialLocale:
     getLocaleFromCookie() ??
-    getLocaleFromPathname(/^\/.{2,}?/v) ??
+    getLocaleFromPathname(/^\/.{2,}?/u) ??
     getLocaleFromNavigator() ??
     DEFAULT_LOCALE,
 });

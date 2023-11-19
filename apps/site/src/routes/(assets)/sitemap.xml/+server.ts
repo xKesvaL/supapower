@@ -9,7 +9,7 @@ export const GET: RequestHandler = () => {
     .map((file) => {
       let url = file
         .replace("/src/routes", "")
-        .replace("[[lang=locale]]", "")
+        .replace("[[lang=lg]]", "")
         .replace(".svelte", "")
         .replace(".md", "")
         .replace("+page", "")
@@ -57,7 +57,7 @@ export const GET: RequestHandler = () => {
         };
         LOCALES.forEach((otherLocale) => {
           if (otherLocale !== locale) {
-            const otherLocaleToUse = otherLocale === DEFAULT_LOCALE ? "" : `/${otherLocale}`;
+            const otherLocaleToUse = otherLocale === DEFAULT_LOCALE ? "/en" : `/${otherLocale}`;
             entry.links.push({
               lang: otherLocale,
               url:

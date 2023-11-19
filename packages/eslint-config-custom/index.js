@@ -54,6 +54,7 @@ module.exports = {
     "sonar/no-empty-after-reluctant": "off",
     quotes: "off",
     "unicorn/no-empty-file": "off",
+    "regexp/require-unicode-sets-regexp": "off",
   },
   ignorePatterns: [
     "node_modules",

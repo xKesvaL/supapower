@@ -6,8 +6,8 @@ export const DEFAULT_LOCALE = "en" as const;
 
 export const BRAND: Brand = {
   author: {
-    name: "LeetStrength",
-    url: "https://leetstrength.com",
+    name: "KesvaL",
+    url: "https://kesval.com",
   },
 
   color: {
@@ -20,9 +20,9 @@ export const BRAND: Brand = {
     light: "/images/logos/logo.png",
   },
 
-  name: "KesvaL",
+  name: "LeetStrength",
   startDate: new Date("2023-06-01"),
-  url: "https://kesval.com",
+  url: "https://leetstrength.com",
 } as const;
 
 export const SOCIALS_LIST = ["instagram", "tiktok", "twitter"] as const;

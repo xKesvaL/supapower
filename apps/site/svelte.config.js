@@ -14,6 +14,7 @@ const config = {
     adapter: adapter(),
     alias: {
       $assets: "./src/assets",
+      $routes: "./src/routes",
     },
   },
 };

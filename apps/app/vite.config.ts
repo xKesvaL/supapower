@@ -10,7 +10,8 @@ export default defineConfig({
 
   resolve: {
     alias: {
-      $assets: "/src/assets",
+      $assets: "./src/assets",
+      $routes: "./src/routes",
     },
   },
 });
