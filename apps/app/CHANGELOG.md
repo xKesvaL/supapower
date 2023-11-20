@@ -1,5 +1,15 @@
 # site
 
+## 0.1.0
+
+### Minor Changes
+
+- [`28ad324`](https://github.com/xKesvaL/leetstrength/commit/28ad324a544e1f8567d45f406375da07c71feea9) Thanks [@xKesvaL](https://github.com/xKesvaL)! - feat: prepare template
+
+### Patch Changes
+
+- [#17](https://github.com/xKesvaL/leetstrength/pull/17) [`2bf2225`](https://github.com/xKesvaL/leetstrength/commit/2bf2225088777e4ed7b0d79846663c2ff408b768) Thanks [@xKesvaL](https://github.com/xKesvaL)! - feat: formatting
+
 ## 0.0.3
 
 ### Patch Changes
