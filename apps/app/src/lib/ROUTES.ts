@@ -5,29 +5,110 @@
  */
 
 export const PAGES = {
-  "_ROOT": () =>  {
-    return ensurePrefix(`/`)
+  "_ROOT": (sp?: Record<string, string | number>) =>  {
+    return ensurePrefix(`/${appendSp(sp)}`)
   },
-  "profile": () =>  {
-    return ensurePrefix(`/profile`)
+  "admin": (sp?: Record<string, string | number>) =>  {
+    return ensurePrefix(`/admin${appendSp(sp)}`)
   },
-  "profile copy": () =>  {
-    return ensurePrefix(`/profile copy`)
+  "admin_users": (sp?: Record<string, string | number>) =>  {
+    return ensurePrefix(`/admin/users${appendSp(sp)}`)
   },
-  "profile copy_settings": () =>  {
-    return ensurePrefix(`/profile copy/settings`)
+  "login": (sp?: Record<string, string | number>) =>  {
+    return ensurePrefix(`/login${appendSp(sp)}`)
   },
-  "profile_settings": () =>  {
-    return ensurePrefix(`/profile/settings`)
+  "nutrition": (sp?: Record<string, string | number>) =>  {
+    return ensurePrefix(`/nutrition${appendSp(sp)}`)
+  },
+  "nutrition_log": (sp?: Record<string, string | number>) =>  {
+    return ensurePrefix(`/nutrition/log${appendSp(sp)}`)
+  },
+  "profile": (sp?: Record<string, string | number>) =>  {
+    return ensurePrefix(`/profile${appendSp(sp)}`)
+  },
+  "profile_username": (params: {username: string | number}, sp?: Record<string, string | number>) =>  {
+    return ensurePrefix(`/profile/${params.username}${appendSp(sp)}`)
+  },
+  "profile_calendar": (sp?: Record<string, string | number>) =>  {
+    return ensurePrefix(`/profile/calendar${appendSp(sp)}`)
+  },
+  "profile_exercises": (sp?: Record<string, string | number>) =>  {
+    return ensurePrefix(`/profile/exercises${appendSp(sp)}`)
+  },
+  "profile_measures": (sp?: Record<string, string | number>) =>  {
+    return ensurePrefix(`/profile/measures${appendSp(sp)}`)
+  },
+  "profile_settings": (sp?: Record<string, string | number>) =>  {
+    return ensurePrefix(`/profile/settings${appendSp(sp)}`)
+  },
+  "profile_settings_account": (sp?: Record<string, string | number>) =>  {
+    return ensurePrefix(`/profile/settings/account${appendSp(sp)}`)
+  },
+  "profile_settings_app": (sp?: Record<string, string | number>) =>  {
+    return ensurePrefix(`/profile/settings/app${appendSp(sp)}`)
+  },
+  "profile_settings_connections": (sp?: Record<string, string | number>) =>  {
+    return ensurePrefix(`/profile/settings/connections${appendSp(sp)}`)
+  },
+  "profile_settings_contact": (sp?: Record<string, string | number>) =>  {
+    return ensurePrefix(`/profile/settings/contact${appendSp(sp)}`)
+  },
+  "profile_settings_language": (sp?: Record<string, string | number>) =>  {
+    return ensurePrefix(`/profile/settings/language${appendSp(sp)}`)
+  },
+  "profile_settings_legal": (sp?: Record<string, string | number>) =>  {
+    return ensurePrefix(`/profile/settings/legal${appendSp(sp)}`)
+  },
+  "profile_settings_notifications": (sp?: Record<string, string | number>) =>  {
+    return ensurePrefix(`/profile/settings/notifications${appendSp(sp)}`)
+  },
+  "profile_settings_profile": (sp?: Record<string, string | number>) =>  {
+    return ensurePrefix(`/profile/settings/profile${appendSp(sp)}`)
+  },
+  "profile_settings_q_and_a": (sp?: Record<string, string | number>) =>  {
+    return ensurePrefix(`/profile/settings/q-and-a${appendSp(sp)}`)
+  },
+  "profile_settings_theme": (sp?: Record<string, string | number>) =>  {
+    return ensurePrefix(`/profile/settings/theme${appendSp(sp)}`)
+  },
+  "profile_settings_units": (sp?: Record<string, string | number>) =>  {
+    return ensurePrefix(`/profile/settings/units${appendSp(sp)}`)
+  },
+  "profile_settings_workouts": (sp?: Record<string, string | number>) =>  {
+    return ensurePrefix(`/profile/settings/workouts${appendSp(sp)}`)
+  },
+  "profile_statistics": (sp?: Record<string, string | number>) =>  {
+    return ensurePrefix(`/profile/statistics${appendSp(sp)}`)
+  },
+  "programs": (sp?: Record<string, string | number>) =>  {
+    return ensurePrefix(`/programs${appendSp(sp)}`)
+  },
+  "programs_community": (sp?: Record<string, string | number>) =>  {
+    return ensurePrefix(`/programs/community${appendSp(sp)}`)
+  },
+  "programs_self": (sp?: Record<string, string | number>) =>  {
+    return ensurePrefix(`/programs/self${appendSp(sp)}`)
+  },
+  "register": (sp?: Record<string, string | number>) =>  {
+    return ensurePrefix(`/register${appendSp(sp)}`)
+  },
+  "train": (sp?: Record<string, string | number>) =>  {
+    return ensurePrefix(`/train${appendSp(sp)}`)
+  },
+  "train_log": (sp?: Record<string, string | number>) =>  {
+    return ensurePrefix(`/train/log${appendSp(sp)}`)
+  },
+  "train_log_add_exercises": (sp?: Record<string, string | number>) =>  {
+    return ensurePrefix(`/train/log/add-exercises${appendSp(sp)}`)
   }
 }
 
 export const SERVERS = {
-  "assets_manifest.webmanifest": () =>  {
-    return ensurePrefix(`/manifest.webmanifest`)
+  "assets_manifest.webmanifest": (sp?: Record<string, string | number>) =>  {
+    return ensurePrefix(`/manifest.webmanifest${appendSp(sp)}`)
   },
-  "assets_sitemap.xml": (method: 'GET') =>  {
-    return ensurePrefix(`/sitemap.xml`)
+  "assets_sitemap.xml": (method: 'GET', sp?: Record<string, string | number>) =>  {
+    return ensurePrefix(`/sitemap.xml${appendSp(sp)}`)
   }
 }
 
@@ -73,10 +154,10 @@ const ensurePrefix = (str: string) => {
 * ```
 */
 export type KIT_ROUTES = { 
-  PAGES: { '_ROOT': never, 'profile': never, 'profile copy': never, 'profile copy_settings': never, 'profile_settings': never }
+  PAGES: { '_ROOT': never, 'admin': never, 'admin_users': never, 'login': never, 'nutrition': never, 'nutrition_log': never, 'profile': never, 'profile_username': 'username', 'profile_calendar': never, 'profile_exercises': never, 'profile_measures': never, 'profile_settings': never, 'profile_settings_account': never, 'profile_settings_app': never, 'profile_settings_connections': never, 'profile_settings_contact': never, 'profile_settings_language': never, 'profile_settings_legal': never, 'profile_settings_notifications': never, 'profile_settings_profile': never, 'profile_settings_q_and_a': never, 'profile_settings_theme': never, 'profile_settings_units': never, 'profile_settings_workouts': never, 'profile_statistics': never, 'programs': never, 'programs_community': never, 'programs_self': never, 'register': never, 'train': never, 'train_log': never, 'train_log_add_exercises': never }
   SERVERS: { 'assets_manifest.webmanifest': never, 'assets_sitemap.xml': never }
   ACTIONS: {  }
-  Storage_Params: {  }
+  Storage_Params: { username: never }
 }
 
 import { browser } from '$app/environment'

@@ -10,7 +10,9 @@ export default defineConfig({
   plugins: [
     enhancedImages(),
     sveltekit(),
-    kitRoutes<KIT_ROUTES>(),
+    kitRoutes<KIT_ROUTES>({
+      extra_search_params: "with",
+    }),
     watch({
       pattern: "src/lang",
       command: "paraglide-js compile --project ./project.inlang.json",
