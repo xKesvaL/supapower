@@ -6,16 +6,15 @@
   import "$lib/styles/nprogress.scss";
 
   // ! TODO: Set lang based on firebase user data
-
   import nprogress from "nprogress";
   import { onMount } from "svelte";
   import { setupViewTransition } from "sveltekit-view-transition";
 
+  import { preloadCode } from "$app/navigation";
   import { navigating, page } from "$app/stores";
   import { BRAND } from "$lib/CONFIG";
-  import { type DisplayMode, setDisplayMode, setOnline, setPromptEvent } from "$lib/utils/context";
-  import { preloadCode } from "$app/navigation";
   import { PAGES } from "$lib/ROUTES";
+  import { type DisplayMode, setDisplayMode, setOnline, setPromptEvent } from "$lib/utils/context";
 
   nprogress.configure({ easing: "ease", minimum: 0.2, speed: 600 });
   $: $navigating ? nprogress.start() : nprogress.done();

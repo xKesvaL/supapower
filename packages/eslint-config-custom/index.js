@@ -71,5 +71,6 @@ module.exports = {
     "*.json",
     "*.html",
     ".eslintrc.cjs",
+    "**/paraglide/**/*",
   ],
 };
