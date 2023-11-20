@@ -9,7 +9,6 @@ export const GET: RequestHandler = () => {
     .map((file) => {
       let url = file
         .replace("/src/routes", "")
-        .replace("[[lang=locale]]", "")
         .replace(".svelte", "")
         .replace(".md", "")
         .replace("+page", "")
@@ -26,13 +25,6 @@ export const GET: RequestHandler = () => {
     })
     .filter((url) => url !== "");
   const uniqueUrls = Array.from(new Set(urls));
-
-  // Generate a sitemap for each locale using the LOCALES variable
-  // use the unique urls array to generate the sitemap
-  // the unique urls array looks like this:
-  // [ '/', '/about', '/blog', '/work' ]
-  // the sitemap should include the location, lastmod, changefreq, and priority
-  // also include the link to every other locale for each url
 
   interface SitemapEntry {
     changefreq: string;

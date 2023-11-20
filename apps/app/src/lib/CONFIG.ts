@@ -6,8 +6,8 @@ export const DEFAULT_LOCALE = "en" as const;
 
 export const BRAND: Brand = {
   author: {
-    name: "LeetStrength",
-    url: "https://leetstrength.com",
+    name: "LeetStrength App",
+    url: "https://app.leetstrength.com",
   },
 
   color: {
