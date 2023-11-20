@@ -3,14 +3,15 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
-    "lint": "turbo run lint",
-    "format": "prettier --write .",
+    "lint": "turbo run lint --filter=./apps/*",
+    "format": "turbo run format",
     "changeset": "changeset && git add --all",
     "publish:packages": "changeset publish",
-    "version:packages": "changeset version && git add --all"
+    "version:packages": "changeset version && git add --all",
+    "test": "turbo run test --filter=./apps/*"
   },
   "devDependencies": {
-    "eslint": "^8.53.0",
+    "eslint": "^8.54.0",
     "eslint-config-custom": "workspace:*",
     "prettier": "^3.1.0",
     "prettier-plugin-svelte": "^3.1.0",

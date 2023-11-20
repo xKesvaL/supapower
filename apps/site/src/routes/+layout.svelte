@@ -1,130 +1,131 @@
 <script lang="ts">
-	import '@kesval/design';
-	import '../app.postcss';
-	import '$lib/styles/fonts.scss';
-	import '$lib/styles/main.scss';
-	import '$lib/styles/nprogress.scss';
+  import "@kesval/design";
+  import "../app.postcss";
+  import "$lib/styles/fonts.scss";
+  import "$lib/styles/main.scss";
+  import "$lib/styles/nprogress.scss";
 
-	import { navigating, page } from '$app/stores';
-	import nprogress from 'nprogress';
-	import { isLoading, locales } from 'svelte-i18n';
-	import { setupViewTransition } from 'sveltekit-view-transition';
-	import { BRAND } from '$lib/CONFIG';
-	import { type DisplayMode, setPromptEvent, setOnline, setDisplayMode } from '$lib/utils/context';
-	import { onMount } from 'svelte';
+  import nprogress from "nprogress";
+  import { onMount } from "svelte";
+  import { isLoading, locales } from "svelte-i18n";
+  import { setupViewTransition } from "sveltekit-view-transition";
 
-	nprogress.configure({ easing: 'ease', minimum: 0.2, speed: 600 });
-	$: $navigating ? nprogress.start() : nprogress.done();
+  import { navigating, page } from "$app/stores";
+  import { BRAND } from "$lib/CONFIG";
+  import { type DisplayMode, setDisplayMode, setOnline, setPromptEvent } from "$lib/utils/context";
 
-	// Path without lang
-	let pathWithoutLang = $page.url.pathname.replace(`/${$page.params.lang}`, '') || '/';
-	$: pathWithoutLang = $page.url.pathname.replace(`/${$page.params.lang}`, '') || '/';
+  nprogress.configure({ easing: "ease", minimum: 0.2, speed: 600 });
+  $: $navigating ? nprogress.start() : nprogress.done();
 
-	let online = true;
-	let displayMode: DisplayMode = 'browser';
+  // Path without lang
+  let pathWithoutLang = $page.url.pathname.replace(`/${$page.params.lang}`, "") || "/";
+  $: pathWithoutLang = $page.url.pathname.replace(`/${$page.params.lang}`, "") || "/";
 
-	onMount(() => {
-		window.matchMedia('(display-mode: standalone)').addEventListener('change', (e) => {
-			displayMode = e.matches ? 'standalone' : 'browser';
-		});
-	});
+  let online = true;
+  let displayMode: DisplayMode = "browser";
 
-	const onBeforeInstallPrompt = (e: Event) => {
-		e.preventDefault();
-		setPromptEvent(e);
-	};
+  onMount(() => {
+    window.matchMedia("(display-mode: standalone)").addEventListener("change", (event) => {
+      displayMode = event.matches ? "standalone" : "browser";
+    });
+  });
 
-	const windowOnline = () => {
-		online = true;
-	};
+  const onBeforeInstallPrompt = (event: Event) => {
+    event.preventDefault();
+    setPromptEvent(event);
+  };
 
-	const windowOffline = () => {
-		online = false;
-	};
+  const windowOnline = () => {
+    online = true;
+  };
 
-	$: setDisplayMode(displayMode);
-	$: setOnline(online);
+  const windowOffline = () => {
+    online = false;
+  };
 
-	setupViewTransition();
+  $: setDisplayMode(displayMode);
+  $: setOnline(online);
+
+  setupViewTransition();
 </script>
 
 <svelte:window
-	on:beforeinstallprompt={onBeforeInstallPrompt}
-	on:online={windowOnline}
-	on:offline={windowOffline}
+  on:beforeinstallprompt={onBeforeInstallPrompt}
+  on:online={windowOnline}
+  on:offline={windowOffline}
 />
 
 <svelte:head>
-	<!-- Manifest -->
-	<link rel="manifest" href="/manifest.webmanifest" />
+  <!-- Manifest -->
+  <link rel="manifest" href="/manifest.webmanifest" />
 
-	<!-- Preload fonts -->
-	<link
-		rel="preload"
-		href="/fonts/Inter-300-Lat.woff2"
-		as="font"
-		crossorigin="anonymous"
-		type="font/woff2"
-	/>
-	<link
-		rel="preload"
-		href="/fonts/Inter-400-Lat.woff2"
-		as="font"
-		crossorigin="anonymous"
-		type="font/woff2"
-	/>
-	<link
-		rel="preload"
-		href="/fonts/Inter-700-Lat.woff2"
-		as="font"
-		crossorigin="anonymous"
-		type="font/woff2"
-	/>
-	<link
-		rel="preload"
-		href="/fonts/Poppins-900-Lat.woff2"
-		as="font"
-		crossorigin="anonymous"
-		type="font/woff2"
-	/>
+  <!-- Preload fonts -->
+  <link
+    rel="preload"
+    href="/fonts/Inter-300-Lat.woff2"
+    as="font"
+    crossorigin="anonymous"
+    type="font/woff2"
+  />
+  <link
+    rel="preload"
+    href="/fonts/Inter-400-Lat.woff2"
+    as="font"
+    crossorigin="anonymous"
+    type="font/woff2"
+  />
+  <link
+    rel="preload"
+    href="/fonts/Inter-700-Lat.woff2"
+    as="font"
+    crossorigin="anonymous"
+    type="font/woff2"
+  />
+  <link
+    rel="preload"
+    href="/fonts/Poppins-900-Lat.woff2"
+    as="font"
+    crossorigin="anonymous"
+    type="font/woff2"
+  />
 
-	<!-- Favicons -->
-	<link rel="icon" href="/favicon.ico" />
-	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffffff" />
-	<meta name="msapplication-TileColor" content="#ffffff" />
+  <!-- Favicons -->
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ffffff" />
+  <meta name="msapplication-TileColor" content="#ffffff" />
 
-	<link rel="apple-touch-icon" href="/images/logos/logo.png" />
-	<link rel="apple-touch-startup-image" href="/images/logos/logo.png" />
+  <link rel="apple-touch-icon" href="/images/logos/logo.png" />
+  <link rel="apple-touch-startup-image" href="/images/logos/logo.png" />
 
-	<!-- Disable darkreader -->
-	<meta name="darkreader-lock" />
+  <!-- Disable darkreader -->
+  <meta name="darkreader-lock" />
 
-	<!-- Mobile -->
-	<meta name="viewport" content="width=device-width" />
+  <!-- Mobile -->
+  <meta name="viewport" content="width=device-width" />
 
-	<!-- Metas -->
-	<meta name="robots" content="index, follow" />
+  <!-- Metas -->
+  <meta name="robots" content="index, follow" />
 
-	<!-- PWA Infos -->
-	<meta name="theme-color" content={BRAND.color.primary} />
-	<meta name="copyright" content={BRAND.author.name} />
-	<meta name="og:site_name" content={BRAND.name} />
+  <!-- PWA Infos -->
+  <meta name="theme-color" content={BRAND.color.primary} />
+  <meta name="copyright" content={BRAND.author.name} />
+  <meta name="og:site_name" content={BRAND.name} />
 
-	<!-- Href langs -->
-	<link href={pathWithoutLang} hreflang="x-default" rel="alternate" />
-	{#each $locales as locale}
-		<link
-			href={`/${locale}${pathWithoutLang == '/' ? '' : pathWithoutLang}?owlang=true`}
-			hreflang={locale}
-			rel="alternate"
-		/>
-	{/each}
+  <!-- Href langs -->
+  <link href={pathWithoutLang} hreflang="x-default" rel="alternate" />
+  {#each $locales as locale}
+    <link
+      href={`/${locale}${pathWithoutLang === "/" ? "" : pathWithoutLang}?owlang=true`}
+      hreflang={locale}
+      rel="alternate"
+    />
+  {/each}
 </svelte:head>
 
 {#if $isLoading}
-	...
+  ...
 {:else}
-	<slot />
+  <slot />
 {/if}

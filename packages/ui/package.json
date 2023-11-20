@@ -7,12 +7,12 @@
   "svelte": "index.ts",
   "license": "MIT",
   "scripts": {
-    "lint": "prettier --check --ignore-path=../../.prettierignore . && eslint \".\"",
+    "lint": "prettier --check --ignore-path=../../.prettierignore . && eslint \".\" --fix",
     "format": "prettier --write --ignore-path=../../.prettierignore ."
   },
   "devDependencies": {
     "eslint-config-custom": "workspace:*",
-    "svelte": "^4.2.3"
+    "svelte": "^4.2.5"
   },
   "exports": {
     ".": "./index.ts",

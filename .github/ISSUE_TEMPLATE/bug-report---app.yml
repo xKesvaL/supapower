@@ -1,8 +1,8 @@
 name: Bug Report
 description: File a bug report
-title: '[App/Bug]: '
-labels: ['app', 'bug']
-projects: ['xKesvaL/5']
+title: "[App/Bug]: "
+labels: ["app", "bug"]
+projects: ["xKesvaL/5"]
 assignees:
   - xkesval
   - gbihry

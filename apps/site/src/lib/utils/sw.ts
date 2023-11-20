@@ -1,45 +1,48 @@
+import { readonlyURL } from "readonly-types";
+
 export const cacheFiles = async (cacheKey: string, assets: string[]) => {
-	const cache = await caches.open(cacheKey);
-	await cache.addAll(assets);
+  const cache = await caches.open(cacheKey);
+  await cache.addAll(assets);
 };
 
 export const deleteOldCaches = async (currentCacheKey: string) => {
-	for (const key of await caches.keys()) {
-		if (key !== currentCacheKey) {
-			await caches.delete(key);
-		}
-	}
+  for (const key of await caches.keys()) {
+    if (key !== currentCacheKey) {
+      void caches.delete(key);
+    }
+  }
 };
 
 export const getFromCache = async (
-	cacheKey: string,
-	assets: string[],
-	request: Request
-): Promise<Response> => {
-	if (
-		request.method !== 'GET' ||
-		request.url.startsWith('chrome-extension://') ||
-		request.url.includes('extension')
-	) {
-		return await fetch(request);
-	}
+  cacheKey: string,
+  assets: readonly string[],
+  request: Request,
+): Promise<Response | undefined> => {
+  if (
+    request.method !== "GET" ||
+    request.url.startsWith("chrome-extension://") ||
+    request.url.includes("extension")
+  ) {
+    return await fetch(request);
+  }
 
-	const url = new URL(request.url);
-	const cache = await caches.open(cacheKey);
+  const url = readonlyURL(request.url);
+  const cache = await caches.open(cacheKey);
 
-	if (assets.includes(url.pathname)) {
-		return cache.match(url.pathname) as Promise<Response>;
-	}
+  if (url && url.pathname && assets.includes(url.pathname)) {
+    return await cache.match(url.pathname);
+  }
 
-	try {
-		const response = await fetch(request);
+  try {
+    const response = await fetch(request);
 
-		if (response.status === 200) {
-			cache.put(request, response.clone());
-		}
+    // eslint-disable-next-line @typescript-eslint/no-magic-numbers
+    if (response.status === 200) {
+      await cache.put(request, response.clone());
+    }
 
-		return response;
-	} catch (e) {
-		return cache.match(request) as Promise<Response>;
-	}
+    return response;
+  } catch {
+    return await cache.match(request);
+  }
 };

@@ -1,24 +1,28 @@
-import { writable } from 'svelte/store';
+/* eslint-disable @typescript-eslint/no-use-before-define */
+import { writable } from "svelte/store";
 
 const createNavigationOpenStore = () => {
-	const { set, subscribe, update } = writable<boolean>(false);
+  const { set, subscribe, update } = writable<boolean>(false);
 
-	return {
-		set: (value: boolean) => {
-			scrollLocked.set(value);
-			set(value);
-		},
-		subscribe,
-		toggle: () => {
-			update((t) => {
-				scrollLocked.set(!t);
-				return !t;
-			});
-		},
-		update
-	};
+  return {
+    set: (isOpen: boolean) => {
+      scrollLocked.set(isOpen);
+      set(isOpen);
+    },
+
+    subscribe,
+
+    toggle: () => {
+      update((isLocked) => {
+        scrollLocked.set(!isLocked);
+        return !isLocked;
+      });
+    },
+
+    update,
+  };
 };
 
-export const navigationOpen = createNavigationOpenStore();
-
 export const scrollLocked = writable<boolean>(false);
+
+export const navigationOpen = createNavigationOpenStore();

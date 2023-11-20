@@ -1,7 +1,9 @@
-export const load = ({ locals }) => {
-	const lang = locals.lang;
+import type { LayoutServerLoad } from "./$types";
 
-	return {
-		lang
-	};
+export const load: LayoutServerLoad = ({ locals }) => {
+  const { lang } = locals;
+
+  return {
+    lang,
+  };
 };
