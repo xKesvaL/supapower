@@ -15,6 +15,7 @@ const config = {
     alias: {
       $assets: "./src/assets",
       $routes: "./src/routes",
+      $paraglide: "./src/paraglide",
     },
   },
 };

@@ -18,11 +18,13 @@ const ASSETS = [
 ];
 
 sw.addEventListener("install", (event) => {
-  event.waitUntil(cacheFiles(CACHE, ASSETS).then(() => sw.skipWaiting()));
+  event.waitUntil(sw.skipWaiting());
+  event.waitUntil(cacheFiles(CACHE, ASSETS));
 });
 
 sw.addEventListener("activate", (event) => {
-  event.waitUntil(deleteOldCaches(CACHE).then(() => sw.clients.claim()));
+  event.waitUntil(deleteOldCaches(CACHE));
+  event.waitUntil(sw.clients.claim());
 });
 
 sw.addEventListener("fetch", async (event) => {

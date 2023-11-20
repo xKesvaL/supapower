@@ -8,7 +8,8 @@ export const cacheFiles = async (cacheKey: string, assets: string[]) => {
 export const deleteOldCaches = async (currentCacheKey: string) => {
   for (const key of await caches.keys()) {
     if (key !== currentCacheKey) {
-      void caches.delete(key);
+      // eslint-disable-next-line no-await-in-loop
+      await caches.delete(key);
     }
   }
 };
