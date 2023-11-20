@@ -13,7 +13,6 @@ declare global {
     // interface Error {}
     interface Locals {
       lang: string;
-      uid: string;
     }
 
     interface PageData {

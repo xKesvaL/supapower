@@ -55,6 +55,7 @@ module.exports = {
     quotes: "off",
     "unicorn/no-empty-file": "off",
     "regexp/require-unicode-sets-regexp": "off",
+    endOfLine: "off",
   },
   ignorePatterns: [
     "node_modules",
