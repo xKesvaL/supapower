@@ -4,7 +4,6 @@
   let user = {
     username: "Jordan",
   };
-
 </script>
 
-<Profile {user}/>
+<Profile {user} />
