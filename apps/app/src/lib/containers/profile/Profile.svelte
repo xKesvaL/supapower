@@ -1,4 +1,5 @@
 <script lang="ts">
+
   import ProfileHeader from "$lib/containers/profile/ProfileHeader.svelte";
   import ProfileContent from "$lib/containers/profile/ProfileContent.svelte";
   import ProfileCards from "$lib/containers/profile/ProfileCards.svelte";
