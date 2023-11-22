@@ -2,7 +2,7 @@
   import { IconGraph, IconBarbell, IconMan, IconCalendarEvent  } from "ui/icons";
 </script>
 
-<div class="mx-8 mt-4 grid grid-cols-2 gap-2 justify-center">
+<div class="mt-4 grid grid-cols-2 gap-2 justify-center">
   <div class="flex gap-2 flex text-sm items-center border rounded p-1 shadow-sm shadow-primary">
     <div class="w-6">
         <IconGraph />
