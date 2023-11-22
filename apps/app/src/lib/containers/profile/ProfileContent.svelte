@@ -1,18 +1,17 @@
-<div class="mt-4 flex justify-center gap-5 text-center text-sm">
-  <div>
-    <span class="font-bold">0</span>
-    <p>Workouts</p>
+<script lang="ts">
+  
+  interface User {
+      username: string;
+  }
+
+  export let user: User;
+
+</script>
+
+<div class="mt-2 flex flex-col gap-2 text-xs text-foreground">
+  <div class="text-2xs">
+    <p>{user.username}</p>
   </div>
-  <div>
-    <span class="font-bold">255</span>
-    <p>Followers</p>
-  </div>
-  <div>
-    <span class="font-bold">161</span>
-    <p>Followings</p>
-  </div>
-</div>
-<div class="m-4 mt-4 flex flex-col gap-2 text-xs text-foreground">
   <p>
     19, Fullstack Developer Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi libero
     suscipit animi ad adipisci perferendis cupiditate modi eligendi at ullam!. 🚗🏍️🎧♟️🎮

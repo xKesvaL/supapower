@@ -1,14 +1,15 @@
-<script lang="ts">
-  import Profile from "$lib/containers/profile/Profile.svelte";
-
-  let user = {
-    username: "Jordan",
-  };
-</script>
-
-<div class="mx-auto my-4 flex items-center gap-16">
+<div class="mt-4 flex justify-center gap-3 text-center text-xs items-center">
   <img class="h-14 w-14 rounded-full border-2 border-gray-700" alt="" />
-  <div class="text-2xl">
-    <Profile {user} />
+  <div>
+    <span class="font-bold">0</span>
+    <p>Workouts</p>
+  </div>
+  <div>
+    <span class="font-bold">255</span>
+    <p>Followers</p>
+  </div>
+  <div>
+    <span class="font-bold">161</span>
+    <p>Followings</p>
   </div>
 </div>
