@@ -4,3 +4,7 @@ export { default as IconBrandTiktok } from "./brand-tiktok.svelte";
 export { default as IconBrandTwitter } from "./brand-twitter.svelte";
 export { default as IconMoon } from "./moon.svelte";
 export { default as IconSun } from "./sun.svelte";
+export { default as IconGraph } from "./graph.svelte";
+export { default as IconBarbell } from "./barbell.svelte";
+export { default as IconMan } from "./man.svelte";
+export { default as IconCalendarEvent } from "./calendar-event.svelte";
