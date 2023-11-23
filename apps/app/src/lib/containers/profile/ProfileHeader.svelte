@@ -1,21 +1,19 @@
-<div class="mt-4 flex">
+<div class="flex gap-4">
   <div>
-    <img class="h-14 w-14 rounded-full border-2 border-gray-700" alt="" />
+    <img class="border-border h-[4.5rem] w-[4.5rem] rounded-full border-2" alt="" />
   </div>
-  <div class="flex justify-around gap-3 text-center text-xs items-center grow">
+  <div class="flex grow items-center justify-around gap-2 text-center text-sm">
     <div>
-      <span class="font-bold">0</span>
+      <span class="text-base font-bold">0</span>
       <p>Workouts</p>
     </div>
     <div>
-      <span class="font-bold">255</span>
+      <span class="text-base font-bold">255</span>
       <p>Followers</p>
     </div>
     <div>
-      <span class="font-bold">161</span>
+      <span class="text-base font-bold">161</span>
       <p>Followings</p>
     </div>
   </div>
-  
-  
 </div>
