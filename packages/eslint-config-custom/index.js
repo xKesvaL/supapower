@@ -51,6 +51,8 @@ module.exports = {
     "import/max-dependencies": "off",
     "max-statements": "off",
     "prettier/prettier": "off",
+    "perfectionist/sort-objects": "off",
+    "@typescript-eslint/naming-convention": "off",
     "import/no-namespace": "off",
     "@typescript-eslint/prefer-readonly-parameter-types": "off",
     "sonar/no-empty-after-reluctant": "off",
