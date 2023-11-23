@@ -163,8 +163,8 @@ importers:
         specifier: ^5.0.0
         version: 5.0.0(@types/node@20.9.1)(sass@1.69.5)
       vite-plugin-kit-routes:
-        specifier: ^0.0.11
-        version: 0.0.11
+        specifier: ^0.1.0
+        version: 0.1.0
       vite-plugin-watch:
         specifier: ^0.2.0
         version: 0.2.0
@@ -1604,6 +1604,10 @@ packages:
 
   /@kitql/helpers@0.8.3:
     resolution: {integrity: sha512-oozUXcSEo7sTAyUF6HOkO1M4D8g9z0w//7MHI1fyXZ1QhA5SQEjq0Q5Js7VQPhVE5tPg0RuDlnqV5GHCOcdwsQ==}
+    dev: true
+
+  /@kitql/helpers@0.8.4:
+    resolution: {integrity: sha512-i6DricOzvcbB/wSDv4Ir9VwiJnuDcVP0MxWW+CAHqRuOLuAO3Z6wXk7mtrtIZfePLC9E+XhuaXhvxR0h5TGb9A==}
     dev: true
 
   /@lix-js/fs@0.4.0:
@@ -11073,10 +11077,26 @@ packages:
       vite-plugin-watch-and-run: 1.4.2
     dev: true
 
+  /vite-plugin-kit-routes@0.1.0:
+    resolution: {integrity: sha512-mSDZaihwlYlk1AEURBC1xv4YPhQPFluXj1sAGsmKUnDL1OW6ct0bUlaPbEAHNazswuAe4e6wvXrYzzSWMVcGHQ==}
+    dependencies:
+      '@babel/parser': 7.23.3
+      '@kitql/helpers': 0.8.4
+      recast: 0.23.4
+      vite-plugin-watch-and-run: 1.4.3
+    dev: true
+
   /vite-plugin-watch-and-run@1.4.2:
     resolution: {integrity: sha512-MvdFhh++FuE5bUg40n05SLnlT8gwCbcIJx1v0ZRiJRH0qNmLkiOSO8j61mxRZ2dpxCNwWVpal27OHsHgIGJ7jQ==}
     dependencies:
       '@kitql/helpers': 0.8.3
+      micromatch: 4.0.5
+    dev: true
+
+  /vite-plugin-watch-and-run@1.4.3:
+    resolution: {integrity: sha512-UJaDGFNdasvDQEiPsUIL4eI2KY0aEep2Bl+WraOLZjvRZBT72KtSG7tYmui8t7ykeqfb2i18xTECqjXFB2s5Jg==}
+    dependencies:
+      '@kitql/helpers': 0.8.4
       micromatch: 4.0.5
     dev: true
 
