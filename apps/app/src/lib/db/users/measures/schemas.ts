@@ -1,6 +1,6 @@
 import * as z from "zod";
 
-export const UserMeasuresSchemas = z.object({
+export const UserMeasuresSchema = z.object({
   weight: z.number(),
   waist: z.number(),
   bodyFat: z.number(),

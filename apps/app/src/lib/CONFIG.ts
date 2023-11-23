@@ -1,5 +1,4 @@
 /* eslint-disable unicorn/filename-case */
-/* eslint-disable @typescript-eslint/naming-convention */
 import type { Brand, Socials } from "./typings/standard";
 
 export const DEFAULT_LOCALE = "en" as const;
