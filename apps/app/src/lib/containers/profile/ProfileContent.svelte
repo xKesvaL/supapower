@@ -6,7 +6,7 @@
   export let user: User;
 </script>
 
-<div class="text-foreground flex flex-col gap-1 text-sm">
+<div class="text-foreground fold:text-xs flex flex-col gap-1 text-sm">
   <div>
     <p>{user.username}</p>
   </div>

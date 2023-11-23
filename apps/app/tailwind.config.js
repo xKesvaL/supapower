@@ -8,8 +8,10 @@ const config = {
       padding: "1rem",
       screens: {},
     },
-
     extend: {
+      screens: {
+        fold: { max: "320px" },
+      },
       borderRadius: {
         "4xl": "2rem",
         "5xl": "4rem",
