@@ -4,9 +4,9 @@
 
 <div class="mt-2 grid grid-cols-2 justify-center gap-2">
   <div
-    class="shadow-primary flex min-h-[3.5rem] items-center justify-center gap-2 rounded border p-1 text-sm shadow-sm"
+    class="shadow-primary fold:text-xs fold:min-h-[3rem] flex min-h-[3.5rem] items-center justify-center gap-2 rounded border p-1 text-sm shadow-sm"
   >
-    <div class="w-6">
+    <div class="fold:w-5 w-6">
       <IconGraph />
     </div>
     <div class="">
@@ -14,9 +14,9 @@
     </div>
   </div>
   <div
-    class="shadow-primary flex min-h-[3.5rem] items-center justify-center gap-2 rounded border p-1 text-sm shadow-sm"
+    class="shadow-primary fold:text-xs fold:min-h-[3rem] flex min-h-[3.5rem] items-center justify-center gap-2 rounded border p-1 text-sm shadow-sm"
   >
-    <div class="w-6">
+    <div class="fold:w-5 w-6">
       <IconBarbell />
     </div>
     <div class="">
@@ -24,9 +24,9 @@
     </div>
   </div>
   <div
-    class="shadow-primary flex min-h-[3.5rem] items-center justify-center gap-2 rounded border p-1 text-sm shadow-sm"
+    class="shadow-primary fold:text-xs fold:min-h-[3rem] flex min-h-[3.5rem] items-center justify-center gap-2 rounded border p-1 text-sm shadow-sm"
   >
-    <div class="w-6">
+    <div class="fold:w-5 w-6">
       <IconMan />
     </div>
     <div class="">
@@ -34,9 +34,9 @@
     </div>
   </div>
   <div
-    class="shadow-primary flex min-h-[3.5rem] items-center justify-center gap-2 rounded border p-1 text-sm shadow-sm"
+    class="shadow-primary fold:text-xs fold:min-h-[3rem] flex min-h-[3.5rem] items-center justify-center gap-2 rounded border p-1 text-sm shadow-sm"
   >
-    <div class="w-6">
+    <div class="fold:w-5 w-6">
       <IconCalendarEvent />
     </div>
     <div class="">
