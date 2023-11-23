@@ -50,6 +50,8 @@ module.exports = {
     "@typescript-eslint/consistent-type-assertions": "off",
     "import/max-dependencies": "off",
     "max-statements": "off",
+    "prettier/prettier": "off",
+    "import/no-namespace": "off",
     "@typescript-eslint/prefer-readonly-parameter-types": "off",
     "sonar/no-empty-after-reluctant": "off",
     quotes: "off",
