@@ -4,17 +4,16 @@
   import ProfileCards from "$lib/containers/profile/ProfileCards.svelte";
 
   interface User {
-      username: string;
+    username: string;
   }
 
   export let user: User;
-
 </script>
 
-<div class="container">
+<div class="container flex flex-col gap-2">
   <ProfileHeader />
 
-  <ProfileContent {user}/>
+  <ProfileContent {user} />
 
   <ProfileCards />
 </div>

@@ -1,15 +1,13 @@
 <script lang="ts">
-  
   interface User {
-      username: string;
+    username: string;
   }
 
   export let user: User;
-
 </script>
 
-<div class="mt-2 flex flex-col gap-2 text-xs text-foreground">
-  <div class="text-2xs">
+<div class="text-foreground flex flex-col gap-1 text-sm">
+  <div>
     <p>{user.username}</p>
   </div>
   <p>
