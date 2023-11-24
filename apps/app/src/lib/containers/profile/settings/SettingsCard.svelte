@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { PAGES } from "$lib/ROUTES";
   import { IconChevronRight } from "ui/icons";
 
   interface User {
@@ -10,7 +11,10 @@
   export let user: User;
 </script>
 
-<div class="flex items-center justify-between rounded-lg bg-muted/75 p-4">
+<a
+  class="flex items-center justify-between rounded-lg bg-muted/75 p-4"
+  href={PAGES.profile_settings_account()}
+>
   <div class="flex items-center gap-4">
     <div class="h-16 w-16 rounded border">
       <!--Image ?-->
@@ -24,4 +28,4 @@
   <div class="w-8 text-muted-foreground">
     <IconChevronRight />
   </div>
-</div>
+</a>
