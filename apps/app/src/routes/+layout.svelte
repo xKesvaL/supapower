@@ -64,10 +64,14 @@
 
   $effect(() => {
     setUser(userState);
-    console.log(userState.user);
-    console.log(userState.loading);
-    if (browser && !userState.loading && !userState.user) {
-      goto(PAGES.login());
+
+    if (
+      browser &&
+      !userState.loading &&
+      !userState.user &&
+      !$page.url.pathname.startsWith(PAGES.auth())
+    ) {
+      goto(PAGES.auth_login({ frel: $page.url.pathname }));
     }
   });
 
