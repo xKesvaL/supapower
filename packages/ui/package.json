@@ -12,7 +12,8 @@
   },
   "devDependencies": {
     "eslint-config-custom": "workspace:*",
-    "svelte": "^4.2.5"
+    "sass": "^1.69.5",
+    "svelte": "5.0.0-next.12"
   },
   "exports": {
     ".": "./index.ts",

@@ -74,10 +74,6 @@
       goto(PAGES.auth_login({ frel: $page.url.pathname }));
     }
   });
-
-  onDestroy(() => {
-    userState.unsubscribe();
-  });
 </script>
 
 <svelte:window
@@ -146,18 +142,6 @@
 
   <!-- Href langs -->
   <link href={$page.url.pathname} hreflang="x-default" rel="alternate" />
-  <!-- {#each $locales as locale}
-    <link
-      href={`/${locale}${$page.url.pathname === "/" ? "" : $page.url.pathname}?owlang=true`}
-      hreflang={locale}
-      rel="alternate"
-    />
-  {/each} -->
 </svelte:head>
-
-<button onclick={async () => await signInAnonymously(auth)}> Sign in </button>
-<button onclick={async () => await signOut(auth)}> Sign out </button>
-
-{JSON.stringify(userState.user)}
 
 <slot />

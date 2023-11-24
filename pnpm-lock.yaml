@@ -26,7 +26,7 @@ importers:
         version: 3.1.0
       prettier-plugin-svelte:
         specifier: ^3.1.0
-        version: 3.1.0(prettier@3.1.0)(svelte@4.2.5)
+        version: 3.1.0(prettier@3.1.0)(svelte@5.0.0-next.12)
       turbo:
         specifier: latest
         version: 1.10.16
@@ -103,8 +103,8 @@ importers:
         specifier: ^10.6.0
         version: 10.6.0
       firebase-svelte:
-        specifier: 3.0.0-next.1
-        version: 3.0.0-next.1(firebase@10.6.0)(svelte@5.0.0-next.8)
+        specifier: 3.0.0-next.2
+        version: 3.0.0-next.2(firebase@10.6.0)(svelte@5.0.0-next.8)
       formsnap:
         specifier: ^0.4.1
         version: 0.4.1(svelte@5.0.0-next.8)(sveltekit-superforms@1.10.2)(zod@3.22.4)
@@ -236,7 +236,7 @@ importers:
         version: 9.0.0(eslint@8.54.0)
       eslint-plugin-perfectionist:
         specifier: ^2.4.0
-        version: 2.4.0(eslint@8.54.0)(svelte@4.2.5)(typescript@5.2.2)(vue-eslint-parser@9.3.2)
+        version: 2.4.0(eslint@8.54.0)(svelte@4.2.5)(typescript@5.2.2)
       eslint-plugin-svelte:
         specifier: ^2.35.0
         version: 2.35.0(eslint@8.54.0)(svelte@4.2.5)
@@ -327,22 +327,25 @@ importers:
         version: 6.11.0(eslint@8.54.0)(typescript@5.2.2)
       eslint-config-hardcore:
         specifier: ^42.0.0
-        version: 42.0.0(@babel/core@7.23.3)(@babel/eslint-parser@7.23.3)(eslint@8.54.0)(svelte@4.2.5)(typescript@5.2.2)(vue-eslint-parser@9.3.2)
+        version: 42.0.0(@babel/core@7.23.3)(@babel/eslint-parser@7.23.3)(eslint@8.54.0)(svelte@5.0.0-next.12)(typescript@5.2.2)(vue-eslint-parser@9.3.2)
       eslint-config-prettier:
         specifier: ^9.0.0
         version: 9.0.0(eslint@8.54.0)
       eslint-plugin-svelte:
         specifier: ^2.35.0
-        version: 2.35.0(eslint@8.54.0)(svelte@4.2.5)
+        version: 2.35.0(eslint@8.54.0)(svelte@5.0.0-next.12)
 
   packages/ui:
     devDependencies:
       eslint-config-custom:
         specifier: workspace:*
         version: link:../eslint-config-custom
+      sass:
+        specifier: ^1.69.5
+        version: 1.69.5
       svelte:
-        specifier: ^4.2.5
-        version: 4.2.5
+        specifier: 5.0.0-next.12
+        version: 5.0.0-next.12
 
 packages:
 
@@ -4393,6 +4396,14 @@ packages:
     dependencies:
       acorn: 8.11.2
 
+  /acorn-typescript@1.4.11(acorn@8.11.2):
+    resolution: {integrity: sha512-cRGgp+4HMxMZAiMS61ZmQ3iuU/+A4g4ZYZsyLZdmvrEVN/TOwfJ40rPWcLqi3H5ut75SYAdOOJj6QGCcrkK57w==}
+    peerDependencies:
+      acorn: '>=8.9.0'
+    dependencies:
+      acorn: 8.11.2
+    dev: true
+
   /acorn@8.11.2:
     resolution: {integrity: sha512-nc0Axzp/0FILLEVsm4fNwLCwMttvhEI263QtVPQcbpfZZ3ts0hLsZGOpE6czNlid7CJ9MlyH8reXkpsf3YUY4w==}
     engines: {node: '>=0.4.0'}
@@ -5682,7 +5693,7 @@ packages:
       eslint: 8.54.0
     dev: true
 
-  /eslint-config-hardcore@42.0.0(@babel/core@7.23.3)(@babel/eslint-parser@7.23.3)(eslint@8.54.0)(svelte@4.2.5)(typescript@5.2.2)(vue-eslint-parser@9.3.2):
+  /eslint-config-hardcore@42.0.0(@babel/core@7.23.3)(@babel/eslint-parser@7.23.3)(eslint@8.54.0)(svelte@5.0.0-next.12)(typescript@5.2.2)(vue-eslint-parser@9.3.2):
     resolution: {integrity: sha512-Yo5G0K8nymxA6/5z7ZWu0wTmYdwMZJ1ukpmYOw9Pw3Y6rnb/iNvbssLD7G80EPEDIyFlWP+bswFZE3Nx54oAYg==}
     peerDependencies:
       eslint: ^8.51.0
@@ -5720,7 +5731,7 @@ packages:
       eslint-plugin-no-only-tests: 3.1.0
       eslint-plugin-no-unsanitized: 4.0.2(eslint@8.54.0)
       eslint-plugin-no-use-extend-native: 0.5.0
-      eslint-plugin-perfectionist: 2.4.0(eslint@8.54.0)(svelte@4.2.5)(typescript@5.2.2)(vue-eslint-parser@9.3.2)
+      eslint-plugin-perfectionist: 2.4.0(eslint@8.54.0)(svelte@5.0.0-next.12)(typescript@5.2.2)(vue-eslint-parser@9.3.2)
       eslint-plugin-prettier: 5.0.1(eslint-config-prettier@9.0.0)(eslint@8.54.0)(prettier@3.1.0)
       eslint-plugin-promise: 6.1.1(eslint@8.54.0)
       eslint-plugin-putout: 18.2.0(eslint@8.54.0)(putout@30.7.0)
@@ -6173,7 +6184,7 @@ packages:
       semver: 6.3.1
     dev: true
 
-  /eslint-plugin-perfectionist@2.4.0(eslint@8.54.0)(svelte@4.2.5)(typescript@5.2.2)(vue-eslint-parser@9.3.2):
+  /eslint-plugin-perfectionist@2.4.0(eslint@8.54.0)(svelte@4.2.5)(typescript@5.2.2):
     resolution: {integrity: sha512-til+vyf56wAUgFv5guBA1Zo5lTw9xj2kCeK/g+9NBtsRy1rkGrlqnvxYNuFExcK3VsPhUUtx5UdScEDz9ahQ5Q==}
     peerDependencies:
       astro-eslint-parser: ^0.16.0
@@ -6196,6 +6207,34 @@ packages:
       minimatch: 9.0.3
       natural-compare-lite: 1.4.0
       svelte: 4.2.5
+    transitivePeerDependencies:
+      - supports-color
+      - typescript
+    dev: true
+
+  /eslint-plugin-perfectionist@2.4.0(eslint@8.54.0)(svelte@5.0.0-next.12)(typescript@5.2.2)(vue-eslint-parser@9.3.2):
+    resolution: {integrity: sha512-til+vyf56wAUgFv5guBA1Zo5lTw9xj2kCeK/g+9NBtsRy1rkGrlqnvxYNuFExcK3VsPhUUtx5UdScEDz9ahQ5Q==}
+    peerDependencies:
+      astro-eslint-parser: ^0.16.0
+      eslint: '>=8.0.0'
+      svelte: '>=3.0.0'
+      svelte-eslint-parser: ^0.33.0
+      vue-eslint-parser: '>=9.0.0'
+    peerDependenciesMeta:
+      astro-eslint-parser:
+        optional: true
+      svelte:
+        optional: true
+      svelte-eslint-parser:
+        optional: true
+      vue-eslint-parser:
+        optional: true
+    dependencies:
+      '@typescript-eslint/utils': 6.11.0(eslint@8.54.0)(typescript@5.2.2)
+      eslint: 8.54.0
+      minimatch: 9.0.3
+      natural-compare-lite: 1.4.0
+      svelte: 5.0.0-next.12
       vue-eslint-parser: 9.3.2(eslint@8.54.0)
     transitivePeerDependencies:
       - supports-color
@@ -6560,6 +6599,35 @@ packages:
       - ts-node
     dev: true
 
+  /eslint-plugin-svelte@2.35.0(eslint@8.54.0)(svelte@5.0.0-next.12):
+    resolution: {integrity: sha512-3WDFxNrkXaMlpqoNo3M1ZOQuoFLMO9+bdnN6oVVXaydXC7nzCJuGy9a0zqoNDHMSRPYt0Rqo6hIdHMEaI5sQnw==}
+    engines: {node: ^14.17.0 || >=16.0.0}
+    peerDependencies:
+      eslint: ^7.0.0 || ^8.0.0-0
+      svelte: ^3.37.0 || ^4.0.0
+    peerDependenciesMeta:
+      svelte:
+        optional: true
+    dependencies:
+      '@eslint-community/eslint-utils': 4.4.0(eslint@8.54.0)
+      '@jridgewell/sourcemap-codec': 1.4.15
+      debug: 4.3.4
+      eslint: 8.54.0
+      eslint-compat-utils: 0.1.2(eslint@8.54.0)
+      esutils: 2.0.3
+      known-css-properties: 0.29.0
+      postcss: 8.4.31
+      postcss-load-config: 3.1.4(postcss@8.4.31)
+      postcss-safe-parser: 6.0.0(postcss@8.4.31)
+      postcss-selector-parser: 6.0.13
+      semver: 7.5.4
+      svelte: 5.0.0-next.12
+      svelte-eslint-parser: 0.33.1(svelte@5.0.0-next.12)
+    transitivePeerDependencies:
+      - supports-color
+      - ts-node
+    dev: true
+
   /eslint-plugin-svelte@2.35.0(eslint@8.54.0)(svelte@5.0.0-next.8):
     resolution: {integrity: sha512-3WDFxNrkXaMlpqoNo3M1ZOQuoFLMO9+bdnN6oVVXaydXC7nzCJuGy9a0zqoNDHMSRPYt0Rqo6hIdHMEaI5sQnw==}
     engines: {node: ^14.17.0 || >=16.0.0}
@@ -6855,6 +6923,13 @@ packages:
       '@types/estree': 1.0.5
     dev: true
 
+  /esrap@1.2.0:
+    resolution: {integrity: sha512-ZWd00MnkN45Hcj+nIV5FPiZk6Nx7RDUL8G0KGp1cg1xSKXOEac0IhMQdsrGswXB1O0fMzH+MXq288Lt0Abpg/Q==}
+    dependencies:
+      '@jridgewell/sourcemap-codec': 1.4.15
+      '@types/estree': 1.0.5
+    dev: true
+
   /esrecurse@4.3.0:
     resolution: {integrity: sha512-KmfKL3b6G+RXvP8N1vr3Tq1kL/oCFgn2NYXEtqP8/L3pKapUA4G8cFVaoF3SU323CD4XypR/ffioHmkti6/Tag==}
     engines: {node: '>=4.0'}
@@ -7063,8 +7138,8 @@ packages:
       pkg-dir: 4.2.0
     dev: false
 
-  /firebase-svelte@3.0.0-next.1(firebase@10.6.0)(svelte@5.0.0-next.8):
-    resolution: {integrity: sha512-XByBumX4Rv+yciQUhbuoluV8AQt930KMr8WzatLyBGUexd3Y5Ft+IoCyxoGdSYqHvLW4KQIzzrJKNhrYsY5VFg==}
+  /firebase-svelte@3.0.0-next.2(firebase@10.6.0)(svelte@5.0.0-next.8):
+    resolution: {integrity: sha512-DoFUvmnwNIQourzxNQ81EppnquN8VgJpD4Rag3TvXVeAFNMuk8aN3wCFRAeQ57STR0LGgVaOAyUhpxFBkYwogQ==}
     peerDependencies:
       firebase: '>=10.0.0'
       svelte: '>=3.54.0'
@@ -9338,6 +9413,16 @@ packages:
       svelte: 4.2.5
     dev: true
 
+  /prettier-plugin-svelte@3.1.0(prettier@3.1.0)(svelte@5.0.0-next.12):
+    resolution: {integrity: sha512-96+AZxs2ESqIFA9j+o+DHqY+BsUglezfl553LQd6VOtTyJq5GPuBEb3ElxF2cerFzKlYKttlH/VcVmRNj5oc3A==}
+    peerDependencies:
+      prettier: ^3.0.0
+      svelte: ^3.2.0 || ^4.0.0-next.0 || ^5.0.0-next.0
+    dependencies:
+      prettier: 3.1.0
+      svelte: 5.0.0-next.12
+    dev: true
+
   /prettier-plugin-svelte@3.1.0(prettier@3.1.0)(svelte@5.0.0-next.8):
     resolution: {integrity: sha512-96+AZxs2ESqIFA9j+o+DHqY+BsUglezfl553LQd6VOtTyJq5GPuBEb3ElxF2cerFzKlYKttlH/VcVmRNj5oc3A==}
     peerDependencies:
@@ -10751,6 +10836,23 @@ packages:
       svelte: 4.2.5
     dev: true
 
+  /svelte-eslint-parser@0.33.1(svelte@5.0.0-next.12):
+    resolution: {integrity: sha512-vo7xPGTlKBGdLH8T5L64FipvTrqv3OQRx9d2z5X05KKZDlF4rQk8KViZO4flKERY+5BiVdOh7zZ7JGJWo5P0uA==}
+    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    peerDependencies:
+      svelte: ^3.37.0 || ^4.0.0
+    peerDependenciesMeta:
+      svelte:
+        optional: true
+    dependencies:
+      eslint-scope: 7.2.2
+      eslint-visitor-keys: 3.4.3
+      espree: 9.6.1
+      postcss: 8.4.31
+      postcss-scss: 4.0.9(postcss@8.4.31)
+      svelte: 5.0.0-next.12
+    dev: true
+
   /svelte-eslint-parser@0.33.1(svelte@5.0.0-next.8):
     resolution: {integrity: sha512-vo7xPGTlKBGdLH8T5L64FipvTrqv3OQRx9d2z5X05KKZDlF4rQk8KViZO4flKERY+5BiVdOh7zZ7JGJWo5P0uA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
@@ -10936,6 +11038,24 @@ packages:
       locate-character: 3.0.0
       magic-string: 0.30.5
       periscopic: 3.1.0
+    dev: true
+
+  /svelte@5.0.0-next.12:
+    resolution: {integrity: sha512-vdO72COF59XERYoVRSxyMloa0JYUts3Bkx5QAk3CmgtAKsp4o5pXx8NF6IkPjIIWoNRi5TqBs659KG6IRSIgTw==}
+    engines: {node: '>=18'}
+    dependencies:
+      '@ampproject/remapping': 2.2.1
+      '@jridgewell/sourcemap-codec': 1.4.15
+      acorn: 8.11.2
+      acorn-typescript: 1.4.11(acorn@8.11.2)
+      aria-query: 5.3.0
+      axobject-query: 4.0.0
+      esm-env: 1.0.0
+      esrap: 1.2.0
+      is-reference: 3.0.2
+      locate-character: 3.0.0
+      magic-string: 0.30.5
+      zimmerframe: 1.1.0
     dev: true
 
   /svelte@5.0.0-next.8:
