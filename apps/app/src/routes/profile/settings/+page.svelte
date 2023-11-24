@@ -3,7 +3,11 @@
 
     let user = {
         username: "Jordan",
+        email: "jabeddou@gmail.com",
+        date: "Aug 2023"
     };
 </script>
 
-<ProfileSettings {user}/>
+<div class="container">
+    <ProfileSettings {user}/>
+</div>

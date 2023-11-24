@@ -2,7 +2,7 @@
   import Profile from "$lib/containers/profile/Profile.svelte";
 
   let user = {
-    username: "Jordan",
+    username: "Jordan"
   };
 
 </script>

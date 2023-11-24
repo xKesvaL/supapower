@@ -6,17 +6,25 @@
 
     interface User {
         username: string;
+        email: string;
+        date: string;
     }
 
     export let user: User;
 </script>
 
-<div class="container">
+
+<div class="pb-5">
     <SettingsCard {user}/>
-
+</div>
+<div class="py-5">
     <SettingsAccount />
-
+</div>
+<div class="py-5">
     <SettingsPreferences />
-
+</div>
+<div class="pt-5">
     <SettingsHelp />
 </div>
+
+
