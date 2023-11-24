@@ -7,17 +7,29 @@
 
   // ! TODO: Set lang based on firebase user data
   import nprogress from "nprogress";
-  import { onMount } from "svelte";
+  import { onDestroy, onMount } from "svelte";
   import { setupViewTransition } from "sveltekit-view-transition";
 
-  import { preloadCode } from "$app/navigation";
+  import { goto, preloadCode } from "$app/navigation";
   import { navigating, page } from "$app/stores";
   import { BRAND } from "$lib/CONFIG";
   import { PAGES } from "$lib/ROUTES";
-  import { type DisplayMode, setDisplayMode, setOnline, setPromptEvent } from "$lib/utils/context";
+  import {
+    type DisplayMode,
+    setDisplayMode,
+    setOnline,
+    setPromptEvent,
+    setUser,
+  } from "$lib/utils/context";
+  import { auth } from "$lib/utils/firebase";
+  import { UserState } from "firebase-svelte";
+  import { signInAnonymously, signOut } from "firebase/auth";
+  import { browser } from "$app/environment";
 
   nprogress.configure({ easing: "ease", minimum: 0.2, speed: 600 });
-  $: $navigating ? nprogress.start() : nprogress.done();
+  $effect(() => {
+    $navigating ? nprogress.start() : nprogress.done();
+  });
 
   let online = true;
   let displayMode: DisplayMode = "browser";
@@ -27,7 +39,7 @@
       displayMode = event.matches ? "standalone" : "browser";
     });
 
-    preloadCode(PAGES._ROOT());
+    preloadCode(PAGES._ROOT(), PAGES.nutrition(), PAGES.train(), PAGES.profile());
   });
 
   const onBeforeInstallPrompt = (event: Event) => {
@@ -43,10 +55,25 @@
     online = false;
   };
 
-  $: setDisplayMode(displayMode);
-  $: setOnline(online);
+  $effect(() => setDisplayMode(displayMode));
+  $effect(() => setOnline(online));
 
   setupViewTransition();
+
+  let userState = new UserState(auth);
+
+  $effect(() => {
+    setUser(userState);
+    console.log(userState.user);
+    console.log(userState.loading);
+    if (browser && !userState.loading && !userState.user) {
+      goto(PAGES.login());
+    }
+  });
+
+  onDestroy(() => {
+    userState.unsubscribe();
+  });
 </script>
 
 <svelte:window
@@ -123,5 +150,10 @@
     />
   {/each} -->
 </svelte:head>
+
+<button onclick={async () => await signInAnonymously(auth)}> Sign in </button>
+<button onclick={async () => await signOut(auth)}> Sign out </button>
+
+{JSON.stringify(userState.user)}
 
 <slot />
