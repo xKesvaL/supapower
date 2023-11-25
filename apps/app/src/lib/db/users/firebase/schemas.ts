@@ -1,6 +1,7 @@
-/* eslint-disable @typescript-eslint/no-magic-numbers */
 /* eslint-disable camelcase */
 import * as z from "zod";
+
+import { AUTH_PASSWORD_MAX_LENGTH, AUTH_PASSWORD_MIN_LENGTH } from "./types";
 
 export const UserFirebaseSchema = z.object({
   email: z
@@ -16,10 +17,10 @@ export const UserFirebaseSchema = z.object({
       required_error: "auth_error_password_required",
       invalid_type_error: "auth_error_password_invalid",
     })
-    .min(8, {
+    .min(AUTH_PASSWORD_MIN_LENGTH, {
       message: "auth_error_password_min",
     })
-    .max(32, {
+    .max(AUTH_PASSWORD_MAX_LENGTH, {
       message: "auth_error_password_max",
     }),
 });

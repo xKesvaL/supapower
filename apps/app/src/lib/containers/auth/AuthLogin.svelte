@@ -13,6 +13,8 @@
   import { formatZodError, gotoFrel } from "$lib/utils/functions";
   import { authLoginWithPassword } from "$lib/db/users/firebase/actions";
   import type { AuthError } from "$lib/db/users/firebase/types";
+  import { blur } from "svelte/transition";
+  import { Loader } from "ui/components";
 
   let passwordShown = $state(false);
   let fieldErrors = $state<FormattedZodError>({});
@@ -44,6 +46,8 @@
       return;
     }
 
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
     const authRes = await authLoginWithPassword(schemaRes.data.email, schemaRes.data.password);
 
     if (authRes.error) {
@@ -74,6 +78,11 @@
           placeholder={m.auth_email_placeholder()}
           autocomplete="email"
         />
+        {#if fieldErrors.email}
+          <span class="error" transition:blur={{ duration: 300 }}>
+            {m[fieldErrors.email.message]()}
+          </span>
+        {/if}
       </Label>
       <Label class="flex w-full flex-col gap-1">
         <div class="flex justify-between">
@@ -106,12 +115,24 @@
             {/if}
           </Button>
         </div>
+        {#if fieldErrors.password}
+          <span class="error" transition:blur={{ duration: 300 }}>
+            {m[fieldErrors.password.message]()}
+          </span>
+        {/if}
       </Label>
     </div>
 
     <div class="flex w-full flex-col gap-2">
-      <Button class="w-full">
+      {#snippet defaultState()}
         {m.auth_login_action()}
+      {/snippet}
+      <Button class="w-full" type="submit" disabled={loading}>
+        {#if loading}
+          <Loader {defaultState} />
+        {:else}
+          {@render defaultState()}
+        {/if}
       </Button>
       <Button class="flex w-full gap-2" variant="secondary">
         <div class="h-5 w-5">
@@ -119,6 +140,11 @@
         </div>
         {m.auth_login_action_with({ provider: "Google" })}
       </Button>
+      {#if authError}
+        <span class="error text-center" transition:blur={{ duration: 300 }}
+          >{m[authError.code]()}</span
+        >
+      {/if}
     </div>
   </form>
 </AuthBase>
