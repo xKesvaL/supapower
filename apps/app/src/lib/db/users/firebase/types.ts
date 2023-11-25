@@ -8,35 +8,35 @@ export interface AuthErrorBase {
 }
 
 export type AuthErrorCodeLogin =
-  | "auth/invalid-email"
-  | "auth/user-disabled"
-  | "auth/user-not-found"
-  | "auth/wrong-password";
+  | "auth/invalid_email"
+  | "auth/user_disabled"
+  | "auth/user_not_found"
+  | "auth/wrong_password";
 
 export type AuthErrorCodeRegister =
-  | "auth/email-already-in-use"
-  | "auth/invalid-email"
-  | "auth/operation-not-allowed"
-  | "auth/weak-password";
+  | "auth/email_already_in_use"
+  | "auth/invalid_email"
+  | "auth/operation_not_allowed"
+  | "auth/weak_password";
 
 export type AuthErrorCodeReauth =
-  | "auth/invalid-credential"
-  | "auth/invalid-email"
-  | "auth/invalid-verification-code"
-  | "auth/invalid-verification-id"
-  | "auth/user-mismatch"
-  | "auth/user-not-found"
-  | "auth/wrong-password";
+  | "auth/invalid_credential"
+  | "auth/invalid_email"
+  | "auth/invalid_verification_code"
+  | "auth/invalid_verification_id"
+  | "auth/user_mismatch"
+  | "auth/user_not_found"
+  | "auth/wrong_password";
 
 export type AuthErrorCodePopup =
-  | "auth/account-exists-with-different-credential"
-  | "auth/auth-domain-config-required"
-  | "auth/cancelled-popup-request"
-  | "auth/operation-not-allowed"
-  | "auth/operation-not-supported-in-this-environment"
-  | "auth/popup-blocked"
-  | "auth/popup-closed-by-user"
-  | "auth/unauthorized-domain";
+  | "auth/account_exists_with_different_credential"
+  | "auth/auth_domain_config_required"
+  | "auth/cancelled_popup_request"
+  | "auth/operation_not_allowed"
+  | "auth/operation_not_supported_in_this_environment"
+  | "auth/popup_blocked"
+  | "auth/popup_closed_by_user"
+  | "auth/unauthorized_domain";
 
 export type UserStore = Readable<User | null | undefined>;
 
