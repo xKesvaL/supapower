@@ -7,17 +7,30 @@
 
   // ! TODO: Set lang based on firebase user data
   import nprogress from "nprogress";
-  import { onMount } from "svelte";
+  import { onDestroy, onMount } from "svelte";
   import { setupViewTransition } from "sveltekit-view-transition";
 
-  import { preloadCode } from "$app/navigation";
+  import { goto, preloadCode } from "$app/navigation";
   import { navigating, page } from "$app/stores";
   import { BRAND } from "$lib/CONFIG";
   import { PAGES } from "$lib/ROUTES";
-  import { type DisplayMode, setDisplayMode, setOnline, setPromptEvent } from "$lib/utils/context";
+  import {
+    type DisplayMode,
+    setDisplayMode,
+    setOnline,
+    setPromptEvent,
+    setUser,
+  } from "$lib/utils/context";
+  import { auth } from "$lib/utils/firebase";
+  import { UserState } from "firebase-svelte";
+  import { signInAnonymously, signOut } from "firebase/auth";
+  import { browser } from "$app/environment";
+  import Navigation from "$lib/containers/layout/Navigation.svelte";
 
   nprogress.configure({ easing: "ease", minimum: 0.2, speed: 600 });
-  $: $navigating ? nprogress.start() : nprogress.done();
+  $effect(() => {
+    $navigating ? nprogress.start() : nprogress.done();
+  });
 
   let online = true;
   let displayMode: DisplayMode = "browser";
@@ -27,7 +40,7 @@
       displayMode = event.matches ? "standalone" : "browser";
     });
 
-    preloadCode(PAGES._ROOT());
+    preloadCode(PAGES._ROOT(), PAGES.nutrition(), PAGES.train(), PAGES.profile());
   });
 
   const onBeforeInstallPrompt = (event: Event) => {
@@ -43,8 +56,23 @@
     online = false;
   };
 
-  $: setDisplayMode(displayMode);
-  $: setOnline(online);
+  $effect(() => setDisplayMode(displayMode));
+  $effect(() => setOnline(online));
+
+  const userState = new UserState(auth);
+
+  $effect(() => {
+    setUser(userState);
+
+    if (
+      browser &&
+      !userState.loading &&
+      !userState.user &&
+      !$page.url.pathname.startsWith(PAGES.auth())
+    ) {
+      goto(PAGES.auth_login({ frel: $page.url.pathname }));
+    }
+  });
 
   setupViewTransition();
 </script>
@@ -115,13 +143,16 @@
 
   <!-- Href langs -->
   <link href={$page.url.pathname} hreflang="x-default" rel="alternate" />
-  <!-- {#each $locales as locale}
-    <link
-      href={`/${locale}${$page.url.pathname === "/" ? "" : $page.url.pathname}?owlang=true`}
-      hreflang={locale}
-      rel="alternate"
-    />
-  {/each} -->
 </svelte:head>
 
-<slot />
+<div class="lg:flex">
+  <Navigation />
+
+  <div class="lg:flex-grow">
+    {#if userState.loading}
+      loading...
+    {:else}
+      <slot />
+    {/if}
+  </div>
+</div>

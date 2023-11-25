@@ -15,8 +15,8 @@ export default defineConfig({
       format: "_",
     }),
     watch({
-      pattern: "src/lang",
-      command: "paraglide-js compile --project ./project.inlang.json",
+      pattern: "../../packages/lang/*.json",
+      command: "paraglide-js compile --project ../../project.inlang.json",
     }),
   ],
 
