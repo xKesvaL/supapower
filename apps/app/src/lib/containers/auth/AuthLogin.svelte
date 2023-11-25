@@ -70,6 +70,7 @@
         <Input
           type="email"
           class="placeholder:text-muted-foreground/50"
+          name="email"
           placeholder={m.auth_email_placeholder()}
           autocomplete="email"
         />
@@ -87,6 +88,7 @@
           <Input
             type={passwordShown ? "text" : "password"}
             class="placeholder:text-muted-foreground/50"
+            name="password"
             placeholder={m.auth_password_placeholder()}
             autocomplete="current-password"
           />
