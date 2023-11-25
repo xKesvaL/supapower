@@ -145,14 +145,14 @@
 </svelte:head>
 
 <div class="lg:flex">
-  {#if !userState.user}
-    <Navigation />
-  {/if}
-
   <div class="lg:flex-grow">
     {#if userState.loading}
       loading...
     {:else}
+      {#if userState.user}
+        <Navigation />
+      {/if}
+
       <slot />
     {/if}
   </div>

@@ -36,5 +36,6 @@
   "nutrition_title": "Nutrition",
   "train_title": "Train",
   "profile_title": "Profile",
-  "admin_title": "Admin"
+  "admin_title": "Admin",
+  "save": "Save"
 }

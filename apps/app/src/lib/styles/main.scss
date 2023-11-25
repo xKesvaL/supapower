@@ -120,3 +120,23 @@ section.section {
   font-weight: 400;
   text-wrap: balance;
 }
+
+header.page-header {
+  @apply mx-auto grid w-full max-w-[1280px] grid-cols-[1fr,auto,1fr] gap-2 py-3 pl-4 pr-2;
+
+  div {
+    @apply flex items-center;
+  }
+
+  :nth-child(1) {
+    @apply justify-start;
+  }
+
+  :nth-child(2) {
+    @apply justify-center;
+  }
+
+  :nth-child(3) {
+    @apply justify-end;
+  }
+}

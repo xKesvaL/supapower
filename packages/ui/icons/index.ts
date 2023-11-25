@@ -1,3 +1,4 @@
+export { default as IconArrowLeft } from "./arrow-left.svelte";
 export { default as IconArrowUpLeft } from "./arrow-up-left.svelte";
 export { default as IconBarbell } from "./barbell.svelte";
 export { default as IconBell } from "./bell.svelte";
