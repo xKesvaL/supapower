@@ -31,5 +31,10 @@
   "auth_popup_closed_by_user": "Pop_up fermé. Veuillez réessayer.",
   "auth_unauthorized_domain": "Domaine non autorisé. Veuillez contacter un administrateur.",
   "auth_email_already_in_use": "Email déjà utilisé. Pensez plutôt à vous connecter ou à utiliser une autre adresse e-mail.",
-  "auth_weak_password": "Mot de passe faible. Veuillez réessayer."
+  "auth_weak_password": "Mot de passe faible. Veuillez réessayer.",
+  "home_title": "Accueil",
+  "nutrition_title": "Nutrition",
+  "train_title": "S'entraîner",
+  "profile_title": "Profil",
+  "admin_title": "Admin"
 }
