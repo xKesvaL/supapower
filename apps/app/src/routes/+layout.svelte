@@ -60,7 +60,7 @@
 
   setupViewTransition();
 
-  let userState = new UserState(auth);
+  const userState = new UserState(auth);
 
   $effect(() => {
     setUser(userState);
