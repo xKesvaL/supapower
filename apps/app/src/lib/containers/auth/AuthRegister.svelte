@@ -8,6 +8,16 @@
   import { createUserWithEmailAndPassword } from "firebase/auth";
   import { auth } from "$lib/utils/firebase";
   import { gotoFrel } from "$lib/utils/functions";
+  import { getUser } from "$lib/utils/context";
+  import { browser } from "$app/environment";
+
+  let userState = getUser();
+
+  $effect(() => {
+    if (browser && !userState.loading && userState.user) {
+      gotoFrel($page);
+    }
+  });
 
   const register = async (e: SubmitEvent) => {
     e.preventDefault();

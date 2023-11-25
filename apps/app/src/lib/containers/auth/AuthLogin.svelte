@@ -15,11 +15,21 @@
   import type { AuthError } from "$lib/db/users/firebase/types";
   import { blur } from "svelte/transition";
   import { Loader } from "ui/components";
+  import { getUser } from "$lib/utils/context";
+  import { browser } from "$app/environment";
+  import { goto } from "$app/navigation";
 
   let passwordShown = $state(false);
   let fieldErrors = $state<FormattedZodError>({});
   let authError = $state<AuthError | null>(null);
   let loading = $state(false);
+  let userState = getUser();
+
+  $effect(() => {
+    if (browser && !userState.loading && userState.user) {
+      gotoFrel($page);
+    }
+  });
 
   const togglePassword = (e: MouseEvent) => {
     e.preventDefault();
