@@ -40,7 +40,7 @@
       {#snippet defaultState()}
         {m.save()}
       {/snippet}
-      <Button onclick={onSave} disabled={!saveButtonEnabled}>
+      <Button onclick={onSave} size="sm" disabled={!saveButtonEnabled}>
         {#if loading}
           <Loader {defaultState} />
         {:else}
