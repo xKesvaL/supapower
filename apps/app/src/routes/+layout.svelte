@@ -7,7 +7,7 @@
 
   // ! TODO: Set lang based on firebase user data
   import nprogress from "nprogress";
-  import { onDestroy, onMount } from "svelte";
+  import { onMount } from "svelte";
   import { setupViewTransition } from "sveltekit-view-transition";
 
   import { goto, preloadCode } from "$app/navigation";
@@ -23,7 +23,6 @@
   } from "$lib/utils/context";
   import { auth } from "$lib/utils/firebase";
   import { UserState } from "firebase-svelte";
-  import { signInAnonymously, signOut } from "firebase/auth";
   import { browser } from "$app/environment";
   import Navigation from "$lib/containers/layout/Navigation.svelte";
 
@@ -146,7 +145,9 @@
 </svelte:head>
 
 <div class="lg:flex">
-  <Navigation />
+  {#if !userState.user}
+    <Navigation />
+  {/if}
 
   <div class="lg:flex-grow">
     {#if userState.loading}
