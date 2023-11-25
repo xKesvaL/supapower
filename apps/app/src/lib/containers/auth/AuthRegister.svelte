@@ -31,8 +31,10 @@
   <br />
   this is only here to make the app work for now
   <form onsubmit={register}>
-    <input type="email" name="email" />
-    <input type="password" name="password" />
+    <span> email </span>
+    <input class="border" type="email" name="email" />
+    <span> password </span>
+    <input class="border" type="password" name="password" />
     <button> register </button>
   </form>
 </AuthBase>
