@@ -11,31 +11,46 @@
 <nav
   class="fixed bottom-0 left-0 right-0 z-10 flex h-12 items-center justify-around lg:sticky lg:bottom-auto lg:right-auto lg:top-0 lg:h-screen lg:min-w-[12rem] lg:flex-col lg:items-start lg:justify-start"
 >
-  <NavigationLink href={PAGES._ROOT()} startsWith={false}>
+  <NavigationLink href={PAGES._ROOT()} active={$page.url.pathname === PAGES._ROOT()}>
     {#snippet icon()}
       <IconHome />
     {/snippet}
     <span>{m.home_title()}</span>
   </NavigationLink>
 
-  <a href={PAGES.nutrition()} class:active={$page.url.pathname.startsWith(PAGES.nutrition())}>
-    <div class="icon">
+  <NavigationLink
+    href={PAGES.nutrition()}
+    active={$page.url.pathname.startsWith(PAGES.nutrition())}
+  >
+    {#snippet icon()}
       <IconSoup />
-    </div>
+    {/snippet}
     <span>{m.nutrition_title()}</span>
-  </a>
-  <a href={PAGES.train()} class:active={$page.url.pathname.startsWith(PAGES.train())}>
-    <div class="icon">
+  </NavigationLink>
+
+  <NavigationLink href={PAGES.train()} active={$page.url.pathname.startsWith(PAGES.train())}>
+    {#snippet icon()}
       <IconBarbell />
-    </div>
+    {/snippet}
     <span>{m.train_title()}</span>
-  </a>
-  <a href={PAGES.profile()} class:active={$page.url.pathname.startsWith(PAGES.profile())}>
-    <div class="icon">
+  </NavigationLink>
+
+  <NavigationLink href={PAGES.profile()} active={$page.url.pathname.startsWith(PAGES.profile())}>
+    {#snippet icon()}
       <IconUser />
-    </div>
+    {/snippet}
     <span>{m.profile_title()}</span>
-  </a>
+  </NavigationLink>
+
+  <!-- {#if $userData.type === 'admin'}
+    <NavigationLink href={PAGES.admin()} active={$page.url.pathname.startsWith(PAGES.admin())}>
+      {#snippet icon()}
+        <IconTool />
+      {/snippet}
+      <span>{m.admin_title()}</span>
+    </NavigationLink>
+  {/if} -->
+
   <!-- {#if $userData.type === 'admin'}
 		<a href={PAGES.admin()} class:active={$page.url.pathname.startsWith(PAGES.admin())}>
 			<div class="icon">

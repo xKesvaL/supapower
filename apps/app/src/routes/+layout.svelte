@@ -59,8 +59,6 @@
   $effect(() => setDisplayMode(displayMode));
   $effect(() => setOnline(online));
 
-  setupViewTransition();
-
   const userState = new UserState(auth);
 
   $effect(() => {
@@ -75,6 +73,8 @@
       goto(PAGES.auth_login({ frel: $page.url.pathname }));
     }
   });
+
+  setupViewTransition();
 </script>
 
 <svelte:window
@@ -145,10 +145,14 @@
   <link href={$page.url.pathname} hreflang="x-default" rel="alternate" />
 </svelte:head>
 
-{#if userState.loading}
-  loading...
-{:else}
-  <slot />
-{/if}
+<div class="lg:flex">
+  <Navigation />
 
-<Navigation />
+  <div class="lg:flex-grow">
+    {#if userState.loading}
+      loading...
+    {:else}
+      <slot />
+    {/if}
+  </div>
+</div>

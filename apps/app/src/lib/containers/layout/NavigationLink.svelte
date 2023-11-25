@@ -5,14 +5,10 @@
     href: string;
     children?: any;
     icon: any;
-    startsWith?: boolean;
+    active: boolean;
   }
 
-  let { href, children, icon, startsWith = true } = $props<Props>();
-
-  let active = $derived(
-    startsWith ? $page.url.pathname.startsWith(href) : $page.url.pathname === href,
-  );
+  let { href, children, icon, active } = $props<Props>();
 </script>
 
 <a
