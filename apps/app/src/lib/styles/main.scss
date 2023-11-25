@@ -122,7 +122,7 @@ section.section {
 }
 
 header.page-header {
-  @apply mx-auto grid w-full max-w-[1280px] grid-cols-[1fr,auto,1fr] gap-2 py-3 pl-4 pr-2;
+  @apply mx-auto grid w-full max-w-[1280px] grid-cols-[1fr,auto,1fr] items-center gap-2 py-3 pl-2 pr-3;
 
   div {
     @apply flex items-center;

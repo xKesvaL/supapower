@@ -4,6 +4,7 @@ import type { ZodError } from "zod";
 import { goto } from "$app/navigation";
 import { PAGES } from "$lib/ROUTES";
 import type { FormattedZodError } from "$lib/typings/standard";
+import { browser } from "$app/environment";
 
 export const formatZodError = (error: ZodError): FormattedZodError =>
   error.errors.reduce<FormattedZodError>((accumulator, current) => {
@@ -21,4 +22,12 @@ export const formatZodError = (error: ZodError): FormattedZodError =>
 export const gotoFrel = async (page: Page<{ [key: string]: string }>) => {
   // eslint-disable-next-line no-underscore-dangle, @typescript-eslint/no-unsafe-argument
   await goto(page.data.frel ?? PAGES._ROOT());
+};
+
+export const goBack = (event: MouseEvent) => {
+  event.preventDefault();
+
+  if (browser) {
+    window.history.back();
+  }
 };

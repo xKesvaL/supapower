@@ -19,7 +19,7 @@
       {@render children()}
     </div>
   </div>
-  <div class="w-8 text-muted-foreground">
+  <div class="text-muted-foreground w-8">
     <IconChevronRight />
   </div>
 </a>
