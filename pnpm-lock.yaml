@@ -33,6 +33,9 @@ importers:
 
   apps/app:
     devDependencies:
+      '@formkit/auto-animate':
+        specifier: ^0.8.1
+        version: 0.8.1
       '@inlang/paraglide-js':
         specifier: 1.0.0-prerelease.9
         version: 1.0.0-prerelease.9
@@ -1860,6 +1863,10 @@ packages:
     resolution: {integrity: sha512-txaaE2fiBMagLrR4jYhxzFO6wEdEG4TPMqrzBAcbr4HFUYzH/YC+lg6OIzKCHm8WgDdyQevxbAAV1OgcXctuGw==}
     dependencies:
       tslib: 2.6.2
+    dev: true
+
+  /@formkit/auto-animate@0.8.1:
+    resolution: {integrity: sha512-0/Z2cuNXWVVIG/l0SpcHAWFhGdvLJ8DRvEfRWvmojtmRWfEy+LWNwgDazbZqY0qQYtkHcoEK3jBLkhiZaB/4Ig==}
     dev: true
 
   /@grpc/grpc-js@1.9.11:

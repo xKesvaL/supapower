@@ -144,4 +144,8 @@
   <link href={$page.url.pathname} hreflang="x-default" rel="alternate" />
 </svelte:head>
 
-<slot />
+{#if userState.loading}
+  loading...
+{:else}
+  <slot />
+{/if}

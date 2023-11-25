@@ -6,6 +6,7 @@
     href?: string | null;
     class?: string;
     classBg?: string;
+    style?: string;
     styleBg?: string;
     scale?: number;
     defaultBorder?: boolean;
@@ -17,6 +18,7 @@
     href = null,
     class: classes = "",
     classBg = "",
+    style = "",
     styleBg = "",
     scale = 1.02,
     defaultBorder = true,
@@ -52,9 +54,9 @@
   class:border={defaultBorder}
   role={href ? "link" : "none"}
   onmousemove={onHover}
-  style="--cg-sc: {scale}; --cg-st: {strength}"
+  style="--cg-sc: {scale}; --cg-st: {strength}; {style}"
 >
-  <div class="card-bg-img flex h-full flex-col p-4 transition-all {classBg}" style={styleBg}>
+  <div class="card-bg-img {classBg}" style={styleBg}>
     <slot />
   </div>
 </svelte:element>
@@ -66,7 +68,7 @@
 
     --drop-color: var(--primary);
 
-    background: hsl(var(--base-300) / 0.25);
+    background: hsl(var(--card) / 1);
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -75,10 +77,10 @@
     transition: all 0.2s ease-in-out;
 
     &.border {
-      border-color: hsl(var(--foreground) / 0.1);
+      border-color: hsl(var(--foreground) / 0.3);
 
       &:hover {
-        border-color: hsl(var(--foreground) / 0.3);
+        border-color: hsl(var(--foreground) / 0.6);
       }
     }
 
@@ -87,6 +89,10 @@
     }
 
     &-bg-img {
+      height: 100%;
+      width: 100%;
+      transition: all 0.2s ease-in-out;
+
       &:hover {
         background-color: rgba(var(--base-200-rgb), 0.3);
         background-image: radial-gradient(

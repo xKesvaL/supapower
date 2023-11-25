@@ -75,6 +75,14 @@ const config = {
         sans: ["var(--font-sans)"],
         title: ["var(--font-title)"],
       },
+      boxShadow: {
+        out: "0 0 4px 0 var(--sdw-out)",
+        "out-sm": "0 0 2px 0 var(--sdw-out)",
+        "out-md": "0 0 6px 0 var(--sdw-out)",
+        "out-lg": "0 0 12px 0 var(--sdw-out)",
+        "out-xl": "0 0 18px 0 var(--sdw-out)",
+        "out-2xl": "0 0 24px 0 var(--sdw-out)",
+      },
     },
   },
 };
