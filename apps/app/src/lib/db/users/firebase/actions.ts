@@ -21,7 +21,7 @@ export const authLoginWithPassword = async (
       res = {
         success: false,
         error: {
-          code: e.code.replaceAll("-", "_"),
+          code: e.code.replaceAll("-", "_").replaceAll("/", "_"),
           type: "login",
         },
       };

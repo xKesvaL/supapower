@@ -10,7 +10,7 @@
   import { IconCustomGoogle, IconEye, IconEyeOff } from "ui/icons";
   import { UserFirebaseSchema } from "$lib/db/users/firebase/schemas";
   import type { FormattedZodError } from "$lib/typings/standard";
-  import { formatZodError, gotoFrel } from "$lib/utils/functions";
+  import { formatZodError, getI18n, gotoFrel } from "$lib/utils/functions";
   import { authLoginWithPassword } from "$lib/db/users/firebase/actions";
   import type { AuthError } from "$lib/db/users/firebase/types";
   import { blur } from "svelte/transition";
@@ -62,6 +62,7 @@
 
     if (authRes.error) {
       authError = authRes.error;
+      console.log(authRes.error);
     } else {
       await gotoFrel($page);
     }
@@ -90,7 +91,7 @@
         />
         {#if fieldErrors.email}
           <span class="error" transition:blur={{ duration: 300 }}>
-            {m[fieldErrors.email.message]()}
+            {getI18n(fieldErrors.email.message)}
           </span>
         {/if}
       </Label>
@@ -127,7 +128,7 @@
         </div>
         {#if fieldErrors.password}
           <span class="error" transition:blur={{ duration: 300 }}>
-            {m[fieldErrors.password.message]()}
+            {getI18n(fieldErrors.password.message)}
           </span>
         {/if}
       </Label>
@@ -152,7 +153,7 @@
       </Button>
       {#if authError}
         <span class="error text-center" transition:blur={{ duration: 300 }}
-          >{m[authError.code]()}</span
+          >{getI18n(authError.code)}</span
         >
       {/if}
     </div>

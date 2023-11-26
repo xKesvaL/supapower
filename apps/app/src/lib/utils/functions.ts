@@ -1,10 +1,11 @@
 import type { Page } from "@sveltejs/kit";
 import type { ZodError } from "zod";
 
+import { browser } from "$app/environment";
 import { goto } from "$app/navigation";
 import { PAGES } from "$lib/ROUTES";
 import type { FormattedZodError } from "$lib/typings/standard";
-import { browser } from "$app/environment";
+import * as m from "$paraglide/messages";
 
 export const formatZodError = (error: ZodError): FormattedZodError =>
   error.errors.reduce<FormattedZodError>((accumulator, current) => {
@@ -30,4 +31,15 @@ export const goBack = (event: MouseEvent) => {
   if (browser) {
     window.history.back();
   }
+};
+
+export const i18nKeys = Object.keys(m);
+
+export const getI18n = (key: string, args?: { [key: string]: unknown }) => {
+  if (i18nKeys.includes(key)) {
+    // @ts-expect-error args aren't needed for all keys
+    return m[key as keyof typeof m](args);
+  }
+
+  return key;
 };
