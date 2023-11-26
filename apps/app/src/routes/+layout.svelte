@@ -69,7 +69,7 @@
       !userState.user &&
       !$page.url.pathname.startsWith(PAGES.auth())
     ) {
-      goto(PAGES.auth_login({ frel: $page.url.pathname }));
+      goto(PAGES.auth_register({ frel: $page.url.pathname }));
     }
   });
 
