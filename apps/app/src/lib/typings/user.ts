@@ -9,3 +9,5 @@ export const USER_WORKOUT_TYPES = [
   "calisthenics",
   "sculpting",
 ] as const;
+export const USER_EQUIPMENT = ["full_gym", "garage_gym", "dumbbells", "at_home"] as const;
+export const USER_EXPERIENCE = ["beginner", "intermediate", "advanced"] as const;

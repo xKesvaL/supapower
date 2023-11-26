@@ -43,3 +43,16 @@ export const getI18n = (key: string, args?: { [key: string]: unknown }) => {
 
   return key;
 };
+
+export const transition = async (action: () => Promise<void>) => {
+  // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
+  if (!document.startViewTransition) {
+    await action();
+    return;
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return, consistent-return, @typescript-eslint/no-unsafe-call
+  return document.startViewTransition(async () => {
+    await action();
+  });
+};

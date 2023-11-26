@@ -1,7 +1,7 @@
 <script lang="ts">
 </script>
 
-<section class="container flex min-h-screen flex-col items-center justify-center gap-2">
+<section class="flex min-h-screen flex-col items-center justify-center gap-2">
   <slot />
 </section>
 
