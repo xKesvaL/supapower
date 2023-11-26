@@ -17,7 +17,6 @@
   import { Loader } from "ui/components";
   import { getUser } from "$lib/utils/context";
   import { browser } from "$app/environment";
-  import { goto } from "$app/navigation";
 
   let passwordShown = $state(false);
   let fieldErrors = $state<FormattedZodError>({});
