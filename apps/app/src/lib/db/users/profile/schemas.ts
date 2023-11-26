@@ -25,8 +25,7 @@ export const UserProfileSchema = z.object({
   workout: z.object({
     // eslint-disable-next-line @typescript-eslint/no-magic-numbers
     frequencies: z.array(z.number().gte(2).lte(6)).max(3).min(1),
-    // eslint-disable-next-line @typescript-eslint/no-magic-numbers
-    types: z.array(z.enum(USER_WORKOUT_TYPES)).max(3).min(1),
+    type: z.enum(USER_WORKOUT_TYPES),
     equipment: z.enum(USER_EQUIPMENT),
     experience: z.enum(USER_EXPERIENCE),
   }),

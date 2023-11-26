@@ -24,3 +24,9 @@
   </h1>
   <div />
 </header>
+
+<style>
+  header {
+    view-transition-name: register-flow-header;
+  }
+</style>

@@ -2,12 +2,13 @@
   interface Props {
     steps: readonly string[];
     activeStep: number;
+    viewTransitionName?: string;
   }
 
-  let { steps, activeStep } = $props<Props>();
+  let { steps, activeStep, viewTransitionName = "steps" } = $props<Props>();
 </script>
 
-<div class="steps">
+<div class="steps" style="view-transition-name: {viewTransitionName}">
   {#each steps as _step, i}
     <div class="step" class:active={i < activeStep}></div>
   {/each}
