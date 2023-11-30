@@ -12,8 +12,9 @@
   }
 
   let { onNext, goal } = $props<Props>();
+  let disabled = $derived(goal === null);
 </script>
 
 <AuthRegisterSelect title="test" options={USER_WORKOUT_TYPES} bind:selected={goal} />
 
-<AuthRegisterNextButton {onNext} />
+<AuthRegisterNextButton {onNext} {disabled} />

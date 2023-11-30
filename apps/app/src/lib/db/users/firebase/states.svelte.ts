@@ -8,5 +8,5 @@ export class RegisterState {
 
   public equipment: UserProfile["workout"]["equipment"] | null = $state(null);
 
-  public frequencies: UserProfile["workout"]["frequencies"] | null = $state(null);
+  public frequencies: UserProfile["workout"]["frequencies"] = $state([]);
 }

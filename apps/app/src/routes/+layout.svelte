@@ -25,6 +25,7 @@
   import { UserState } from "firebase-svelte";
   import { browser } from "$app/environment";
   import Navigation from "$lib/containers/layout/Navigation.svelte";
+  import type { UserProfile } from "$lib/db/users/profile/types";
 
   nprogress.configure({ easing: "ease", minimum: 0.2, speed: 600 });
   $effect(() => {

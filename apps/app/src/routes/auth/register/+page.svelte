@@ -5,7 +5,7 @@
   import AuthRegisterExperience from "$lib/containers/auth/register/AuthRegisterExperience.svelte";
   import AuthRegisterEquipment from "$lib/containers/auth/register/AuthRegisterEquipment.svelte";
   import AuthRegisterFrequency from "$lib/containers/auth/register/AuthRegisterFrequency.svelte";
-  import AuthRegisterComplete from "$lib/containers/auth/register/AuthRegisterFrequency copy.svelte";
+  import AuthRegisterComplete from "$lib/containers/auth/register/AuthRegisterComplete.svelte";
   import { HorizontalSteps } from "ui/components";
   import { transition } from "$lib/utils/functions";
   import { RegisterState } from "$lib/db/users/firebase/states.svelte";
@@ -51,6 +51,13 @@
       currentState = hash;
     });
   };
+
+  $effect(() => {
+    console.log(registerState.goal);
+    console.log(registerState.experience);
+    console.log(registerState.equipment);
+    console.log(registerState.frequencies);
+  });
 </script>
 
 <svelte:window onhashchange={onHashChange} />
@@ -71,11 +78,11 @@
       {:else if currentState === "goal"}
         <AuthRegisterGoal bind:goal={registerState.goal} {onNext} />
       {:else if currentState === "experience"}
-        <AuthRegisterExperience {onNext} />
+        <AuthRegisterExperience bind:experience={registerState.experience} {onNext} />
       {:else if currentState === "equipment"}
-        <AuthRegisterEquipment {onNext} />
+        <AuthRegisterEquipment bind:equipment={registerState.equipment} {onNext} />
       {:else if currentState === "frequency"}
-        <AuthRegisterFrequency {onNext} />
+        <AuthRegisterFrequency bind:frequencies={registerState.frequencies} {onNext} />
       {:else if currentState === "complete"}
         <AuthRegisterComplete {onNext} />
       {/if}

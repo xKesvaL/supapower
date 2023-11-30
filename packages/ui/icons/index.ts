@@ -6,6 +6,7 @@ export { default as IconBrandInstagram } from "./brand-instagram.svelte";
 export { default as IconBrandTiktok } from "./brand-tiktok.svelte";
 export { default as IconBrandTwitter } from "./brand-twitter.svelte";
 export { default as IconCalendarEvent } from "./calendar-event.svelte";
+export { default as IconCheck } from "./check.svelte";
 export { default as IconChevronRight } from "./chevron-right.svelte";
 export { default as IconCirclesRelation } from "./circles-relation.svelte";
 export { default as IconCustomGoogle } from "./custom/custom-google.svelte";

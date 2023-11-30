@@ -3,11 +3,11 @@ import * as z from "zod";
 import { LOCALES } from "$lib/CONFIG";
 import {
   USER_DISTANCE,
-  USER_EQUIPMENT,
-  USER_EXPERIENCE,
   USER_MEASUREMENTS,
   USER_TYPES,
   USER_WEIGHT,
+  USER_WORKOUT_EQUIPMENT,
+  USER_WORKOUT_EXPERIENCE,
   USER_WORKOUT_TYPES,
 } from "$lib/typings/user";
 
@@ -26,7 +26,7 @@ export const UserProfileSchema = z.object({
     // eslint-disable-next-line @typescript-eslint/no-magic-numbers
     frequencies: z.array(z.number().gte(2).lte(6)).max(3).min(1),
     type: z.enum(USER_WORKOUT_TYPES),
-    equipment: z.enum(USER_EQUIPMENT),
-    experience: z.enum(USER_EXPERIENCE),
+    equipment: z.enum(USER_WORKOUT_EQUIPMENT),
+    experience: z.enum(USER_WORKOUT_EXPERIENCE),
   }),
 });
