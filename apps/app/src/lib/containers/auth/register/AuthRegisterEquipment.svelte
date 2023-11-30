@@ -15,6 +15,6 @@
   let disabled = $derived(equipment === null);
 </script>
 
-<AuthRegisterSelect title="test" options={USER_WORKOUT_EQUIPMENT} bind:selected={equipment} />
+<AuthRegisterSelect title="equipment" options={USER_WORKOUT_EQUIPMENT} bind:selected={equipment} />
 
 <AuthRegisterNextButton {onNext} {disabled} />

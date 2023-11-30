@@ -16,7 +16,7 @@
 </script>
 
 <AuthRegisterSelectMultiple
-  title="test"
+  title="frequencies"
   options={USER_WORKOUT_FREQUENCIES}
   bind:selected={frequencies}
 />
