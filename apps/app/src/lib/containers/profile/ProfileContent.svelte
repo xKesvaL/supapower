@@ -3,7 +3,11 @@
     username: string;
   }
 
-  export let user: User;
+  type Props = {
+    user: User;
+  };
+
+  let { user } = $props<Props>();
 </script>
 
 <div class="text-foreground fold:text-xs flex flex-col gap-1 text-sm">

@@ -10,7 +10,11 @@
     date: string;
   }
 
-  export let user: User;
+  type Props = {
+    user: User;
+  };
+
+  let { user } = $props<Props>();
 </script>
 
 <section class="flex flex-col gap-8">
