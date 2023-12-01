@@ -50,7 +50,7 @@
   "auth_register_goal_bodybuilding": "Musculation",
   "auth_register_goal_bodybuilding_description": "Les entraînements axés sur la musculation comportent des répétitions élevées (8 à 15) et une gamme d’exercices plus large.",
   "auth_register_goal_powerbuilding": "Powerbuilding",
-  "auth_register_goal_powerbuilding_description": "Les entraînements axés sur la force et les muscles comprennent à la fois des haltères de poids élevé, des exercices de force et des machines à répétitions élevées, des exercices de musculation. Test",
+  "auth_register_goal_powerbuilding_description": "Les entraînements axés sur la force et les muscles comprennent à la fois des haltères de poids élevé, des exercices de force et des machines à répétitions élevées, des exercices de musculation.",
   "auth_register_goal_powerlifting": "Force (Dynamophilie)",
   "auth_register_goal_powerlifting_description": "Les programmes de dynamophilie se concentrent sur le développé couché, le squat et le soulevé de terre avec de faibles répétitions mais un poids élevé, axés sur l'augmentation du nombre.",
   "auth_register_goal_calisthenics": "Calisthenics",
