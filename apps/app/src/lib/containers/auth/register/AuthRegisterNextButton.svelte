@@ -10,7 +10,7 @@
   let { onNext, disabled } = $props<Props>();
 </script>
 
-<footer class="fixed bottom-0 left-0 right-0 px-4 py-2">
+<footer class="fixed bottom-0 left-0 right-0 z-50 px-4 py-2">
   <Button
     class="w-full transition-all"
     {disabled}

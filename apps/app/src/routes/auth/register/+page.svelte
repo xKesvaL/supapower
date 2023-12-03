@@ -31,6 +31,7 @@
       transition(async () => {
         currentState = registerStages[currentIndex + 1] ?? "complete";
         window.location.hash = `#${currentState}`;
+        window.scrollTo(0, 0);
       });
     }
   };
@@ -41,6 +42,7 @@
       transition(async () => {
         currentState = registerStages[currentIndex - 1] ?? "discover";
         window.location.hash = `#${currentState}`;
+        window.scrollTo(0, 0);
       });
     }
   };
@@ -62,7 +64,7 @@
 
 <svelte:window onhashchange={onHashChange} />
 
-<div class="flex w-full flex-1 flex-col gap-2">
+<div class="flex w-full flex-1 flex-col gap-2 pb-12">
   {#if currentState !== "discover"}
     <AuthRegisterHeader {onPrevious} name={currentState} />
   {/if}

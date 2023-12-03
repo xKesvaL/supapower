@@ -20,7 +20,10 @@
   <div class="flex flex-col gap-4">
     {#each options as option}
       <button
-        class="bg-card flex w-full flex-col gap-2 rounded-lg p-3"
+        class="bg-card flex w-full flex-col gap-2 rounded-lg border p-3 transition-all {selected ===
+        option
+          ? 'border-primary'
+          : 'border-n'}"
         onclick={() => {
           selected = option;
         }}
@@ -37,9 +40,9 @@
             {getI18n(`auth_register_${title}_${option}`)}
           </h3>
         </div>
-        <div class="pl-9">
+        <p class="text-muted-foreground/80 pl-9 text-left text-sm">
           {getI18n(`auth_register_${title}_${option}_description`)}
-        </div>
+        </p>
       </button>
     {/each}
   </div>

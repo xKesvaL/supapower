@@ -14,14 +14,21 @@
 </script>
 
 <div class="mt-4 flex flex-col gap-8" style="view-transition-name: register-flow-select">
-  <h2>
+  <h2 class="text-center text-xl">
     {getI18n(`auth_register_${title}`)}
   </h2>
+  <p class="text-muted-foreground -mt-6 text-center text-sm">
+    {getI18n(`choose_up_to`, { max })}
+  </p>
 
   <div class="flex flex-col gap-4">
     {#each options as option}
       <button
-        class="bg-card flex w-full flex-col gap-2 rounded p-3"
+        class="bg-card flex w-full flex-col gap-2 rounded-lg border p-3 transition-all {selected.includes(
+          option,
+        )
+          ? 'border-primary'
+          : 'border-muted'}"
         onclick={() => {
           if (selected.includes(option)) {
             selected = selected.filter((item) => item !== option);
@@ -43,9 +50,9 @@
             {getI18n(`auth_register_${title}_${option}`)}
           </h3>
         </div>
-        <div class="pl-9">
+        <p class="text-muted-foreground/80 pl-9 text-left text-sm">
           {getI18n(`auth_register_${title}_${option}_description`)}
-        </div>
+        </p>
       </button>
     {/each}
   </div>
