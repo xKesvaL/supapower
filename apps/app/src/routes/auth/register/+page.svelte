@@ -53,13 +53,6 @@
       currentState = hash;
     });
   };
-
-  $effect(() => {
-    console.log(registerState.goal);
-    console.log(registerState.experience);
-    console.log(registerState.equipment);
-    console.log(registerState.frequencies);
-  });
 </script>
 
 <svelte:window onhashchange={onHashChange} />

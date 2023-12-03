@@ -85,5 +85,6 @@
   "auth_register_frequencies_5_description": "Usually for intermediates to advanced",
   "auth_register_frequencies_6": "6 days",
   "auth_register_frequencies_6_description": "Usually for advanced",
-  "choose_up_to": "Choose up to {max}"
+  "choose_up_to": "Choose up to {max}",
+  "register_page_title": "Create your account"
 }
