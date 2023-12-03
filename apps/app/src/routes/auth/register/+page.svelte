@@ -27,6 +27,11 @@
 
   let currentState = $state<RegisterStage>("discover");
 
+  let credentials = $state({
+    email: "",
+    password: "",
+  });
+
   const onNext = () => {
     const currentIndex = registerStages.indexOf(currentState);
     if (currentIndex < registerStages.length - 1) {
@@ -55,6 +60,10 @@
       currentState = hash;
     });
   };
+
+  const onFinish = () => {
+    console.log("finish");
+  };
 </script>
 
 <svelte:window onhashchange={onHashChange} />
@@ -81,7 +90,7 @@
       {:else if currentState === "frequency"}
         <AuthRegisterFrequency bind:frequencies={registerState.frequencies} {onNext} />
       {:else if currentState === "complete"}
-        <AuthRegisterComplete {onNext} />
+        <AuthRegisterComplete {onFinish} bind:credentials />
       {/if}
     </div>
   </section>

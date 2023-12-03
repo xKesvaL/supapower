@@ -13,7 +13,7 @@
   let { onNext } = $props<Props>();
 </script>
 
-<div class="flex flex-grow flex-col gap-4 py-4">
+<div class="flex flex-grow flex-col gap-4 py-6">
   <div class="bg-muted flex-grow">image</div>
   <h1 class="text-xl">Blabla best app</h1>
   <p class="text-muted-foreground text-sm">
