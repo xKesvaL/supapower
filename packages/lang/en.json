@@ -48,7 +48,7 @@
   "auth_register_steps_complete": "Create Account",
   "auth_register_goal": "What's your main training goal?",
   "auth_register_goal_bodybuilding": "Bodybuilding",
-  "auth_register_goal_bodybuilding_description": "Bodybuilding",
+  "auth_register_goal_bodybuilding_description": "Bodybuilding focused programs have higher reps (8-15) and a wider range of exercises",
   "auth_register_goal_powerbuilding": "Powerbuilding",
   "auth_register_goal_powerbuilding_description": "Powerbuilding",
   "auth_register_goal_powerlifting": "Powerlifting",
