@@ -85,5 +85,6 @@
   "auth_register_frequencies_5": "5 jours",
   "auth_register_frequencies_5_description": "Généralement pour intermédiaires à avancés",
   "auth_register_frequencies_6": "6 jours",
-  "auth_register_frequencies_6_description": "Généralement pour les avancés"
+  "auth_register_frequencies_6_description": "Généralement pour les avancés",
+  "choose_up_to": "Choisissez jusqu'à {max}"
 }
