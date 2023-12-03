@@ -6,7 +6,7 @@
     timer?: number;
   }
 
-  let { defaultState, timer = 500 } = $props<Props>()
+  let { defaultState, timer = 750 } = $props<Props>()
 
   let show = $state(false);
   const timeoutId = setTimeout(() => (show = true), timer);
