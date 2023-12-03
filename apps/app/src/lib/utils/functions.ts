@@ -3,7 +3,7 @@ import type { ZodError } from "zod";
 
 import { browser } from "$app/environment";
 import { goto } from "$app/navigation";
-import { PAGES } from "$lib/ROUTES";
+import { route } from "$lib/ROUTES";
 import type { FormattedZodError } from "$lib/typings/standard";
 import * as m from "$paraglide/messages";
 
@@ -21,8 +21,8 @@ export const formatZodError = (error: ZodError): FormattedZodError =>
   }, {});
 
 export const gotoFrel = async (page: Page<{ [key: string]: string }>) => {
-  // eslint-disable-next-line no-underscore-dangle, @typescript-eslint/no-unsafe-argument
-  await goto(page.data.frel ?? PAGES._ROOT());
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+  await goto(page.data.frel ?? route("/"));
 };
 
 export const goBack = (event: MouseEvent) => {
@@ -45,13 +45,13 @@ export const getI18n = (key: string, args?: { [key: string]: unknown }) => {
 };
 
 export const transition = async (action: () => Promise<void>) => {
-  // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
+  // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions, @typescript-eslint/no-unnecessary-condition
   if (!document.startViewTransition) {
     await action();
     return;
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return, consistent-return, @typescript-eslint/no-unsafe-call
+  // eslint-disable-next-line consistent-return
   return document.startViewTransition(async () => {
     await action();
   });

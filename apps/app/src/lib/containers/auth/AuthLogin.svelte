@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { PAGES } from "$lib/ROUTES";
   import { Button } from "$lib/components/ui/button";
   import AuthBase from "./AuthBase.svelte";
   import { page } from "$app/stores";
@@ -17,6 +16,7 @@
   import { Loader } from "ui/components";
   import { getUser } from "$lib/utils/context";
   import { browser } from "$app/environment";
+  import { route } from "$lib/ROUTES";
 
   let passwordShown = $state(false);
   let fieldErrors = $state<FormattedZodError>({});
@@ -70,99 +70,101 @@
   };
 </script>
 
-<AuthBase>
-  <form class="flex w-full flex-col items-center gap-8" onsubmit={logIn}>
-    <h1 class="text-5xl font-black">
-      {m.auth_login()}
-    </h1>
+<section class="container flex flex-col items-center justify-center gap-2">
+  <AuthBase>
+    <form class="flex w-full flex-col items-center gap-8" onsubmit={logIn}>
+      <h1 class="text-5xl font-black">
+        {m.auth_login()}
+      </h1>
 
-    <div class="flex w-full flex-col gap-4">
-      <Label class="flex w-full flex-col gap-1">
-        <span>
-          {m.auth_email()}
-        </span>
-        <Input
-          type="email"
-          class="placeholder:text-muted-foreground/50"
-          name="email"
-          placeholder={m.auth_email_placeholder()}
-          autocomplete="email"
-        />
-        {#if fieldErrors.email}
-          <span class="error" transition:blur={{ duration: 300 }}>
-            {getI18n(fieldErrors.email.message)}
-          </span>
-        {/if}
-      </Label>
-      <Label class="flex w-full flex-col gap-1">
-        <div class="flex justify-between">
+      <div class="flex w-full flex-col gap-4">
+        <Label class="flex w-full flex-col gap-1">
           <span>
-            {m.auth_password()}
+            {m.auth_email()}
           </span>
-          <a href={PAGES.auth_forgot_password()} class="text-muted-foreground">
-            {m.auth_forgot_password()}
-          </a>
-        </div>
-        <div class="relative flex w-full items-center">
           <Input
-            type={passwordShown ? "text" : "password"}
+            type="email"
             class="placeholder:text-muted-foreground/50"
-            name="password"
-            placeholder={m.auth_password_placeholder()}
-            autocomplete="current-password"
+            name="email"
+            placeholder={m.auth_email_placeholder()}
+            autocomplete="email"
           />
-          <Button
-            size="icon"
-            variant="ghost"
-            class="hover:text-foreground absolute right-2 h-6 w-6 hover:bg-transparent"
-            onclick={togglePassword}
-            type="button"
+          {#if fieldErrors.email}
+            <span class="error" transition:blur={{ duration: 300 }}>
+              {getI18n(fieldErrors.email.message)}
+            </span>
+          {/if}
+        </Label>
+        <Label class="flex w-full flex-col gap-1">
+          <div class="flex justify-between">
+            <span>
+              {m.auth_password()}
+            </span>
+            <a href={route("/auth/forgot-password")} class="text-muted-foreground">
+              {m.auth_forgot_password()}
+            </a>
+          </div>
+          <div class="relative flex w-full items-center">
+            <Input
+              type={passwordShown ? "text" : "password"}
+              class="placeholder:text-muted-foreground/50"
+              name="password"
+              placeholder={m.auth_password_placeholder()}
+              autocomplete="current-password"
+            />
+            <Button
+              size="icon"
+              variant="ghost"
+              class="hover:text-foreground absolute right-2 h-6 w-6 hover:bg-transparent"
+              onclick={togglePassword}
+              type="button"
+            >
+              {#if passwordShown}
+                <IconEyeOff />
+              {:else}
+                <IconEye />
+              {/if}
+            </Button>
+          </div>
+          {#if fieldErrors.password}
+            <span class="error" transition:blur={{ duration: 300 }}>
+              {getI18n(fieldErrors.password.message)}
+            </span>
+          {/if}
+        </Label>
+      </div>
+
+      <div class="flex w-full flex-col gap-2">
+        {#snippet defaultState()}
+          {m.auth_login_action()}
+        {/snippet}
+        <Button class="w-full" type="submit" disabled={loading}>
+          {#if loading}
+            <Loader {defaultState} />
+          {:else}
+            {@render defaultState()}
+          {/if}
+        </Button>
+        <Button class="flex w-full gap-2" variant="secondary">
+          <div class="h-5 w-5">
+            <IconCustomGoogle />
+          </div>
+          {m.auth_login_action_with({ provider: "Google" })}
+        </Button>
+        {#if authError}
+          <span class="error text-center" transition:blur={{ duration: 300 }}
+            >{getI18n(authError.code)}</span
           >
-            {#if passwordShown}
-              <IconEyeOff />
-            {:else}
-              <IconEye />
-            {/if}
-          </Button>
-        </div>
-        {#if fieldErrors.password}
-          <span class="error" transition:blur={{ duration: 300 }}>
-            {getI18n(fieldErrors.password.message)}
-          </span>
         {/if}
-      </Label>
-    </div>
+      </div>
+    </form>
+  </AuthBase>
 
-    <div class="flex w-full flex-col gap-2">
-      {#snippet defaultState()}
-        {m.auth_login_action()}
-      {/snippet}
-      <Button class="w-full" type="submit" disabled={loading}>
-        {#if loading}
-          <Loader {defaultState} />
-        {:else}
-          {@render defaultState()}
-        {/if}
-      </Button>
-      <Button class="flex w-full gap-2" variant="secondary">
-        <div class="h-5 w-5">
-          <IconCustomGoogle />
-        </div>
-        {m.auth_login_action_with({ provider: "Google" })}
-      </Button>
-      {#if authError}
-        <span class="error text-center" transition:blur={{ duration: 300 }}
-          >{getI18n(authError.code)}</span
-        >
-      {/if}
-    </div>
-  </form>
-</AuthBase>
-
-<Button
-  variant="link"
-  class="text-muted-foreground underline"
-  href={PAGES.auth_register({ frel: $page.data.frel })}
->
-  {m.auth_switch_to_register()}
-</Button>
+  <Button
+    variant="link"
+    class="text-muted-foreground underline"
+    href={route("/auth/register", { frel: $page.data.frel })}
+  >
+    {m.auth_switch_to_register()}
+  </Button>
+</section>

@@ -21,6 +21,8 @@
     "complete",
   ] as const;
 
+  $inspect(registerState);
+
   type RegisterStage = (typeof registerStages)[number];
 
   let currentState = $state<RegisterStage>("discover");
@@ -57,7 +59,7 @@
 
 <svelte:window onhashchange={onHashChange} />
 
-<div class="flex w-full flex-1 flex-col gap-2 pb-12">
+<div class="flex w-full flex-1 flex-col gap-2">
   {#if currentState !== "discover"}
     <AuthRegisterHeader {onPrevious} name={currentState} />
   {/if}

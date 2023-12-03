@@ -1,5 +1,7 @@
-import type { UserState } from "firebase-svelte";
+import type { DocState, UserState } from "firebase-svelte";
 import { getContext, setContext } from "svelte";
+
+import type { UserProfile } from "$lib/db/users/profile/types";
 
 export const contextKeys = [
   "installPromptEvent",
@@ -38,3 +40,10 @@ export const getUser = (): UserState => getContext<UserState>("user" satisfies C
 export const setUser = (user: UserState) => {
   setContext<UserState>("user" satisfies ContextKey, user);
 };
+
+export const setUserProfile = (profile: DocState<UserProfile>) => {
+  setContext<DocState<UserProfile>>("userProfile" satisfies ContextKey, profile);
+};
+
+export const getUserProfile = (): DocState<UserProfile> =>
+  getContext<DocState<UserProfile>>("userProfile" satisfies ContextKey);

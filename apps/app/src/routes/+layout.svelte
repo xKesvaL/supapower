@@ -13,19 +13,21 @@
   import { goto, preloadCode } from "$app/navigation";
   import { navigating, page } from "$app/stores";
   import { BRAND } from "$lib/CONFIG";
-  import { PAGES } from "$lib/ROUTES";
+  import { route } from "$lib/ROUTES";
   import {
     type DisplayMode,
     setDisplayMode,
     setOnline,
     setPromptEvent,
     setUser,
+    setUserProfile,
   } from "$lib/utils/context";
-  import { auth } from "$lib/utils/firebase";
-  import { UserState } from "firebase-svelte";
+  import { auth, firestore } from "$lib/utils/firebase";
+  import { DocState, UserState } from "firebase-svelte";
   import { browser } from "$app/environment";
   import Navigation from "$lib/containers/layout/Navigation.svelte";
   import { MetaTags } from "svelte-meta-tags";
+  import type { UserProfile } from "$lib/db/users/profile/types";
 
   nprogress.configure({ easing: "ease", minimum: 0.2, speed: 600 });
   $effect(() => {
@@ -40,7 +42,7 @@
       displayMode = event.matches ? "standalone" : "browser";
     });
 
-    preloadCode(PAGES._ROOT(), PAGES.nutrition(), PAGES.train(), PAGES.profile());
+    preloadCode(route("/"), route("/nutrition"), route("/train"), route("/profile"));
   });
 
   const onBeforeInstallPrompt = (event: Event) => {
@@ -60,17 +62,19 @@
   $effect(() => setOnline(online));
 
   const userState = new UserState(auth);
+  const userProfile = new DocState<UserProfile>(firestore, `users/${userState.user?.uid}`);
 
   $effect(() => {
     setUser(userState);
+    setUserProfile(userProfile);
 
     if (
       browser &&
       !userState.loading &&
       !userState.user &&
-      !$page.url.pathname.startsWith(PAGES.auth())
+      !$page.url.pathname.startsWith(route("/auth"))
     ) {
-      goto(PAGES.auth_register({ frel: $page.url.pathname }));
+      goto(route("/auth/register", { frel: $page.url.pathname }));
     }
   });
 

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { page } from "$app/stores";
 
-  import { PAGES } from "$lib/ROUTES";
+  import { route } from "$lib/ROUTES";
   import { IconBarbell, IconHome, IconSoup, IconTool, IconUser } from "ui/icons";
 
   import * as m from "$paraglide/messages";
@@ -11,7 +11,7 @@
 <nav
   class="fixed bottom-0 left-0 right-0 z-10 flex h-12 items-center justify-around lg:sticky lg:bottom-auto lg:right-auto lg:top-0 lg:h-screen lg:min-w-[12rem] lg:flex-col lg:items-start lg:justify-start"
 >
-  <NavigationLink href={PAGES._ROOT()} active={$page.url.pathname === PAGES._ROOT()}>
+  <NavigationLink href={route("/")} active={$page.url.pathname === route("/")}>
     {#snippet icon()}
       <IconHome />
     {/snippet}
@@ -19,8 +19,8 @@
   </NavigationLink>
 
   <NavigationLink
-    href={PAGES.nutrition()}
-    active={$page.url.pathname.startsWith(PAGES.nutrition())}
+    href={route("/nutrition")}
+    active={$page.url.pathname.startsWith(route("/nutrition"))}
   >
     {#snippet icon()}
       <IconSoup />
@@ -28,14 +28,17 @@
     <span>{m.nutrition_title()}</span>
   </NavigationLink>
 
-  <NavigationLink href={PAGES.train()} active={$page.url.pathname.startsWith(PAGES.train())}>
+  <NavigationLink href={route("/train")} active={$page.url.pathname.startsWith(route("/train"))}>
     {#snippet icon()}
       <IconBarbell />
     {/snippet}
     <span>{m.train_title()}</span>
   </NavigationLink>
 
-  <NavigationLink href={PAGES.profile()} active={$page.url.pathname.startsWith(PAGES.profile())}>
+  <NavigationLink
+    href={route("/profile")}
+    active={$page.url.pathname.startsWith(route("/profile"))}
+  >
     {#snippet icon()}
       <IconUser />
     {/snippet}
@@ -43,7 +46,7 @@
   </NavigationLink>
 
   <!-- {#if $userData.type === 'admin'}
-    <NavigationLink href={PAGES.admin()} active={$page.url.pathname.startsWith(PAGES.admin())}>
+    <NavigationLink href={route('/admin')} active={$page.url.pathname.startsWith(route('/admin'))}>
       {#snippet icon()}
         <IconTool />
       {/snippet}
@@ -52,7 +55,7 @@
   {/if} -->
 
   <!-- {#if $userData.type === 'admin'}
-		<a href={PAGES.admin()} class:active={$page.url.pathname.startsWith(PAGES.admin())}>
+		<a href={route('/admin')} class:active={$page.url.pathname.startsWith(route('/admin'))}>
 			<div class="icon">
 				<IconTool />
 			</div>

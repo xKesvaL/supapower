@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { PAGES } from "$lib/ROUTES";
+  import { route } from "$lib/ROUTES";
   import { IconChevronRight } from "ui/icons";
 
   interface User {
@@ -17,7 +17,7 @@
 
 <a
   class="bg-muted/75 flex items-center justify-between rounded-lg p-4"
-  href={PAGES.profile_settings_account()}
+  href={route("/profile/settings/account")}
 >
   <div class="flex items-center gap-4">
     <div class="h-16 w-16 rounded border">

@@ -13,7 +13,7 @@
   let { options, title, selected = [], max = 3 } = $props<Props>();
 </script>
 
-<div class="mt-4 flex flex-col gap-8" style="view-transition-name: register-flow-select">
+<div class="mt-4 flex flex-col gap-8 pb-12" style="view-transition-name: register-flow-select">
   <h2 class="text-center text-xl">
     {getI18n(`auth_register_${title}`)}
   </h2>
@@ -35,7 +35,6 @@
           } else if (selected.length < max) {
             selected = [...selected, option];
           }
-          console.log(selected);
         }}
       >
         <div class="flex items-center gap-3">
