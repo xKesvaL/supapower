@@ -54,7 +54,7 @@
   "auth_register_goal_powerlifting": "Force (Dynamophilie)",
   "auth_register_goal_powerlifting_description": "La force se concentre sur le développé couché, le squat et le soulevé de terre avec des répétitions plus faibles mais plus élevées, dans le but d'atteindre des records personnels plus élevés",
   "auth_register_goal_calisthenics": "Calisthenics",
-  "auth_register_goal_calisthenics_description": "Les programmes de Calisthenics proposent des exercices à domicile qui vous aident à devenir fort et en forme avec un minimum d'équipement utilisant le poids du corps",
+  "auth_register_goal_calisthenics_description": "Les programmes de Calisthenics proposent des exercices à domicile qui vous aident à devenir fort et en forme avec un minimum d'équipement utilisant le poids du corps.",
   "auth_register_goal_sculpting": "Sculpter",
   "auth_register_goal_sculpting_description": "Les programmes de sculpture sont des programmes de tonification musculaire destinés aux femmes et mettent l’accent sur les exercices du bas du corps.",
   "auth_register_experience": "Depuis combien de temps vous entraînez-vous ?",
