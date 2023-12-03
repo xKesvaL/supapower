@@ -1,5 +1,4 @@
 {
-  "$schema": "https://inlang.com/schema/inlang-message-format",
   "auth_switch_to_login": "Already have an account? Sign in",
   "auth_switch_to_register": "Don't have an account? Register here.",
   "auth_login": "Sign in",
