@@ -5,11 +5,19 @@
   "auth_login_action": "Se connecter",
   "auth_login_action_with": "Connectez-vous avec {provider}",
   "auth_register": "S'inscrire",
+  "auth_register_action": "S'inscrire",
+  "auth_register_action_with": "Inscrivez-vous avec {provider}",
+  "auth_username": "Nom d'utilisateur",
+  "auth_username_placeholder": "JohnDoe123",
+  "auth_username_error_too_short": "Le nom d’utilisateur doit comporter au moins 3 caractères.",
+  "auth_username_error_taken": "Nom d'utilisateur déjà pris.",
   "auth_email": "E-mail",
   "auth_email_placeholder": "email@exemple.com",
   "auth_password": "Mot de passe",
   "auth_password_confirm": "Confirmez le mot de passe",
+  "auth_password_confirm_mismatch": "Les mots de passe ne correspondent pas",
   "auth_password_placeholder": "Coolmdp123!",
+  "auth_password_error_weak": "Le mot de passe est trop faible. Essayez d'ajouter des chiffres, des symboles ou des lettres majuscules.",
   "auth_forgot_password": "Mot de passe oublié?",
   "auth_error_email_required": "Veuillez entrer votre adresse e-mail.",
   "auth_error_email_invalid": "Veuillez entrer une adresse email valide.",
@@ -85,5 +93,6 @@
   "auth_register_frequencies_5_description": "Généralement pour intermédiaires à avancés",
   "auth_register_frequencies_6": "6 jours",
   "auth_register_frequencies_6_description": "Généralement pour les avancés",
-  "choose_up_to": "Choisissez jusqu'à {max}"
+  "choose_up_to": "Choisissez jusqu'à {max}",
+  "register_title": "Créez votre compte"
 }

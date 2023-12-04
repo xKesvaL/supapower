@@ -5,11 +5,19 @@
   "auth_login_action": "Anmeldung",
   "auth_login_action_with": "Melden Sie sich mit {provider} an",
   "auth_register": "Registrieren",
+  "auth_register_action": "Melden Sie sich an",
+  "auth_register_action_with": "Registrieren Sie sich mit {provider}",
+  "auth_username": "Nutzername",
+  "auth_username_placeholder": "JohnDoe123",
+  "auth_username_error_too_short": "Der Benutzername muss mindestens 3 Zeichen lang sein.",
+  "auth_username_error_taken": "Benutzername bereits vergeben.",
   "auth_email": "Email",
   "auth_email_placeholder": "email@example.com",
   "auth_password": "Passwort",
   "auth_password_confirm": "Bestätige das Passwort",
+  "auth_password_confirm_mismatch": "Passwörter stimmen nicht überein",
   "auth_password_placeholder": "Cooles Passwort123!",
+  "auth_password_error_weak": "Passwort ist zu schwach. Versuchen Sie, Zahlen, Symbole oder Großbuchstaben hinzuzufügen.",
   "auth_forgot_password": "Passwort vergessen?",
   "auth_error_email_required": "Geben Sie bitte Ihre Email-Adresse ein.",
   "auth_error_email_invalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
@@ -85,5 +93,6 @@
   "auth_register_frequencies_5_description": "Normalerweise für Fortgeschrittene bis Fortgeschrittene",
   "auth_register_frequencies_6": "6 Tage",
   "auth_register_frequencies_6_description": "Normalerweise für Fortgeschrittene",
-  "choose_up_to": "Wählen Sie bis zu {max}"
+  "choose_up_to": "Wählen Sie bis zu {max}",
+  "register_title": "Erstelle deinen Account"
 }
