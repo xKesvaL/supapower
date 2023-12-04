@@ -17,3 +17,7 @@ export const auth = initializeAuth(app, {
   persistence: browserLocalPersistence,
 });
 export const firestore = initializeFirestore(app, {});
+
+export const authProviders = ["credentials", "google"] as const;
+
+export type AuthProvider = (typeof authProviders)[number];

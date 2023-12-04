@@ -7,7 +7,6 @@
 
   interface Props {
     onNext: () => void;
-    children?: any;
   }
 
   let { onNext } = $props<Props>();

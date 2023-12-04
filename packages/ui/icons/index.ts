@@ -28,3 +28,4 @@ export { default as IconSoup } from "./soup.svelte";
 export { default as IconSun } from "./sun.svelte";
 export { default as IconTool } from "./tool.svelte";
 export { default as IconUser } from "./user.svelte";
+export { default as IconX } from "./x.svelte";

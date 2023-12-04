@@ -7,8 +7,15 @@
   import AuthRegisterFrequency from "$lib/containers/auth/register/AuthRegisterFrequency.svelte";
   import AuthRegisterComplete from "$lib/containers/auth/register/AuthRegisterComplete.svelte";
   import { HorizontalSteps } from "ui/components";
-  import { transition } from "$lib/utils/functions";
+  import { formatZodError, gotoFrel, transition } from "$lib/utils/functions";
   import { RegisterState } from "$lib/db/users/firebase/states.svelte";
+  import type { FormattedZodError } from "$lib/typings/standard";
+  import type { AuthError } from "$lib/db/users/firebase/types";
+  import type { AuthProvider } from "$lib/utils/firebase";
+  import { UserFirebaseSchema } from "$lib/db/users/firebase/schemas";
+  import { page } from "$app/stores";
+  import { authRegisterWithEmailAndPassword } from "$lib/db/users/firebase/actions";
+  import { createUserProfile } from "$lib/db/users/profile/actions";
 
   const registerState = new RegisterState();
 
@@ -30,6 +37,18 @@
   let credentials = $state({
     email: "",
     password: "",
+  });
+
+  let username = $state("");
+
+  let authState = $state<{
+    loading: boolean;
+    authError: AuthError | null;
+    fieldErrors: FormattedZodError;
+  }>({
+    loading: false,
+    authError: null,
+    fieldErrors: {},
   });
 
   const onNext = () => {
@@ -61,8 +80,35 @@
     });
   };
 
-  const onFinish = () => {
-    console.log("finish");
+  const onFinish = async (type: AuthProvider) => {
+    if (type === "credentials") {
+      authState.loading = true;
+      authState.fieldErrors = {};
+
+      const schemaRes = UserFirebaseSchema.safeParse(credentials);
+
+      if (!schemaRes.success) {
+        authState.fieldErrors = formatZodError(schemaRes.error);
+        authState.loading = false;
+        return;
+      }
+
+      const authRes = await authRegisterWithEmailAndPassword(
+        schemaRes.data.email,
+        schemaRes.data.password,
+      );
+
+      if (authRes.error || !authRes.user) {
+        authState.authError = authRes.error ?? null;
+        console.error(authRes.error);
+      } else {
+        await createUserProfile(authRes.user, registerState, username.toLowerCase());
+
+        await gotoFrel($page);
+      }
+
+      authState.loading = false;
+    }
   };
 </script>
 
@@ -90,7 +136,7 @@
       {:else if currentState === "frequency"}
         <AuthRegisterFrequency bind:frequencies={registerState.frequencies} {onNext} />
       {:else if currentState === "complete"}
-        <AuthRegisterComplete {onFinish} bind:credentials />
+        <AuthRegisterComplete {onFinish} bind:authState bind:credentials bind:username />
       {/if}
     </div>
   </section>

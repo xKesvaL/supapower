@@ -1,9 +1,10 @@
 <script lang="ts">
   import { CardGlass } from "ui/components";
   import { twMerge } from "tailwind-merge";
+  import type { Snippet } from "svelte";
 
   interface Props {
-    children?: any;
+    children: Snippet;
     class?: string;
   }
 

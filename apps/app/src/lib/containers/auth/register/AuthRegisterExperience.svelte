@@ -7,7 +7,6 @@
 
   interface Props {
     onNext: () => void;
-    children?: any;
     experience: UserProfile["workout"]["experience"] | null;
   }
 

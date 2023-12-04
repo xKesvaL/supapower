@@ -63,6 +63,7 @@ export type AuthError = AuthErrorLogin | AuthErrorPopup | AuthErrorRegister;
 export interface AuthResponse {
   error?: AuthError;
   success: boolean;
+  user?: User;
 }
 
 export const AUTH_PASSWORD_MIN_LENGTH = 8;

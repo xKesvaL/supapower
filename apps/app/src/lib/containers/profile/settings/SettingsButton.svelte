@@ -1,8 +1,9 @@
 <script lang="ts">
+  import type { Snippet } from "svelte";
   import { IconChevronRight } from "ui/icons";
 
   interface Props {
-    children?: any;
+    children: Snippet;
     icon: any;
     href: string;
   }

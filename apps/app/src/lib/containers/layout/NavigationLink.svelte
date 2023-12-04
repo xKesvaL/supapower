@@ -1,9 +1,10 @@
 <script lang="ts">
   import { page } from "$app/stores";
+  import type { Snippet } from "svelte";
 
   interface Props {
     href: string;
-    children?: any;
+    children: Snippet;
     icon: any;
     active: boolean;
   }
