@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { PAGES } from "$lib/ROUTES";
+  import { route } from "$lib/ROUTES";
   import { IconChevronRight } from "ui/icons";
 
   interface User {
@@ -8,12 +8,16 @@
     date: string;
   }
 
-  export let user: User;
+  type Props = {
+    user: User;
+  };
+
+  let { user } = $props<Props>();
 </script>
 
 <a
-  class="flex items-center justify-between rounded-lg bg-muted/75 p-4"
-  href={PAGES.profile_settings_account()}
+  class="bg-muted/75 flex items-center justify-between rounded-lg p-4"
+  href={route("/profile/settings/account")}
 >
   <div class="flex items-center gap-4">
     <div class="h-16 w-16 rounded border">
@@ -22,10 +26,10 @@
     <div class="flex flex-col gap-1">
       <p class="text-lg leading-none">{user.username}</p>
       <p class="text-sm">{user.email}</p>
-      <p class="text-xs text-muted-foreground">Member since {user.date}</p>
+      <p class="text-muted-foreground text-xs">Member since {user.date}</p>
     </div>
   </div>
-  <div class="w-8 text-muted-foreground">
+  <div class="text-muted-foreground w-8">
     <IconChevronRight />
   </div>
 </a>

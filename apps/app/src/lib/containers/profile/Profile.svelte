@@ -7,7 +7,11 @@
     username: string;
   }
 
-  export let user: User;
+  type Props = {
+    user: User;
+  };
+
+  let { user } = $props<Props>();
 </script>
 
 <div class="container flex flex-col gap-2">

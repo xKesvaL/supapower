@@ -34,6 +34,18 @@
   }
 }
 
+@keyframes slide-from-right-full {
+  from {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slide-to-left-full {
+  to {
+    transform: translateX(100%);
+  }
+}
+
 :root::view-transition-old(root) {
   animation:
     100ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
@@ -46,6 +58,10 @@
     200ms cubic-bezier(0, 0, 0.2, 1) 100ms both fade-in,
     300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right,
     150ms cubic-bezier(0.4, 0, 1, 1) both blur-in;
+}
+
+:root::view-transition-old(register-flow-select) {
+  animation: slide-to-left-full 300ms cubic-bezier(0.4, 0, 0.2, 1) both;
 }
 
 :root::view-transition-old(*),
@@ -118,5 +134,24 @@ section.section {
   color: hsl(var(--danger-700));
   font-size: 0.75rem;
   font-weight: 400;
-  text-wrap: balance;
+}
+
+header.page-header {
+  @apply mx-auto grid w-full max-w-[1280px] grid-cols-[1fr,auto,1fr] items-center gap-2 py-3 pl-2 pr-3;
+
+  div {
+    @apply flex items-center;
+  }
+
+  :nth-child(1) {
+    @apply justify-start;
+  }
+
+  :nth-child(2) {
+    @apply justify-center;
+  }
+
+  :nth-child(3) {
+    @apply justify-end;
+  }
 }

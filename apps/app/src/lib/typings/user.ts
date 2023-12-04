@@ -9,3 +9,7 @@ export const USER_WORKOUT_TYPES = [
   "calisthenics",
   "sculpting",
 ] as const;
+export const USER_WORKOUT_EQUIPMENT = ["full_gym", "garage_gym", "dumbbells", "at_home"] as const;
+export const USER_WORKOUT_EXPERIENCE = ["beginner", "novice", "intermediate", "advanced"] as const;
+// eslint-disable-next-line @typescript-eslint/no-magic-numbers
+export const USER_WORKOUT_FREQUENCIES = [2, 3, 4, 5, 6];

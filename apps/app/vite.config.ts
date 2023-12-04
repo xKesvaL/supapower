@@ -12,7 +12,7 @@ export default defineConfig({
     sveltekit(),
     kitRoutes<KIT_ROUTES>({
       extra_search_params: "with",
-      format: "_",
+      format: "route(path)",
     }),
     watch({
       pattern: "../../packages/lang/*.json",

@@ -2,13 +2,14 @@
   import { onDestroy } from "svelte";
 
   interface Props {
-    defaultState: any
+    defaultState: any;
+    timer?: number;
   }
 
-  let { defaultState } = $props<Props>()
+  let { defaultState, timer = 750 } = $props<Props>()
 
   let show = $state(false);
-  const timeoutId = setTimeout(() => (show = true), 400);
+  const timeoutId = setTimeout(() => (show = true), timer);
   onDestroy(() => clearTimeout(timeoutId));
 </script>
 

@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { browserLocalPersistence, initializeAuth } from "firebase/auth";
+import { initializeFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCKh4v4pcGfgrIwPoHW_9BFHvZENXOuXac",
@@ -15,3 +16,8 @@ export const app = initializeApp(firebaseConfig);
 export const auth = initializeAuth(app, {
   persistence: browserLocalPersistence,
 });
+export const firestore = initializeFirestore(app, {});
+
+export const authProviders = ["credentials", "google"] as const;
+
+export type AuthProvider = (typeof authProviders)[number];

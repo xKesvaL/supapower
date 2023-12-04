@@ -1,3 +1,4 @@
+export { default as IconArrowLeft } from "./arrow-left.svelte";
 export { default as IconArrowUpLeft } from "./arrow-up-left.svelte";
 export { default as IconBarbell } from "./barbell.svelte";
 export { default as IconBell } from "./bell.svelte";
@@ -5,6 +6,7 @@ export { default as IconBrandInstagram } from "./brand-instagram.svelte";
 export { default as IconBrandTiktok } from "./brand-tiktok.svelte";
 export { default as IconBrandTwitter } from "./brand-twitter.svelte";
 export { default as IconCalendarEvent } from "./calendar-event.svelte";
+export { default as IconCheck } from "./check.svelte";
 export { default as IconChevronRight } from "./chevron-right.svelte";
 export { default as IconCirclesRelation } from "./circles-relation.svelte";
 export { default as IconCustomGoogle } from "./custom/custom-google.svelte";
@@ -26,3 +28,4 @@ export { default as IconSoup } from "./soup.svelte";
 export { default as IconSun } from "./sun.svelte";
 export { default as IconTool } from "./tool.svelte";
 export { default as IconUser } from "./user.svelte";
+export { default as IconX } from "./x.svelte";
