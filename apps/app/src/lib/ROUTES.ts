@@ -9,7 +9,7 @@
  */
 const PAGES = {
   "/": (sp?: Record<string, string | number>) => {
-    return `${appendSp(sp)}`
+    return `/${appendSp(sp)}`
   },
   "/admin": (sp?: Record<string, string | number>) => {
     return `/admin${appendSp(sp)}`

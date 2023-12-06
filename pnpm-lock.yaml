@@ -185,8 +185,8 @@ importers:
         specifier: ^5.0.0
         version: 5.0.0(@types/node@20.9.1)(sass@1.69.5)
       vite-plugin-kit-routes:
-        specifier: ^0.2.2
-        version: 0.2.2
+        specifier: ^0.2.4
+        version: 0.2.4
       vite-plugin-watch:
         specifier: ^0.2.0
         version: 0.2.0
@@ -11749,8 +11749,8 @@ packages:
       vite-plugin-watch-and-run: 1.4.2
     dev: true
 
-  /vite-plugin-kit-routes@0.2.2:
-    resolution: {integrity: sha512-TOIFnChCZt/F7+j+il4Zk4LyUfYOhkfWL0tjwzhgTpQ/YUxaH2u/LulflYSCUvqJ0IdHV4CmOzFYw2PhJ0Hr8Q==}
+  /vite-plugin-kit-routes@0.2.4:
+    resolution: {integrity: sha512-bnaafwIKdhd2FC2P0yefZJg25zVUsbT8zjZ3pbDDgN+1qCwbigqO5BHpNImI5cUy+jHdn3WtJOOL7f64ib9C5A==}
     engines: {node: ^16.14 || >=18}
     dependencies:
       '@babel/parser': 7.23.3

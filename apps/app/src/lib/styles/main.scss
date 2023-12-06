@@ -61,7 +61,7 @@
 }
 
 :root::view-transition-old(register-flow-select) {
-  animation: slide-to-left-full 300ms cubic-bezier(0.4, 0, 0.2, 1) both;
+  animation: slide-to-left-full 200ms cubic-bezier(0.4, 0, 0.2, 1) both;
 }
 
 :root::view-transition-old(*),
