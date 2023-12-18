@@ -28,6 +28,7 @@
   import Navigation from "$lib/containers/layout/Navigation.svelte";
   import { MetaTags } from "svelte-meta-tags";
   import type { UserProfile } from "$lib/db/users/profile/types";
+  import { doc } from "firebase/firestore";
 
   nprogress.configure({ easing: "ease", minimum: 0.2, speed: 600 });
   $effect(() => {
@@ -62,11 +63,18 @@
   $effect(() => setOnline(online));
 
   const userState = new UserState(auth);
-  const userProfile = new DocState<UserProfile>(firestore, `users/${userState.user?.uid}`);
+
+  $effect(() => {
+    let userProfile = new DocState<UserProfile>(
+      firestore,
+      doc(firestore, `users/${userState.user?.uid}/profile/data`),
+    );
+
+    setUserProfile(userProfile);
+  });
 
   $effect(() => {
     setUser(userState);
-    setUserProfile(userProfile);
 
     if (
       browser &&
@@ -81,6 +89,8 @@
   setupViewTransition();
 
   let metaTags = $page.data.metaTags ?? {};
+
+  $inspect(userState);
 </script>
 
 <MetaTags titleTemplate="%s | {BRAND.name}" {...metaTags} />

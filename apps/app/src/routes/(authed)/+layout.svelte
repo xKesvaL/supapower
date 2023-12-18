@@ -1,10 +1,21 @@
 <script lang="ts">
-  import { getUser, getUserProfile } from "$lib/utils/context";
+  import type { UserProfile } from "$lib/db/users/profile/types";
+  import { getUser, setUserProfile } from "$lib/utils/context";
+  import { firestore } from "$lib/utils/firebase";
+  import { DocState } from "firebase-svelte";
 
-  const user = getUser();
-  const userProfile = getUserProfile();
+  const userState = getUser();
+
+  let userProfile = new DocState<UserProfile>(
+    firestore,
+    `users/${userState.user?.uid}/profile/data`,
+  );
+
+  $effect(() => {
+    setUserProfile(userProfile);
+  });
 </script>
 
-{#if user && !user.loading && user.user && userProfile && !userProfile.loading && userProfile.doc}
+{#if userState && !userState.loading && userState.user && userProfile && !userProfile.loading && userProfile.doc}
   <slot />
 {/if}
