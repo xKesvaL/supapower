@@ -89,7 +89,6 @@
   setupViewTransition();
 
   let metaTags = $page.data.metaTags ?? {};
-
   $inspect(userState);
 </script>
 

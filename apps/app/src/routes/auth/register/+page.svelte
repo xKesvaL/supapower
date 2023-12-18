@@ -28,8 +28,6 @@
     "complete",
   ] as const;
 
-  $inspect(registerState);
-
   type RegisterStage = (typeof registerStages)[number];
 
   let currentState = $state<RegisterStage>("discover");

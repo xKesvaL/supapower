@@ -90,8 +90,6 @@
   };
 
   const onSignInGoogle = async () => await onFinish("google");
-
-  $inspect(passwordStrength);
 </script>
 
 <form class="flex w-full flex-col items-center gap-8" onsubmit={onSignIn}>
