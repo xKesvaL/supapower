@@ -6,7 +6,13 @@ import { kitRoutes } from "vite-plugin-kit-routes";
 import type { KIT_ROUTES } from "$lib/ROUTES";
 
 export default defineConfig({
-  plugins: [enhancedImages(), sveltekit(), kitRoutes<KIT_ROUTES>()],
+  plugins: [
+    enhancedImages(),
+    sveltekit(),
+    kitRoutes<KIT_ROUTES>({
+      format: "route(path)",
+    }),
+  ],
 
   resolve: {
     alias: {

@@ -2,7 +2,7 @@
   import { IconArrowUpLeft } from "ui/icons";
 
   import { Button } from "$lib/components/ui/button";
-  import { PAGES } from "$lib/ROUTES";
+  import { route } from "$lib/ROUTES";
   import { navigationOpen } from "$lib/stores/common";
 
   import Socials from "../../components/base/Socials.svelte";
@@ -16,20 +16,20 @@
     class="container flex items-center justify-between gap-4 lg:my-6 lg:grid lg:grid-cols-[auto,1fr,auto] lg:gap-10"
     style="view-transition-name: header;"
   >
-    <a class="font-title text-2xl lg:border-r lg:py-2 lg:pr-12" href={PAGES.lang_lg()}
+    <a class="font-title text-2xl lg:border-r lg:py-2 lg:pr-12" href={route("/")}
       >LeetStrength</a
     >
     <div
-      class="lg:0 fixed inset-0 z-10 flex flex-col justify-between gap-12 bg-card p-4 transition-transform duration-500 lg:relative lg:flex-row {$navigationOpen
+      class="lg:0 bg-card fixed inset-0 z-10 flex flex-col justify-between gap-12 p-4 transition-transform duration-500 lg:relative lg:flex-row {$navigationOpen
         ? 'translate-x-0'
         : '-translate-x-full'} lg:translate-x-0 lg:bg-transparent"
     >
       <div
         class="lg:justfiy-start flex flex-grow flex-col items-center justify-center gap-12 lg:flex-grow-0 lg:flex-row"
       >
-        <HeaderLink href={PAGES.lang_lg_features()}>Features</HeaderLink>
-        <HeaderLink href={PAGES.lang_lg_pricing()}>Pricing</HeaderLink>
-        <HeaderLink href={PAGES.lang_lg_about()}>About</HeaderLink>
+        <HeaderLink href={route("/features")}>Features</HeaderLink>
+        <HeaderLink href={route("/pricing")}>Pricing</HeaderLink>
+        <HeaderLink href={route('/about')}>About</HeaderLink>
       </div>
       <div class="flex flex-col gap-4">
         <Button class="gap-2 lg:hidden">
