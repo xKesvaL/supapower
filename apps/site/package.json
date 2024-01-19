@@ -55,7 +55,7 @@
     "tslib": "^2.6.2",
     "typescript": "^5.2.2",
     "ui": "workspace:*",
-    "vite": "^5.0.10",
+    "vite": "^5.0.12",
     "vite-plugin-kit-routes": "^0.2.12",
     "zod": "^3.22.4"
   },
